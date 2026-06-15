@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">dd5680e</tspan> - <tspan class="commit-msg">feat: shrink Unitrio logo, add View Portfolio b...</tspan> <tspan class="commit-time">(27 minutes ago)</tspan>
+        <tspan class="commit-hash">85b9265</tspan> - <tspan class="commit-msg">feat: add // github stats section with contribu...</tspan> <tspan class="commit-time">(2 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">5f2d23d</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(32 minutes ago)</tspan>
+        <tspan class="commit-hash">781709a</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(30 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">7f11e34</tspan> - <tspan class="commit-msg">feat: add animated SVG terminal of recent commi...</tspan> <tspan class="commit-time">(33 minutes ago)</tspan>
+        <tspan class="commit-hash">dd5680e</tspan> - <tspan class="commit-msg">feat: shrink Unitrio logo, add View Portfolio b...</tspan> <tspan class="commit-time">(30 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">0bab2d4</tspan> - <tspan class="commit-msg">design: add modern micro-interactions</tspan> <tspan class="commit-time">(33 minutes ago)</tspan>
+        <tspan class="commit-hash">5f2d23d</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(35 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">21ae772</tspan> - <tspan class="commit-msg">Increase slogan text font size to 44 on active ...</tspan> <tspan class="commit-time">(41 minutes ago)</tspan>
+        <tspan class="commit-hash">7f11e34</tspan> - <tspan class="commit-msg">feat: add animated SVG terminal of recent commi...</tspan> <tspan class="commit-time">(36 minutes ago)</tspan>
       </text>
     </g>
   </g>

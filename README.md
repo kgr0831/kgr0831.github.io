@@ -35,7 +35,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781548528" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781548708" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -45,26 +45,13 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (27 minutes ago)
-- **5f2d23d** - chore: auto-update recent commits in README [skip ci] (32 minutes ago)
-- **7f11e34** - feat: add animated SVG terminal of recent commits and automate it with GitHub Actions (33 minutes ago)
-- **0bab2d4** - design: add modern micro-interactions (33 minutes ago)
-- **21ae772** - Increase slogan text font size to 44 on active banner image (41 minutes ago)
+- **85b9265** - feat: add // github stats section with contribution graph and stats cards (2 minutes ago)
+- **781709a** - chore: auto-update recent commits in README [skip ci] (30 minutes ago)
+- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (30 minutes ago)
+- **5f2d23d** - chore: auto-update recent commits in README [skip ci] (35 minutes ago)
+- **7f11e34** - feat: add animated SVG terminal of recent commits and automate it with GitHub Actions (36 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
-
----
-
-### // github stats
-
-<p align="center">
-  <img src="https://github-contributions-api.deno.dev/Kgr0831.svg?scheme=unicorn" alt="Garam's GitHub Contributions" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Kgr0831&show_icons=true&bg_color=0b0f19&title_color=38bdf8&icon_color=3b82f6&text_color=e2e8f0&border_color=1f2937" alt="Garam's GitHub Stats" width="49%">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kgr0831&theme=dark&background=0b0f19&ring=38bdf8&fire=ec4899&currStreakNum=e2e8f0&sideNums=e2e8f0&sideLabels=64748b&dates=64748b&stroke=1f2937" alt="Garam's Streak Stats" width="49%">
-</p>
 
 ---
 
@@ -112,6 +99,19 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 **HELIX** · 2026.04 — Heterogeneous multi-agent collaboration system to reduce hallucination and minimize API cost. → [live](https://helix-ssu.vercel.app/)
 
 **Unitrio** · ongoing — A 2D top-down action-RPG sandbox, built with a five-person indie team.
+
+---
+
+### // github stats
+
+<p align="center">
+  <img src="https://github-contributions-api.deno.dev/Kgr0831.svg?scheme=unicorn" alt="Garam's GitHub Contributions" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Kgr0831&show_icons=true&bg_color=0b0f19&title_color=38bdf8&icon_color=3b82f6&text_color=e2e8f0&border_color=1f2937" alt="Garam's GitHub Stats" height="165">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kgr0831&layout=compact&bg_color=0b0f19&title_color=38bdf8&text_color=e2e8f0&border_color=1f2937" alt="Garam's Top Languages" height="165">
+</p>
 
 ---
 
