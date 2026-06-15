@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Garam Kim Profile Banner" width="100%">
+</p>
+
 <h1 align="center">Garam Kim</h1>
 
 <p align="center">
