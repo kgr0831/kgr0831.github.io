@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781548872" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781548923" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **d18bef8** - chore: auto-update recent commits in README [skip ci] (13 seconds ago)
-- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (39 seconds ago)
+- **a83b0b3** - feat: move recent updates down, add Website link badge at README top, and slightly reduce website lede font size (18 seconds ago)
+- **d18bef8** - chore: auto-update recent commits in README [skip ci] (64 seconds ago)
+- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (2 minutes ago)
 - **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (3 minutes ago)
 - **85b9265** - feat: add // github stats section with contribution graph and stats cards (5 minutes ago)
-- **781709a** - chore: auto-update recent commits in README [skip ci] (33 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 

@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">d18bef8</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(13 seconds ago)</tspan>
+        <tspan class="commit-hash">a83b0b3</tspan> - <tspan class="commit-msg">feat: move recent updates down, add Website lin...</tspan> <tspan class="commit-time">(18 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">504da65</tspan> - <tspan class="commit-msg">feat: add GitHub links for HELIX, EUM, and Unit...</tspan> <tspan class="commit-time">(39 seconds ago)</tspan>
+        <tspan class="commit-hash">d18bef8</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(64 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">5305dc0</tspan> - <tspan class="commit-msg">feat: move // github stats to bottom and replac...</tspan> <tspan class="commit-time">(3 minutes ago)</tspan>
+        <tspan class="commit-hash">504da65</tspan> - <tspan class="commit-msg">feat: add GitHub links for HELIX, EUM, and Unit...</tspan> <tspan class="commit-time">(2 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">85b9265</tspan> - <tspan class="commit-msg">feat: add // github stats section with contribu...</tspan> <tspan class="commit-time">(5 minutes ago)</tspan>
+        <tspan class="commit-hash">5305dc0</tspan> - <tspan class="commit-msg">feat: move // github stats to bottom and replac...</tspan> <tspan class="commit-time">(3 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">781709a</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(33 minutes ago)</tspan>
+        <tspan class="commit-hash">85b9265</tspan> - <tspan class="commit-msg">feat: add // github stats section with contribu...</tspan> <tspan class="commit-time">(5 minutes ago)</tspan>
       </text>
     </g>
   </g>
