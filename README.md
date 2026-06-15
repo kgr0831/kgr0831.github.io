@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://kgr0831.github.io" target="_blank"><img src="https://img.shields.io/badge/Website-10B981?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"></a>
   <a href="https://www.miricanvas.com/v2/ko/design2/v/432c0240-7b2b-4eae-8089-0bfa18236caa" target="_blank"><img src="https://img.shields.io/badge/Portfolio-00599C?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio"></a>
   <a href="https://kgr0831.github.io/Garam_Kim_CV.pdf"><img src="https://img.shields.io/badge/CV-4285F4?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="CV"></a>
   <a href="https://kgr0831.tistory.com" target="_blank"><img src="https://img.shields.io/badge/Blog-E11D48?style=for-the-badge&logo=tistory&logoColor=white" alt="Blog"></a>
@@ -27,31 +28,6 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 - **Focus** — LLM & SLM optimization · heterogeneous multi-agent systems · on-device LM compression
 - **Learning** — Mesa · LangGraph · RAG & harnessing
 - **Open to** — AI Research · AI FDE · AI Native
-
----
-
-### // recent updates
-
-<!-- START_SECTION:activity_svg -->
-<p align="center">
-  <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781548859" alt="Garam's Recent Activity" width="100%">
-  </a>
-</p>
-<!-- END_SECTION:activity_svg -->
-
-<details>
-  <summary><b>View commit logs as text</b></summary>
-  <br>
-
-<!-- START_SECTION:activity_list -->
-- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (26 seconds ago)
-- **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (2 minutes ago)
-- **85b9265** - feat: add // github stats section with contribution graph and stats cards (4 minutes ago)
-- **781709a** - chore: auto-update recent commits in README [skip ci] (33 minutes ago)
-- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (33 minutes ago)
-<!-- END_SECTION:activity_list -->
-</details>
 
 ---
 
@@ -76,7 +52,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <img src="https://img.shields.io/badge/Unity-000000?style=flat-square&logo=unity&logoColor=white" alt="Unity">
   <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
-  <img src="https://img.shields.io/badge/PixiJS-E72264?style=flat-square&logoColor=white" alt="PixiJS">
+  <img src="https://img.shields.io/badge/PixiJS-E72264?style=flat-square&logo=white" alt="PixiJS">
   <img src="https://img.shields.io/badge/WebGPU-005A9C?style=flat-square&logo=webgpu&logoColor=white" alt="WebGPU">
 </p>
 
@@ -99,6 +75,31 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 **HELIX** · 2026.04 — Heterogeneous multi-agent collaboration system to reduce hallucination and minimize API cost. → [github](https://github.com/kgr0831/HELIX) · [live](https://helix-ssu.vercel.app/)
 
 **Unitrio** · ongoing — A 2D top-down action-RPG sandbox, built with a five-person indie team. → [github](https://github.com/kgr0831/UniTrio-Game-2026)
+
+---
+
+### // recent updates
+
+<!-- START_SECTION:activity_svg -->
+<p align="center">
+  <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
+    <img src="assets/commits_terminal.svg?v=1781548872" alt="Garam's Recent Activity" width="100%">
+  </a>
+</p>
+<!-- END_SECTION:activity_svg -->
+
+<details>
+  <summary><b>View commit logs as text</b></summary>
+  <br>
+
+<!-- START_SECTION:activity_list -->
+- **d18bef8** - chore: auto-update recent commits in README [skip ci] (13 seconds ago)
+- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (39 seconds ago)
+- **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (3 minutes ago)
+- **85b9265** - feat: add // github stats section with contribution graph and stats cards (5 minutes ago)
+- **781709a** - chore: auto-update recent commits in README [skip ci] (33 minutes ago)
+<!-- END_SECTION:activity_list -->
+</details>
 
 ---
 
