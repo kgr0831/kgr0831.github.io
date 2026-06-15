@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781549806" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781550066" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **5c78706** - style: apply keep-all word-wrapping, fix top-down/LLM/sLM wording, and revert hero_gloss translation (17 seconds ago)
-- **35a7951** - chore: auto-update recent commits in README [skip ci] (2 minutes ago)
-- **2a955c9** - style: fix Korean translation terms for On-device, Selected work header, eum_meta, and helix_p (2 minutes ago)
-- **34632f5** - chore: auto-update recent commits in README [skip ci] (3 minutes ago)
-- **37b55ac** - style: fix CJK word-wrapping on website and adjust top-down/LLM/sLM wording (3 minutes ago)
+- **9e05422** - style: change HELIX cost reduction metrics to 1.47x cheaper (77 seconds ago)
+- **5203efe** - style: update roles, change Python to FastAPI for HELIX, and auto-initialize language on page load (2 minutes ago)
+- **72114ec** - chore: auto-update recent commits in README [skip ci] (4 minutes ago)
+- **5c78706** - style: apply keep-all word-wrapping, fix top-down/LLM/sLM wording, and revert hero_gloss translation (5 minutes ago)
+- **35a7951** - chore: auto-update recent commits in README [skip ci] (6 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
