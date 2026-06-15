@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://kgr0831.github.io"><b>↗ Full profile / portfolio</b></a> &nbsp;·&nbsp;
   <a href="https://kgr0831.github.io/Garam_Kim_CV.pdf">CV</a> &nbsp;·&nbsp;
+  <a href="https://kgr0831.tistory.com" target="_blank" rel="noopener">Blog</a> &nbsp;·&nbsp;
   <a href="https://www.linkedin.com/in/kimgalam0831/">LinkedIn</a> &nbsp;·&nbsp;
   <a href="mailto:kimgalam0831@gmail.com">Email</a>
 </p>
