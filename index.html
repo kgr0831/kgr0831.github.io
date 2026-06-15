@@ -338,15 +338,15 @@
         <!-- Project 1: Triniacle (Game Dev Foundations) -->
         <div class="witem feature" data-reveal tabindex="0">
           <div>
-            <img class="plogo" style="height: 38px;" src="assets/triniacle.png" alt="Triniacle logo">
+            <img class="plogo" style="height: 76px;" src="assets/triniacle.png" alt="Triniacle logo">
             <span class="ptag" data-i18n="uni_tag">Unitrio · ongoing</span>
             <p data-i18n="uni_p">Triniacle — a 2D top-down action-RPG sandbox, built with a five-person indie team (three engineers, one designer, one planner). The game I grew up wanting to make.</p>
             <div class="meta" data-i18n="uni_meta">role · lead gameplay &amp; rendering &nbsp;|&nbsp; C++ · DirectX 11 · Custom Engine</div>
           </div>
           <div class="statbox">
-            <div class="sh">indie team size · custom engine</div>
-            <div class="statline"><span class="from">5</span><span class="arrow">→</span><span class="to">1</span><span class="unit">lead</span></div>
-            <div class="delta">built rendering &amp; physics pipelines from scratch</div>
+            <div class="sh" data-i18n="uni_sh">indie team size · custom engine</div>
+            <div class="statline" data-i18n="uni_stat"><span class="to">5</span><span class="unit">members</span></div>
+            <div class="delta" data-i18n="uni_delta">built rendering &amp; physics pipelines from scratch</div>
           </div>
         </div>
 
@@ -360,9 +360,9 @@
             <a class="link" href="https://jungle.krafton.com/news/103" target="_blank" rel="noopener"><span data-i18n="eum_link">demo &amp; write-up</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
           </div>
           <div class="statbox">
-            <div class="sh">avg frame rate · 60Hz</div>
-            <div class="statline"><span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span></div>
-            <div class="delta">+147% · smooth, drop-free drawing</div>
+            <div class="sh" data-i18n="eum_sh">avg frame rate · 60Hz</div>
+            <div class="statline" data-i18n="eum_stat"><span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span></div>
+            <div class="delta" data-i18n="eum_delta">+147% · smooth, drop-free drawing</div>
           </div>
         </div>
 
@@ -376,9 +376,9 @@
             <a class="link" href="https://helix-ssu.vercel.app/" target="_blank" rel="noopener"><span data-i18n="helix_link">live</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
           </div>
           <div class="statbox">
-            <div class="sh">api cost reduction</div>
-            <div class="statline"><span class="from">$10</span><span class="arrow">→</span><span class="to">$1.8</span><span class="unit">avg</span></div>
-            <div class="delta">-82% · model routing &amp; caching</div>
+            <div class="sh" data-i18n="helix_sh">api cost reduction</div>
+            <div class="statline" data-i18n="helix_stat"><span class="from">$10</span><span class="arrow">→</span><span class="to">$1.8</span><span class="unit">avg</span></div>
+            <div class="delta" data-i18n="helix_delta">-82% · model routing &amp; caching</div>
           </div>
         </div>
       </div>
@@ -472,18 +472,29 @@
                    ko:"실시간 AI 통역과 WebGPU 무한 캔버스 화이트보드를 갖춘 브라우저 기반 AI 화상회의 협업 플랫폼. 화이트보드를 풀스택으로 담당했습니다 — 무거운 외부 라이브러리를 걷어내고 PixiJS v8 / WebGPU 기반 렌더러를 자체 구현해 고부하 그래픽 연산을 GPU에 위임하고 단일 스레드 CPU 병목을 해결했습니다. 드로잉 파이프라인은 One Euro Filter, 더글라스–푸커 알고리즘, 베지어 보간을 결합해 끊김 없는 매끄러운 선을 그립니다." },
     eum_meta:    { en:"role · full-stack whiteboard &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js",
                    ko:"담당 · 화이트보드 풀스택 &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js" },
+    eum_sh:      { en:"avg frame rate · 60Hz", ko:"평균 프레임 레이트 · 60Hz" },
+    eum_stat:    { en:'<span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span>',
+                   ko:'<span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span>' },
+    eum_delta:   { en:"+147% · smooth, drop-free drawing", ko:"+147% · 매끄럽고 끊김 없는 드로잉" },
     eum_link:    { en:"demo &amp; write-up", ko:"데모 & 소개" },
     helix_tag:   { en:"2026.04", ko:"2026.04" },
     helix_p:     { en:"A heterogeneous multi-agent collaboration system built to reduce model hallucination while minimizing API cost.",
                    ko:"모델 환각을 줄이고 API 비용을 최소화하기 위한 이기종 다중 에이전트 협업 시스템." },
     helix_meta:  { en:"role · lead researcher &nbsp;|&nbsp; LangGraph · LlamaIndex · Python · Vercel",
                    ko:"담당 · 리드 연구원 &nbsp;|&nbsp; LangGraph · LlamaIndex · Python · Vercel" },
+    helix_sh:    { en:"api cost reduction", ko:"API 호출 비용 절감" },
+    helix_stat:  { en:'<span class="from">$10</span><span class="arrow">→</span><span class="to">$1.8</span><span class="unit">avg</span>',
+                   ko:'<span class="from">$10</span><span class="arrow">→</span><span class="to">$1.8</span><span class="unit">평균</span>' },
+    helix_delta: { en:"-82% · model routing &amp; caching", ko:"-82% · 모델 라우팅 및 캐싱" },
     helix_link:  { en:"live", ko:"라이브" },
     uni_tag:     { en:"Unitrio · ongoing", ko:"Unitrio · 진행 중" },
     uni_p:       { en:"Triniacle — a 2D top-down action-RPG sandbox, built with a five-person indie team (three engineers, one designer, one planner). The game I grew up wanting to make.",
                    ko:"Triniacle — 프로그래머 3명, 디자이너 1명, 기획자 1명으로 구성된 5인 인디 팀이 만드는 2D 탑뷰 액션 RPG 샌드박스 게임. 어릴 적부터 만들고 싶던 게임입니다." },
     uni_meta:    { en:"role · lead gameplay &amp; rendering &nbsp;|&nbsp; C++ · DirectX 11 · Custom Engine",
                    ko:"담당 · 리드 게임플레이 및 렌더링 &nbsp;|&nbsp; C++ · DirectX 11 · 자체 엔진" },
+    uni_sh:      { en:"indie team size · custom engine", ko:"인디 팀 규모 · 자체 엔진" },
+    uni_stat:    { en:'<span class="to">5</span><span class="unit">members</span>', ko:'<span class="to">5</span><span class="unit">인 팀</span>' },
+    uni_delta:   { en:"built rendering &amp; physics pipelines from scratch", ko:"렌더링 및 물리 파이프라인 밑바닥부터 자체 구현" },
 
     lbl_path:    { en:"path", ko:"걸어온 길" },
     path_h2:     { en:"From game dev to AI.", ko:"게임 개발에서 AI로." },
