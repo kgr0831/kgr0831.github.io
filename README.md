@@ -35,7 +35,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781548820" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781548859" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -45,11 +45,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
+- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (26 seconds ago)
 - **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (2 minutes ago)
 - **85b9265** - feat: add // github stats section with contribution graph and stats cards (4 minutes ago)
-- **781709a** - chore: auto-update recent commits in README [skip ci] (32 minutes ago)
-- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (32 minutes ago)
-- **5f2d23d** - chore: auto-update recent commits in README [skip ci] (37 minutes ago)
+- **781709a** - chore: auto-update recent commits in README [skip ci] (33 minutes ago)
+- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (33 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
