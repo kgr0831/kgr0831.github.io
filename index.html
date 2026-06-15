@@ -539,8 +539,7 @@
   };
 
   var nodes = document.querySelectorAll('[data-i18n]');
-  var userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-  var lang = userLang.startsWith('ko') ? 'ko' : 'en';
+  var lang = 'en';
   function apply(l){
     lang = l;
     nodes.forEach(function(n){
