@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781549628" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781549679" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **37b55ac** - style: fix CJK word-wrapping on website and adjust top-down/LLM/sLM wording (20 seconds ago)
-- **01c1c00** - chore: auto-update recent commits in README [skip ci] (5 minutes ago)
-- **01e988a** - style: polish Korean localization texts for natural and professional phrasing (5 minutes ago)
-- **9a52715** - feat: hide letter grade in GitHub stats card (9 minutes ago)
-- **5b8b2f3** - chore: auto-update recent commits in README [skip ci] (12 minutes ago)
+- **2a955c9** - style: fix Korean translation terms for On-device, Selected work header, eum_meta, and helix_p (13 seconds ago)
+- **34632f5** - chore: auto-update recent commits in README [skip ci] (51 seconds ago)
+- **37b55ac** - style: fix CJK word-wrapping on website and adjust top-down/LLM/sLM wording (71 seconds ago)
+- **01c1c00** - chore: auto-update recent commits in README [skip ci] (6 minutes ago)
+- **01e988a** - style: polish Korean localization texts for natural and professional phrasing (6 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
