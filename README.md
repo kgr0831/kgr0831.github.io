@@ -6,7 +6,7 @@
 
 <p align="center">
   Bringing <code>Unreal</code> AI into <code>Unity</code>.<br>
-  <sub>Making AI feel real — and real-time. Software engineer → AI researcher.</sub>
+  <sub>Making AI feel real. Software engineer → AI researcher.</sub>
 </p>
 
 <p align="center">
