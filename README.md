@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://kgr0831.github.io"><b>↗ Full profile / portfolio</b></a> &nbsp;·&nbsp;
-  <a href="https://kgr0831.github.io/Garam_Kim_CV.pdf">CV</a> &nbsp;·&nbsp;
-  <a href="https://kgr0831.tistory.com" target="_blank" rel="noopener">Blog</a> &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/kimgalam0831/">LinkedIn</a> &nbsp;·&nbsp;
-  <a href="mailto:kimgalam0831@gmail.com">Email</a>
+  <a href="https://kgr0831.github.io"><img src="https://img.shields.io/badge/Portfolio-00599C?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio"></a>
+  <a href="https://kgr0831.github.io/Garam_Kim_CV.pdf"><img src="https://img.shields.io/badge/CV-4285F4?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="CV"></a>
+  <a href="https://kgr0831.tistory.com" target="_blank"><img src="https://img.shields.io/badge/Blog-E11D48?style=for-the-badge&logo=tistory&logoColor=white" alt="Blog"></a>
+  <a href="https://www.linkedin.com/in/kimgalam0831/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:kimgalam0831@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 </p>
 
 ---
@@ -30,37 +30,65 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 
 ---
 
+### // recent updates
+
+<!-- START_SECTION:activity_svg -->
+<p align="center">
+  <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
+    <img src="assets/commits_terminal.svg?v=1781546553" alt="Garam's Recent Activity" width="100%">
+  </a>
+</p>
+<!-- END_SECTION:activity_svg -->
+
+<details>
+  <summary><b>View commit logs as text</b></summary>
+  <br>
+
+<!-- START_SECTION:activity_list -->
+- **0bab2d4** - design: add modern micro-interactions (26 seconds ago)
+- **21ae772** - Increase slogan text font size to 44 on active banner image (8 minutes ago)
+- **8946e85** - Crop transparent vertical padding from Triniacle logo image and set its height to 90px in HTML (12 minutes ago)
+- **8d8868e** - Add 150% zoom styling for PC environments (min-width: 1200px) (13 minutes ago)
+- **f19c2cd** - Enlarge Unitrio logo, fix Triniacle metric to show team members, and add full translation support to all project statboxes (14 minutes ago)
+<!-- END_SECTION:activity_list -->
+</details>
+
+---
+
 ### // stack
 
 **Languages**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Assembly](https://img.shields.io/badge/Assembly-6E4C13?style=for-the-badge&logoColor=white)
-![WGSL](https://img.shields.io/badge/WGSL-005A9C?style=for-the-badge&logo=webgpu&logoColor=white)
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white" alt="C#">
+  <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go">
+  <img src="https://img.shields.io/badge/Assembly-6E4C13?style=flat-square&logoColor=white" alt="Assembly">
+  <img src="https://img.shields.io/badge/WGSL-005A9C?style=flat-square&logo=webgpu&logoColor=white" alt="WGSL">
+</p>
 
 **Frameworks & Libraries**
+<p align="left">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA">
+  <img src="https://img.shields.io/badge/Unity-000000?style=flat-square&logo=unity&logoColor=white" alt="Unity">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/PixiJS-E72264?style=flat-square&logoColor=white" alt="PixiJS">
+  <img src="https://img.shields.io/badge/WebGPU-005A9C?style=flat-square&logo=webgpu&logoColor=white" alt="WebGPU">
+</p>
 
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
-![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![PixiJS](https://img.shields.io/badge/PixiJS-E72264?style=for-the-badge&logoColor=white)
-![WebGPU](https://img.shields.io/badge/WebGPU-005A9C?style=for-the-badge&logo=webgpu&logoColor=white)
-
-**Infra & AI Agents**
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Render](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white)
-![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
-![Codex](https://img.shields.io/badge/Codex-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Antigravity](https://img.shields.io/badge/Antigravity-4285F4?style=for-the-badge&logoColor=white)
+**Infra & AI Tools**
+<p align="left">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel">
+  <img src="https://img.shields.io/badge/Render-000000?style=flat-square&logo=render&logoColor=white" alt="Render">
+  <img src="https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
+  <img src="https://img.shields.io/badge/Codex-412991?style=flat-square&logo=openai&logoColor=white" alt="Codex">
+  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logoColor=white" alt="Antigravity">
+</p>
 
 ---
 

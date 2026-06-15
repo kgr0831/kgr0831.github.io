@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" fill="none">
+  <style>
+    .terminal-card {
+      fill: #0b0f19;
+      stroke: #1f2937;
+      stroke-width: 1.5;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+    }
+    .win-title {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Segoe UI Mono', Consolas, Monaco, monospace;
+      font-size: 11px;
+      fill: #4b5563;
+    }
+    .console-text {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Segoe UI Mono', Consolas, Monaco, monospace;
+      font-size: 13px;
+      fill: #f1f5f9;
+    }
+    .prompt-user {
+      fill: #22c55e;
+      font-weight: bold;
+    }
+    .prompt-cmd {
+      fill: #f59e0b;
+    }
+    .commit-hash {
+      fill: #38bdf8;
+      font-weight: bold;
+    }
+    .commit-msg {
+      fill: #e2e8f0;
+    }
+    .commit-time {
+      fill: #64748b;
+      font-size: 11px;
+    }
+    .cursor {
+      fill: #a3b8cc;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .line {
+      opacity: 0;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .line-1 { animation-delay: 0.8s; }
+    .line-2 { animation-delay: 1.1s; }
+    .line-3 { animation-delay: 1.4s; }
+    .line-4 { animation-delay: 1.7s; }
+    .line-5 { animation-delay: 2.0s; }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(3px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- Terminal Background -->
+  <rect class="terminal-card" x="2" y="2" width="756" height="236" rx="12" />
+
+  <!-- Glowing Neon Border Accent -->
+  <rect x="2" y="2" width="756" height="236" rx="12" fill="none" stroke="url(#neon-glow)" stroke-width="1.5" opacity="0.4" />
+
+  <!-- Window Header -->
+  <!-- MacOS Buttons -->
+  <circle cx="20" cy="20" r="6" fill="#ff5f56" />
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
+  <circle cx="60" cy="20" r="6" fill="#27c93f" />
+
+  <!-- Terminal Title -->
+  <text x="380" y="24" text-anchor="middle" class="win-title">kgr0831@terminal: ~/activity</text>
+
+  <!-- Separator Line -->
+  <line x1="2" y1="38" x2="758" y2="38" stroke="#1f2937" stroke-width="1" />
+
+  <!-- Terminal Contents -->
+  <g transform="translate(20, 0)">
+    <!-- Command Input Line -->
+    <text x="0" y="65" class="console-text">
+      <tspan class="prompt-user">kgr0831 $</tspan> <tspan class="prompt-cmd">git log --oneline -n 5</tspan>
+    </text>
+    <!-- Blinking Cursor next to command -->
+    <rect class="cursor" x="236" y="52" width="7" height="15" />
+
+    <!-- Commit Lines -->
+    <!-- Line 1 -->
+    <g class="line line-1">
+      <text x="0" y="95" class="console-text">
+        <tspan class="commit-hash">0bab2d4</tspan> - <tspan class="commit-msg">design: add modern micro-interactions</tspan> <tspan class="commit-time">(26 seconds ago)</tspan>
+      </text>
+    </g>
+
+    <!-- Line 2 -->
+    <g class="line line-2">
+      <text x="0" y="123" class="console-text">
+        <tspan class="commit-hash">21ae772</tspan> - <tspan class="commit-msg">Increase slogan text font size to 44 on active ...</tspan> <tspan class="commit-time">(8 minutes ago)</tspan>
+      </text>
+    </g>
+
+    <!-- Line 3 -->
+    <g class="line line-3">
+      <text x="0" y="151" class="console-text">
+        <tspan class="commit-hash">8946e85</tspan> - <tspan class="commit-msg">Crop transparent vertical padding from Triniacl...</tspan> <tspan class="commit-time">(12 minutes ago)</tspan>
+      </text>
+    </g>
+
+    <!-- Line 4 -->
+    <g class="line line-4">
+      <text x="0" y="179" class="console-text">
+        <tspan class="commit-hash">8d8868e</tspan> - <tspan class="commit-msg">Add 150% zoom styling for PC environments (min-...</tspan> <tspan class="commit-time">(13 minutes ago)</tspan>
+      </text>
+    </g>
+
+    <!-- Line 5 -->
+    <g class="line line-5">
+      <text x="0" y="207" class="console-text">
+        <tspan class="commit-hash">f19c2cd</tspan> - <tspan class="commit-msg">Enlarge Unitrio logo, fix Triniacle metric to s...</tspan> <tspan class="commit-time">(14 minutes ago)</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Defs for Gradients -->
+  <defs>
+    <linearGradient id="neon-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+</svg>

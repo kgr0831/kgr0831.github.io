@@ -1,0 +1,36 @@
+name: Update README Activity
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'assets/commits_terminal.svg'
+      - 'README.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-level: '3.x'
+
+      - name: Run Update Script
+        run: python .github/scripts/update_activity.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git diff --quiet || (git add assets/commits_terminal.svg README.md && git commit -m "chore: auto-update recent commits in README [skip ci]" && git push)
