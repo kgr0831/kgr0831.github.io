@@ -358,7 +358,7 @@
             <img class="plogo" style="height: 63px;" src="assets/triniacle.png" alt="Triniacle logo">
             <span class="ptag" data-i18n="uni_tag">Unitrio · ongoing</span>
             <p data-i18n="uni_p">Triniacle — a 2D top-down action-RPG sandbox, built with a five-person indie team (three engineers, one designer, one planner). The game I grew up wanting to make.</p>
-            <div class="meta" data-i18n="uni_meta">role · lead gameplay &amp; rendering &nbsp;|&nbsp; C++ · DirectX 11 · Custom Engine</div>
+            <div class="meta" data-i18n="uni_meta">role · lead gameplay &amp; rendering &nbsp;|&nbsp; C#, Unity</div>
             <div class="wlinks">
               <a class="link" href="https://github.com/kgr0831/UniTrio-Game-2026" target="_blank" rel="noopener"><span data-i18n="lbl_github">github</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
             </div>
@@ -376,7 +376,7 @@
             <img class="plogo" src="assets/eum.png" alt="EUM logo">
             <span class="ptag" data-i18n="eum_tag">2025.12 — 2026.01</span>
             <p data-i18n="eum_p">A browser-based AI video-meeting platform with real-time interpretation and a WebGPU infinite-canvas whiteboard. I owned the whiteboard full-stack: I replaced heavy third-party libraries with a custom renderer on PixiJS v8 / WebGPU, handing the heavy graphics work to the GPU to kill the single-thread CPU bottleneck. The drawing pipeline combines a One Euro Filter, the Douglas–Peucker algorithm, and Bézier interpolation for smooth, drop-free lines.</p>
-            <div class="meta" data-i18n="eum_meta">role · full-stack whiteboard &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js</div>
+            <div class="meta" data-i18n="eum_meta">role · full-stack &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js</div>
             <div class="wlinks">
               <a class="link" href="https://github.com/jb0xyz/EUM" target="_blank" rel="noopener"><span data-i18n="lbl_github">github</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
               <a class="link" href="https://jungle.krafton.com/news/103" target="_blank" rel="noopener"><span data-i18n="eum_link">demo &amp; write-up</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
@@ -485,7 +485,7 @@
     f2_t:        { en:"Heterogeneous multi-agent systems", ko:"이기종 다중 에이전트 시스템" },
     f2_d:        { en:"Different models cooperating to cut hallucination and API cost.", ko:"서로 다른 특성의 모델들이 유기적으로 협업하게 하여 환각 현상을 줄이고 API 비용을 최소화합니다." },
     f3_t:        { en:"On-device LM compression", ko:"온디바이스 LM 경량화" },
-    f3_d:        { en:"Lightweighting language models so they run where the user is.", ko:"사용자의 기기(On-device)에서 언어모델이 즉각적이고 가볍게 동작하도록 경량화 모델 연구에 주력합니다." },
+    f3_d:        { en:"Lightweighting language models so they run where the user is.", ko:"On-Device에서 언어모델이 즉각적이고 가볍게 동작하도록 경량화 모델 연구에 주력합니다." },
 
     lbl_stack:   { en:"stack", ko:"기술 스택" },
     stack_h2:    { en:"What I build with.", ko:"이런 것들로 만듭니다." },
@@ -494,12 +494,12 @@
     cl_infra:    { en:"infra &amp; ai agents", ko:"인프라 · AI 에이전트" },
 
     lbl_work:    { en:"selected work", ko:"주요 작업" },
-    work_h2:     { en:"Things I shipped.", ko:"직접 만든 것들." },
+    work_h2:     { en:"Things I shipped.", ko:"지금까지의 작업물들." },
     eum_tag:     { en:"FEATURED · 2025.12 — 2026.01", ko:"대표 · 2025.12 — 2026.01" },
     eum_p:       { en:"A browser-based AI video-meeting platform with real-time interpretation and a WebGPU infinite-canvas whiteboard. I owned the whiteboard full-stack: I replaced heavy third-party libraries with a custom renderer on PixiJS v8 / WebGPU, handing the heavy graphics work to the GPU to kill the single-thread CPU bottleneck. The drawing pipeline combines a One Euro Filter, the Douglas–Peucker algorithm, and Bézier interpolation for smooth, drop-free lines.",
                    ko:"실시간 AI 통역 및 WebGPU 무한 캔버스 화이트보드를 탑재한 브라우저 기반 AI 화상회의 플랫폼. 화이트보드 파트의 풀스택 개발을 주도했습니다. 무거운 서드파티 라이브러리 대신 PixiJS v8 및 WebGPU 기반의 자체 렌더러를 구축하여 고부하 그래픽 연산을 GPU에 완전히 위임하고 단일 스레드 CPU 병목 현상을 극복했습니다. 드로잉 파이프라인에는 One Euro Filter, 더글라스-푸커 알고리즘, 베지어 보간법을 적용하여 끊김 없이 극도로 매끄러운 그리기 품질을 구현했습니다." },
-    eum_meta:    { en:"role · full-stack whiteboard &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js",
-                   ko:"담당 · 화이트보드 풀스택 &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js" },
+    eum_meta:    { en:"role · full-stack &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js",
+                   ko:"담당 · 풀스택 &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js" },
     eum_sh:      { en:"avg frame rate · 60Hz", ko:"평균 프레임 레이트 · 60Hz" },
     eum_stat:    { en:'<span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span>',
                    ko:'<span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span>' },
@@ -507,7 +507,7 @@
     eum_link:    { en:"demo &amp; write-up", ko:"데모 & 소개" },
     helix_tag:   { en:"2026.04", ko:"2026.04" },
     helix_p:     { en:"A heterogeneous multi-agent collaboration system built to reduce model hallucination while minimizing API cost.",
-                   ko:"모델의 환각 현상(Hallucination)을 억제하고 API 호출 비용을 최소화하는 이기종 다중 에이전트 협업 시스템." },
+                   ko:"모델의 환각 현상을 억제하고 API 호출 비용을 최소화하는 이기종 다중 에이전트 협업 시스템." },
     helix_meta:  { en:"role · lead researcher &nbsp;|&nbsp; LangGraph · LlamaIndex · Python · Vercel",
                    ko:"담당 · 리드 연구원 &nbsp;|&nbsp; LangGraph · LlamaIndex · Python · Vercel" },
     helix_sh:    { en:"api cost reduction", ko:"API 호출 비용 절감" },
@@ -518,8 +518,8 @@
     uni_tag:     { en:"Unitrio · ongoing", ko:"Unitrio · 진행 중" },
     uni_p:       { en:"Triniacle — a 2D top-down action-RPG sandbox, built with a five-person indie team (three engineers, one designer, one planner). The game I grew up wanting to make.",
                    ko:"Triniacle — 개발자 3명, 디자이너 1명, 기획자 1명으로 구성된 5인 인디 팀에서 제작한 2D 탑다운 액션 RPG 샌드박스 게임. 어릴 때부터 꼭 만들어보고 싶었던 꿈의 프로젝트입니다." },
-    uni_meta:    { en:"role · lead gameplay &amp; rendering &nbsp;|&nbsp; C++ · DirectX 11 · Custom Engine",
-                   ko:"담당 · 리드 게임플레이 및 렌더링 &nbsp;|&nbsp; C++ · DirectX 11 · 자체 엔진" },
+    uni_meta:    { en:"role · lead gameplay &amp; rendering &nbsp;|&nbsp; C#, Unity",
+                   ko:"담당 · 리드 게임플레이 및 렌더링 &nbsp;|&nbsp; C#, Unity" },
     uni_sh:      { en:"indie team size · custom engine", ko:"인디 팀 규모 · 자체 엔진" },
     uni_stat:    { en:'<span class="to">5</span><span class="unit">members</span>', ko:'<span class="to">5</span><span class="unit">인 팀</span>' },
     uni_delta:   { en:"built rendering &amp; physics pipelines from scratch", ko:"렌더링 및 물리 파이프라인을 프레임워크 밑바닥부터 직접 설계 및 구현" },
