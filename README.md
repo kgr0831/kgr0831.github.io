@@ -35,7 +35,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781548708" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781548820" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -45,11 +45,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **85b9265** - feat: add // github stats section with contribution graph and stats cards (2 minutes ago)
-- **781709a** - chore: auto-update recent commits in README [skip ci] (30 minutes ago)
-- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (30 minutes ago)
-- **5f2d23d** - chore: auto-update recent commits in README [skip ci] (35 minutes ago)
-- **7f11e34** - feat: add animated SVG terminal of recent commits and automate it with GitHub Actions (36 minutes ago)
+- **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (2 minutes ago)
+- **85b9265** - feat: add // github stats section with contribution graph and stats cards (4 minutes ago)
+- **781709a** - chore: auto-update recent commits in README [skip ci] (32 minutes ago)
+- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (32 minutes ago)
+- **5f2d23d** - chore: auto-update recent commits in README [skip ci] (37 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
@@ -94,11 +94,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 
 ### // selected work
 
-**EUM** · 2025.12 – 2026.01 — Browser-based AI video-meeting platform with real-time interpretation and a WebGPU infinite-canvas whiteboard. Owned the whiteboard full-stack: built a custom renderer on PixiJS v8 / WebGPU that lifted average frame rate from **23.7 → 58.7 FPS** at 60Hz. → [demo & write-up](https://jungle.krafton.com/news/103)
+**EUM** · 2025.12 – 2026.01 — Browser-based AI video-meeting platform with real-time interpretation and a WebGPU infinite-canvas whiteboard. Owned the whiteboard full-stack: built a custom renderer on PixiJS v8 / WebGPU that lifted average frame rate from **23.7 → 58.7 FPS** at 60Hz. → [github](https://github.com/jb0xyz/EUM) · [demo & write-up](https://jungle.krafton.com/news/103)
 
-**HELIX** · 2026.04 — Heterogeneous multi-agent collaboration system to reduce hallucination and minimize API cost. → [live](https://helix-ssu.vercel.app/)
+**HELIX** · 2026.04 — Heterogeneous multi-agent collaboration system to reduce hallucination and minimize API cost. → [github](https://github.com/kgr0831/HELIX) · [live](https://helix-ssu.vercel.app/)
 
-**Unitrio** · ongoing — A 2D top-down action-RPG sandbox, built with a five-person indie team.
+**Unitrio** · ongoing — A 2D top-down action-RPG sandbox, built with a five-person indie team. → [github](https://github.com/kgr0831/UniTrio-Game-2026)
 
 ---
 
