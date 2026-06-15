@@ -35,7 +35,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781546876" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781546900" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -45,11 +45,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
+- **dd5680e** - feat: shrink Unitrio logo, add View Portfolio button and update README Portfolio badge (20 seconds ago)
 - **5f2d23d** - chore: auto-update recent commits in README [skip ci] (5 minutes ago)
-- **7f11e34** - feat: add animated SVG terminal of recent commits and automate it with GitHub Actions (5 minutes ago)
+- **7f11e34** - feat: add animated SVG terminal of recent commits and automate it with GitHub Actions (6 minutes ago)
 - **0bab2d4** - design: add modern micro-interactions (6 minutes ago)
-- **21ae772** - Increase slogan text font size to 44 on active banner image (13 minutes ago)
-- **8946e85** - Crop transparent vertical padding from Triniacle logo image and set its height to 90px in HTML (18 minutes ago)
+- **21ae772** - Increase slogan text font size to 44 on active banner image (14 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
