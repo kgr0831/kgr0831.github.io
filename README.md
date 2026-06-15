@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781549317" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781549591" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **01e988a** - style: polish Korean localization texts for natural and professional phrasing (17 seconds ago)
-- **9a52715** - feat: hide letter grade in GitHub stats card (3 minutes ago)
-- **5b8b2f3** - chore: auto-update recent commits in README [skip ci] (7 minutes ago)
-- **a83b0b3** - feat: move recent updates down, add Website link badge at README top, and slightly reduce website lede font size (7 minutes ago)
-- **d18bef8** - chore: auto-update recent commits in README [skip ci] (8 minutes ago)
+- **01c1c00** - chore: auto-update recent commits in README [skip ci] (5 minutes ago)
+- **01e988a** - style: polish Korean localization texts for natural and professional phrasing (5 minutes ago)
+- **9a52715** - feat: hide letter grade in GitHub stats card (8 minutes ago)
+- **5b8b2f3** - chore: auto-update recent commits in README [skip ci] (11 minutes ago)
+- **a83b0b3** - feat: move recent updates down, add Website link badge at README top, and slightly reduce website lede font size (11 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
