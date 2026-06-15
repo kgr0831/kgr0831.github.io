@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781550269" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781550430" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **a57bbe6** - style: change HELIX role to 1인 개발 and Unitrio role to 리더 & 게임플레이 및 렌더링 프로그래밍 (27 seconds ago)
-- **455cc09** - style: align English translations to match updated Korean localization (27 seconds ago)
-- **190a4eb** - chore: auto-update recent commits in README [skip ci] (3 minutes ago)
-- **9e05422** - style: change HELIX cost reduction metrics to 1.47x cheaper (5 minutes ago)
-- **5203efe** - style: update roles, change Python to FastAPI for HELIX, and auto-initialize language on page load (6 minutes ago)
+- **84abba7** - style: revert default language to English on initial load (57 seconds ago)
+- **479f889** - chore: auto-update recent commits in README [skip ci] (3 minutes ago)
+- **a57bbe6** - style: change HELIX role to 1인 개발 and Unitrio role to 리더 & 게임플레이 및 렌더링 프로그래밍 (3 minutes ago)
+- **455cc09** - style: align English translations to match updated Korean localization (3 minutes ago)
+- **190a4eb** - chore: auto-update recent commits in README [skip ci] (6 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
