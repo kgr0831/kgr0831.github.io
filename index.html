@@ -63,7 +63,8 @@
   .btn:hover, .btn:focus{border-color:var(--fg2);transform:translateY(-1px)}
   .btn.primary{background:var(--fg);border-color:var(--fg);color:#000;font-weight:600}
   .btn.primary:hover, .btn.primary:focus{background:#fff;border-color:#fff}
-  .btn .bi{width:15px;height:15px}
+  .btn .bi{width:15px;height:15px;transition:transform .2s cubic-bezier(0.16, 1, 0.3, 1)}
+  .btn:hover .bi, .btn:focus .bi{transform:translate(2px,-2px)}
 
   /* sections */
   section{border-top:1px solid var(--border);padding:62px 0}
@@ -81,8 +82,11 @@
 
   /* focus */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-  .card{border:1px solid var(--border);background:var(--bg2);border-radius:13px;padding:22px;transition:border-color .2s,transform .2s,background .2s;outline:none}
+  .card{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2);border-radius:13px;padding:22px;transition:border-color .2s,transform .2s,background .2s;outline:none}
   .card:hover, .card:focus-within{border-color:var(--border2);transform:translateY(-3px);background:var(--bg3)}
+  .card::before{content:"";position:absolute;inset:0;background:radial-gradient(350px circle at var(--mx, 0px) var(--my, 0px), rgba(61,123,255,0.08), transparent 80%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:0}
+  .card:hover::before{opacity:1}
+  .card > *{position:relative;z-index:1}
   .card .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
   .card h3{font-weight:600;font-size:1.06rem;margin:13px 0 7px}
   .card p{font-size:.92rem;color:var(--fg2)}
@@ -165,8 +169,11 @@
 
   /* work */
   .work{display:flex;flex-direction:column;gap:14px;margin-top:28px}
-  .witem{border:1px solid var(--border);background:var(--bg2);border-radius:14px;padding:26px;transition:border-color .2s,transform .2s,background .2s;outline:none}
+  .witem{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2);border-radius:14px;padding:26px;transition:border-color .2s,transform .2s,background .2s;outline:none}
   .witem:hover, .witem:focus-within{border-color:var(--border2);transform:translateY(-3px);background:var(--bg3)}
+  .witem::before{content:"";position:absolute;inset:0;background:radial-gradient(450px circle at var(--mx, 0px) var(--my, 0px), rgba(61,123,255,0.07), transparent 80%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:0}
+  .witem:hover::before{opacity:1}
+  .witem > *{position:relative;z-index:1}
   .witem.feature{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
   .plogo{height:46px;width:auto;max-width:200px;object-fit:contain;display:block;margin-bottom:16px}
   .plogo.small{height:36px}
@@ -207,16 +214,18 @@
   .copyright{margin-top:26px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--fg3)}
 
   /* reveal anim */
-  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  [data-reveal]{opacity:0;transform:translateY(8px);transition:opacity .8s cubic-bezier(0.16,1,0.3,1),transform .8s cubic-bezier(0.16,1,0.3,1)}
   [data-reveal].in{opacity:1;transform:none}
-  .hero .anim{opacity:0;animation:upin .75s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero .anim{opacity:0;animation:upin .75s cubic-bezier(0.16,1,0.3,1) forwards}
   .hero .anim:nth-child(1){animation-delay:.05s}
   .hero .anim:nth-child(2){animation-delay:.14s}
   .hero .anim:nth-child(3){animation-delay:.23s}
   .hero .anim:nth-child(4){animation-delay:.32s}
   .hero .anim:nth-child(5){animation-delay:.41s}
   .hero .anim:nth-child(6){animation-delay:.50s}
-  @keyframes upin{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  @keyframes upin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  [data-i18n]{transition:opacity .12s ease-in-out}
+  .lang-fade{opacity:0}
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     [data-reveal]{opacity:1;transform:none}
@@ -527,7 +536,11 @@
     document.getElementById('langcode').textContent = l.toUpperCase();
   }
   document.getElementById('langbtn').addEventListener('click', function(){
-    apply(lang === 'en' ? 'ko' : 'en');
+    nodes.forEach(function(n){ n.classList.add('lang-fade'); });
+    setTimeout(function(){
+      apply(lang === 'en' ? 'ko' : 'en');
+      nodes.forEach(function(n){ n.classList.remove('lang-fade'); });
+    }, 120);
   });
 
   /* ---- scroll reveal ---- */
@@ -549,6 +562,17 @@
       });
     }, {threshold:.10, rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('[data-reveal]').forEach(function(e){ io.observe(e); });
+  }
+
+  /* ---- hover radial glow tracker ---- */
+  if(!reduce) {
+    document.querySelectorAll('.card, .witem').forEach(function(el){
+      el.addEventListener('mousemove', function(e){
+        var rect = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+      });
+    });
   }
 })();
 </script>
