@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781548923" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1781549093" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **a83b0b3** - feat: move recent updates down, add Website link badge at README top, and slightly reduce website lede font size (18 seconds ago)
-- **d18bef8** - chore: auto-update recent commits in README [skip ci] (64 seconds ago)
-- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (2 minutes ago)
-- **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (3 minutes ago)
-- **85b9265** - feat: add // github stats section with contribution graph and stats cards (5 minutes ago)
+- **5b8b2f3** - chore: auto-update recent commits in README [skip ci] (3 minutes ago)
+- **a83b0b3** - feat: move recent updates down, add Website link badge at README top, and slightly reduce website lede font size (3 minutes ago)
+- **d18bef8** - chore: auto-update recent commits in README [skip ci] (4 minutes ago)
+- **504da65** - feat: add GitHub links for HELIX, EUM, and Unitrio projects (4 minutes ago)
+- **5305dc0** - feat: move // github stats to bottom and replace streak stats with top languages card (6 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
@@ -110,7 +110,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Kgr0831&show_icons=true&bg_color=0b0f19&title_color=38bdf8&icon_color=3b82f6&text_color=e2e8f0&border_color=1f2937" alt="Garam's GitHub Stats" height="165">
+  <img src="https://github-readme-stats.vercel.app/api?username=Kgr0831&show_icons=true&bg_color=0b0f19&title_color=38bdf8&icon_color=3b82f6&text_color=e2e8f0&border_color=1f2937&hide_rank=true" alt="Garam's GitHub Stats" height="165">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kgr0831&layout=compact&bg_color=0b0f19&title_color=38bdf8&text_color=e2e8f0&border_color=1f2937" alt="Garam's Top Languages" height="165">
 </p>
 
