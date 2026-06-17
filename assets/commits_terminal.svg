@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">84abba7</tspan> - <tspan class="commit-msg">style: revert default language to English on in...</tspan> <tspan class="commit-time">(57 seconds ago)</tspan>
+        <tspan class="commit-hash">4972e1f</tspan> - <tspan class="commit-msg">style: update slogan to &#x27;Unreal AI, Unity Exper...</tspan> <tspan class="commit-time">(25 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">479f889</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(3 minutes ago)</tspan>
+        <tspan class="commit-hash">d0d735e</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(2 days ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">a57bbe6</tspan> - <tspan class="commit-msg">style: change HELIX role to 1인 개발 and Unitrio r...</tspan> <tspan class="commit-time">(3 minutes ago)</tspan>
+        <tspan class="commit-hash">84abba7</tspan> - <tspan class="commit-msg">style: revert default language to English on in...</tspan> <tspan class="commit-time">(2 days ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">455cc09</tspan> - <tspan class="commit-msg">style: align English translations to match upda...</tspan> <tspan class="commit-time">(3 minutes ago)</tspan>
+        <tspan class="commit-hash">479f889</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(2 days ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">190a4eb</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(6 minutes ago)</tspan>
+        <tspan class="commit-hash">a57bbe6</tspan> - <tspan class="commit-msg">style: change HELIX role to 1인 개발 and Unitrio r...</tspan> <tspan class="commit-time">(2 days ago)</tspan>
       </text>
     </g>
   </g>
