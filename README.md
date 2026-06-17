@@ -5,7 +5,7 @@
 <h1 align="center">Garam Kim</h1>
 
 <p align="center">
-  Bringing <code>Unreal</code> AI into <code>Unity</code>.<br>
+  <code>Unreal</code> AI, <code>Unity</code> Experience<br>
   <sub>Making AI feel real. Software engineer → AI researcher.</sub>
 </p>
 
