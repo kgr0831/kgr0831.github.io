@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1781726539" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1786859863" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **4972e1f** - style: update slogan to 'Unreal AI, Unity Experience' in meta, README, index, and banner images (25 seconds ago)
-- **d0d735e** - chore: auto-update recent commits in README [skip ci] (2 days ago)
-- **84abba7** - style: revert default language to English on initial load (2 days ago)
-- **479f889** - chore: auto-update recent commits in README [skip ci] (2 days ago)
-- **a57bbe6** - style: change HELIX role to 1인 개발 and Unitrio role to 리더 & 게임플레이 및 렌더링 프로그래밍 (2 days ago)
+- **0d3f780** - Update portfolio links in index.html (9 seconds ago)
+- **3354ff4** - chore: auto-update recent commits in README [skip ci] (8 weeks ago)
+- **4972e1f** - style: update slogan to 'Unreal AI, Unity Experience' in meta, README, index, and banner images (8 weeks ago)
+- **d0d735e** - chore: auto-update recent commits in README [skip ci] (9 weeks ago)
+- **84abba7** - style: revert default language to English on initial load (9 weeks ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
