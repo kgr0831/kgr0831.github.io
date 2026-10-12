@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1789982878" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1791821639" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **3807902** - Update index.html (9 seconds ago)
-- **c1bb4f9** - chore: auto-update recent commits in README [skip ci] (30 hours ago)
-- **f297234** - docs: update CV (30 hours ago)
-- **e8a866d** - chore: auto-update recent commits in README [skip ci] (3 weeks ago)
-- **7285e39** - Update portfolio link in index.html (3 weeks ago)
+- **dffefac** - Publish redesigned portfolio site and updated CV (18 seconds ago)
+- **cd1c0e8** - chore: auto-update recent commits in README [skip ci] (3 weeks ago)
+- **3807902** - Update index.html (3 weeks ago)
+- **c1bb4f9** - chore: auto-update recent commits in README [skip ci] (3 weeks ago)
+- **f297234** - docs: update CV (3 weeks ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
