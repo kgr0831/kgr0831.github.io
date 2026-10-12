@@ -1,0 +1,191 @@
+/* Independent color study based on the supplied site/assets/site.css reference.
+   The Bright Studio layout, content and motion remain shared with the copied files. */
+:root {
+  color-scheme: dark;
+  --paper: #1c1f1c;
+  --ink: #efeee7;
+  --muted: #acafa5;
+  --line: #3b4138;
+  --lime: #bac8a6;
+  --blue: #bac8a6;
+  --panel: #242923;
+  --panel-hover: #2a3028;
+}
+::selection { background: var(--lime); color: var(--paper); }
+.site-header { background: #1c1f1ce8; }
+.wordmark, .site-footer > .wordmark { font-weight: 550; }
+.desktop-nav, .language-button { color: var(--muted); }
+.desktop-nav a:hover, .desktop-nav a.is-current, .language-button:hover { color: var(--ink); }
+.mobile-nav { box-shadow: 0 18px 25px #0002; }
+.skip-link { color: var(--paper); }
+.welcome h1 { font-weight: 530; }
+.welcome-name { color: var(--muted); }
+.welcome-description { color: var(--muted); }
+.welcome-resume { border-color: #73816a; }
+
+/* Fixed colors, with only position and angle changing through the 24s loop. */
+#plane-haze stop:first-child { stop-color: #5b6d4d; stop-opacity: .18; }
+#plane-haze stop:last-child { stop-color: var(--paper); }
+#plane-lilac stop:first-child { stop-color: #6f8165; }
+#plane-lilac stop:last-child { stop-color: #52634b; }
+#plane-blue stop:first-child { stop-color: #9eae8d; }
+#plane-blue stop:last-child { stop-color: #7b8f6d; }
+#plane-cream stop:first-child { stop-color: #d6d6bd; }
+#plane-cream stop:last-child { stop-color: #b7bda0; }
+
+.project { background: var(--panel); border-radius: 2px; }
+.project:hover, .project:focus-within { background: var(--panel-hover); }
+#project-moai { --project-accent: #b6c99b; }
+#project-rolai { --project-accent: #cec3a4; }
+.project-summary, .project-stack { color: var(--muted); }
+.project-art { border-radius: 1px 1px 0 0; }
+.project-art::before { background: radial-gradient(220px circle at var(--pointer-x, 50%) var(--pointer-y, 35%), #dce5cb12, transparent 75%); }
+.project-art::after { background: linear-gradient(110deg, transparent 38%, #dce5cb10 50%, transparent 62%); }
+.eum-art { color: var(--lime); background: radial-gradient(ellipse at 50% 100%, #40513d, #2a3629 75%); }
+.eum-window { color: var(--ink); background: #323b30; box-shadow: 0 12px 35px #0003; }
+.window-bar { border-color: #505a47; }
+.window-dots { color: #839276; }
+.whiteboard { background-image: radial-gradient(#56634a 1px, transparent 1px); }
+.board-toolbar { color: #b6c0a9; background: #273022; border-color: #4b5941; }
+.board-connection { stroke: #7d8d70; }
+.board-drawing { stroke: #d2ddbe; }
+.board-note { color: #2f3829; }
+.board-note > span { color: #4c5843; }
+.note-yellow { background: #c1cdab; }
+.note-violet { background: #a7b7a3; }
+.cursor-one, .cursor-two { color: #cedbc0; }
+.cursor-one > span, .cursor-two > span { color: #1c2418; background: #c6d5b5; }
+.board-zoom { color: #c0ccb3; }
+.moai-art { color: #c1ceb1; background: #34402d; }
+.network-nodes { fill: #34402d; stroke: #70865c; }
+.network-flow { stroke: #d4e4c1; }
+.network-core > circle { fill: #222b1e; }
+.network-core > path { stroke: var(--lime); }
+.rolai-art { background: #33372d; color: #c1c4af; }
+.game-orbit { border-color: #68705d; }
+.game-cross { color: #8d987f; }
+
+.about { background: #252c23; border-block: 1px solid var(--line); }
+.about::before { border-color: #8fa16b24; box-shadow: 0 0 0 24px #8fa16b0c, 0 0 0 49px #8fa16b08, 0 0 0 75px #8fa16b04; }
+.about-signature span { color: var(--lime); }
+.about-story > p, .working-method p { color: #b0b9a7; }
+.working-method { border-color: #444e3b; }
+.working-method svg { stroke: var(--lime); }
+.working-method > div::after { background: #899c73; }
+.about.is-in-view .about-signature {
+  background-image: linear-gradient(110deg, var(--ink) 30%, #a7bc91 45%, var(--ink) 60%);
+}
+
+.skill-workspace { background: var(--panel); border-radius: 3px; }
+.skill-tabs { background: #21261f; }
+.skill-tabs small, .skill-proof > span { color: var(--muted); }
+.skill-tabs [role=tab]:hover { border-color: #647356; }
+.skill-tabs [aria-selected=true] { background: var(--lime); color: var(--paper); }
+.skill-tabs [aria-selected=true] small, .skill-tabs [aria-selected=true] .tab-arrow { color: #39452f; }
+.skill-tabs [role=tab]::before { background: #61764c; }
+.skill-panel-copy > p:not(.skill-proof) { color: var(--muted); }
+.skill-tags span { background: #343e2e; color: #d2dbc7; box-shadow: inset 0 0 0 1px #4e5b43; }
+.skill-panel .skill-tags span:hover { background: var(--lime); }
+.pipeline-visual { background: #303c2b; }
+.raw-stroke { stroke: #839376; }
+.pipeline-labels { color: #bdc9b0; }
+.pipeline-labels span + span::before { color: #859774; }
+.pipeline-visual::after { background: linear-gradient(110deg, transparent 30%, #d6e2c418 50%, transparent 70%); }
+.stack-visual { background: #2c392c; }
+.stack-visual > div { background: #354332; border-color: #687d5d; }
+.stack-visual span { color: #b4c2a6; }
+.stack-visual i { background: #6c805e; }
+.stack-visual i::after { background: #c5d9b0; }
+
+.career-tabs [role=tab] { border-radius: 3px; }
+.career-tabs [role=tab]:hover { background: #282f25; }
+.career-tabs [aria-selected=true] { background: #303a2b; border-color: #8d9f79; }
+.career-tab-copy small, .career-tab-copy > span { color: var(--muted); }
+.career-tabs .tab-arrow { color: #9eae90; }
+.school-logo { background: #efeee7; border-color: #efeee7; border-radius: 3px; }
+.career-panel { background: #28312a; border-color: #435043; border-radius: 3px; }
+.career-jungle { background: #2b3425; border-color: #4d593e; }
+.career-gamehs { background: #323329; border-color: #555543; }
+.career-jungle::before { background: #a5b88d; }
+.career-gamehs::before { background: #c5bd98; }
+.career-state, .career-school p, .career-detail p, .career-learning > span { color: #b7c1ae; }
+.career-year { color: #697963; }
+.career-jungle .career-year { color: #768563; }
+.career-gamehs .career-year { color: #85816a; }
+.career-school img { background: #efeee7; border-radius: 3px; padding: 6px; }
+.career-detail { border-color: #72806855; }
+
+.contact { background: #282f24; border-top: 1px solid #46503d; }
+.contact::before { border-color: #8fa47726; box-shadow: 0 0 0 32px #8fa4770c, 0 0 0 65px #8fa47708, 0 0 0 98px #8fa47704; }
+.contact.is-in-view .contact-main h2 { background-image: linear-gradient(110deg, var(--ink) 30%, #a7bc91 45%, var(--ink) 60%); }
+.contact-resources a { background: #30392a; border-color: #535f46; border-radius: 2px; }
+.contact-resources a > span:nth-child(2) { color: #b0bca3; }
+.contact-resources a::before { background: var(--lime); }
+.contact-resources a:hover, .contact-resources a:focus-visible { border-color: var(--lime); }
+.contact-resources a:hover > span:nth-child(2), .contact-resources a:focus-visible > span:nth-child(2) { color: #455239; }
+.contact-bottom { border-color: #535f46; color: var(--ink); }
+.contact-bottom > p { color: #b0bca3; }
+.email-actions > a { border-color: #899a77; }
+.email-actions > button { border-color: #728260; }
+.email-actions > button:hover { background: #414e36; }
+.button-dark { background: var(--lime); color: var(--paper); }
+.button-dark:hover { background: #d1dbbf; }
+.footer-links > a:hover { color: var(--lime); }
+
+#project-dialog { border: 1px solid var(--line); box-shadow: 0 40px 140px #0006; }
+#project-dialog::backdrop { background: #10150ec9; }
+.dialog-metric { background: #35432c; color: var(--ink); }
+.dialog-close:hover { color: var(--paper); }
+.intro { --paper: #efeee7; --ink: #171c16; }
+.intro-frame { border-color: #bac8a666; }
+.intro-axis { background: #bac8a630; }
+.intro-orbit { border-color: #bac8a640; }
+
+/* Content from the AX/game portfolio: summaries stay brief, details open on demand. */
+.project-library { margin-top: 46px; }
+.project-library > h3 { font-size: 24px; margin-bottom: 22px; }
+.library-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.library-tabs [role=tab] { padding: 10px 17px; border: 1px solid var(--line); border-radius: 3px; font-size: 14px; color: var(--muted); transition: background .2s, color .2s, border-color .2s; }
+.library-tabs [role=tab]:hover { border-color: #8d9f79; color: var(--ink); }
+.library-tabs [aria-selected=true] { color: var(--paper); background: var(--lime); border-color: var(--lime); }
+.library-tabs [aria-selected=true]:hover { color: var(--paper); }
+.library-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 36px; }
+.library-row { display: grid; position: relative; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 18px; align-content: start; padding: 23px 0; border-top: 1px solid var(--line); text-align: left; }
+.library-row strong { font-size: 18px; font-weight: 550; line-height: 1.4; }
+.library-summary { grid-column: 1; color: var(--muted); font-size: 14px; line-height: 1.75; word-break: keep-all; overflow-wrap: anywhere; }
+.library-arrow { grid-column: 2; grid-row: 1 / 3; font-size: 24px; color: var(--lime); transition: rotate .25s; }
+.library-row:hover .library-arrow, .library-row:focus-visible .library-arrow { rotate: 45deg; }
+.library-row:hover strong, .library-row:focus-visible strong { color: var(--lime); }
+.about-role { color: var(--lime); font-size: 18px; }
+.about-story .about-current { display: flex; flex-wrap: wrap; gap: 5px 20px; margin-top: 24px; color: var(--lime); }
+.about-current strong { font-size: 15px; font-weight: 550; }
+.about-current > span { color: var(--muted); font-size: 13px; }
+.experience-mark { flex-shrink: 0; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid #6a7b59; border-radius: 3px; background: #35412e; color: var(--lime); font-size: 26px; font-weight: 500; }
+.career-school .experience-mark { width: 70px; height: 70px; }
+.career-research .career-school h3 { font-size: clamp(23px, 2.2vw, 32px); }
+.career-award { background: #323329; border-color: #555543; }
+.career-award::before { background: #c5bd98; }
+.career-award .career-year { color: #85816a; }
+.dialog-content h2 { font-size: clamp(30px, 4vw, 52px); line-height: 1.15; overflow-wrap: anywhere; }
+.dialog-links .button { max-width: 100%; overflow-wrap: anywhere; }
+.dialog-metric strong { overflow-wrap: anywhere; }
+@media (max-width: 1000px) {
+  .desktop-nav { margin-left: 0; gap: 23px; }
+  .experience-mark { width: 46px; height: 46px; font-size: 22px; }
+  .career-school .experience-mark { width: 52px; height: 52px; }
+}
+@media (max-width: 700px) {
+  .project-library { margin-top: 34px; }
+  .project-library > h3 { font-size: 22px; }
+  .library-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .library-tabs [role=tab] { padding: 10px 8px; font-size: 13px; }
+  .library-panel { grid-template-columns: minmax(0, 1fr); }
+  .library-row { padding-block: 20px; }
+  .library-row strong { font-size: 17px; }
+  .library-summary { font-size: 13px; }
+  .about-role { grid-column: 1 / -1; font-size: 15px; }
+  .about-identity { gap: 13px; }
+  .dialog-metric { flex-wrap: wrap; }
+  .dialog-metric strong { font-size: clamp(23px, 6.5vw, 30px); line-height: 1.3; word-break: keep-all; overflow-wrap: normal; }
+  .dialog-metric > span { max-width: none; }
+}

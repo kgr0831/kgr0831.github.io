@@ -1,0 +1,233 @@
+/* Original portfolio logos and evidence images, within the existing sage theme. */
+.welcome { grid-template-columns: 1.2fr 1fr; }
+.welcome h1 { font-size: clamp(40px, 4.55vw, 74px); }
+.welcome h1 > span { white-space: normal; word-break: keep-all; }
+.welcome-description { max-width: 460px; }
+.welcome-documents { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 32px; }
+.welcome-documents .welcome-resume { margin-top: 0; }
+
+.brand-mark { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 52px; height: 52px; padding: 9px; border-radius: 5px; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.brand-mark img[src$="/gammaru.png"] { transform: scale(1.7); }
+.brand-mark img[src$="/rol.png"] { transform: scale(1.7); }
+.logo-light { background: #e9ece3; }
+.logo-dark { background: #333d35; }
+.project-brand { display: flex; align-items: center; gap: 13px; margin-bottom: 24px; }
+.project-name { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.4; }
+#project-rolai .brand-mark { width: 94px; padding: 5px; }
+.project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+#project-eum { grid-column: 1 / -1; display: grid; grid-template-columns: 1.25fr 1fr; }
+.project-art { height: 300px; }
+#project-eum .project-art { height: 100%; min-height: 420px; }
+.project-body { padding: 30px; }
+.project-summary-title { font-size: clamp(24px, 2.4vw, 34px); }
+.project-summary { font-size: 16px; line-height: 1.85; }
+.project-result { font-size: clamp(24px, 2.4vw, 36px); letter-spacing: -.04em; color: var(--lime); margin-top: 20px; }
+.project-result::after { content: 'EUM · 프로젝트 당시 평균 프레임'; display: block; margin-top: 7px; font-size: 12px; letter-spacing: 0; color: var(--muted); }
+html[lang=en] .project-result::after { content: 'EUM · Average frame rate measured during the project'; }
+.project-role { font-size: 13px; line-height: 1.7; }
+.project-footer { align-items: center; flex-direction: row; font-size: 12px; }
+.photo-art { display: flex; align-items: center; justify-content: center; background: #303a30; padding: 34px 28px 47px; }
+.photo-mat { width: 100%; border: 1px solid #6b776a66; border-radius: 5px; overflow: hidden; box-shadow: 0 20px 60px #090e0940; background: #171c18; }
+.project-photo { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; }
+.photo-rolai { background: #35352e; padding: 0; }
+.photo-rolai .photo-mat { border: 0; border-radius: 0; height: 100%; }
+.photo-rolai .project-photo { height: 100%; aspect-ratio: auto; object-fit: cover; }
+.photo-rolai .art-caption { padding: 5px 9px; border-radius: 3px; background: #151912d9; }
+.photo-art .art-caption { color: #dde3d7; font-size: 11px; }
+.photo-art.is-animated .photo-mat { animation: evidence-float 4.6s ease-in-out both; }
+.photo-rolai.is-animated .photo-mat { animation-name: evidence-pan; }
+.brand-network .network-nodes { fill: #d2d9c5; stroke: #819574; }
+.brand-network .network-flow { stroke: #d4e4c1; }
+.brand-network .art-caption { font-size: 11px; }
+
+.tool-chips, .profile-tools { display: flex; flex-wrap: wrap; gap: 10px; }
+.tool-chip { display: inline-flex; align-items: center; gap: 9px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 5px; background: #2a3228; color: var(--ink); font-size: 13px; white-space: nowrap; }
+.tool-chip > img { display: block; width: 32px; height: 32px; object-fit: contain; padding: 5px; border-radius: 4px; background: #e9ece3; }
+.tool-chip > span { padding: 0; }
+.project-footer .tool-chips { gap: 7px; }
+.project-footer .tool-chip { border: 0; background: transparent; padding: 0; font-size: 12px; gap: 7px; }
+.project-footer .tool-chip > img { width: 27px; height: 27px; }
+.project-library { margin-top: 60px; }
+.library-tabs { margin-bottom: 24px; }
+.library-panel { gap: 22px; }
+.library-row { display: flex; flex-direction: column; gap: 0; padding: 0; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; background: var(--panel); transition: border-color .25s; }
+.library-row:hover, .library-row:focus-visible { border-color: #8d9f79; }
+.library-visual { display: flex; width: 100%; height: 230px; overflow: hidden; position: relative; justify-content: center; align-items: center; background: #dfe4d8; }
+.library-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .7s ease; }
+.library-row:hover .library-photo, .library-row:focus-visible .library-photo { transform: scale(1.025); }
+.library-copy { display: flex; flex-direction: column; position: relative; padding: 22px 52px 25px 24px; gap: 14px; }
+.library-brand { display: flex; align-items: center; gap: 12px; }
+.library-brand .brand-mark { width: 40px; height: 40px; padding: 6px; }
+.library-row[data-project=paperbridge] .brand-mark,
+.library-row[data-project=triniacle] .brand-mark { width: 76px; padding: 5px; }
+.library-row[data-project=pintos] .brand-mark { width: 78px; }
+.library-row strong { font-size: 19px; }
+.library-summary { font-size: 15px; line-height: 1.8; }
+.library-arrow { position: absolute; right: 24px; top: 29px; }
+.brand-stage { position: relative; background-image: radial-gradient(ellipse at 50% 100%, #a7bc9338, transparent 70%); }
+.brand-stage::before, .brand-stage::after { content: ''; position: absolute; width: 230px; height: 230px; border: 1px solid #58745120; border-radius: 50%; }
+.brand-stage::after { width: 330px; height: 330px; }
+.stage-logo { position: relative; z-index: 1; width: 95px; height: 95px; object-fit: contain; }
+.stage-pintos .stage-logo, .stage-triniacle .stage-logo { width: 230px; height: 110px; }
+.stage-triniacle { background-color: #353b33; }
+.visual-vfriend { background: #eeeef0; }
+.visual-vfriend .library-photo { object-fit: contain; }
+.visual-planet .library-photo { object-fit: contain; }
+.image-note { position: absolute; left: 12px; bottom: 12px; padding: 5px 9px; font-size: 11px; color: #eff1e9; background: #1c241cde; border-radius: 3px; }
+
+.profile-tools { margin-top: 25px; }
+.about-current { align-items: center; }
+.current-logo { object-fit: contain; border-radius: 3px; }
+.about-story > p { font-size: 16px; }
+.working-method h4 { font-size: 16px; }
+.working-method p { font-size: 14px; }
+.tab-tools { display: flex; gap: 8px; margin-top: 16px; }
+.tab-tools img { object-fit: contain; width: 30px; height: 30px; background: #ecefe6; padding: 5px; border-radius: 4px; }
+.skill-panel-copy > p:not(.skill-proof) { font-size: 15px; }
+.skill-panel .skill-tags { gap: 12px; margin-top: 24px; }
+.skill-panel .skill-tags > .tool-chip { padding: 10px 14px; background: #2a3228; box-shadow: none; font-size: 15px; }
+.skill-panel .skill-tags .tool-chip > span { background: transparent; box-shadow: none; padding: 0; color: var(--ink); font-size: inherit; }
+.skill-panel .skill-tags .tool-chip:hover { background: #35422e; color: var(--ink); }
+.skill-panel .skill-tags .tool-chip > img { width: 42px; height: 42px; padding: 6px; }
+.pipeline-labels { font-size: 12px; }
+.pipeline-labels span + span::before { content: none; }
+.flow-logo { display: block; margin: 12px auto; width: 44px; height: 44px; object-fit: contain; padding: 8px; background: #e9ece3; border-radius: 6px; }
+img[src$="/codex.svg"], img[src$="/orca.svg"] { background-color: #354332; }
+.skill-proof > span { font-size: 12px; }
+
+.career-board { grid-template-columns: minmax(290px, .9fr) minmax(0, 1.1fr); gap: 30px; }
+.career-tabs [role=tab] { padding: 28px 22px; min-height: 145px; }
+.school-logo { width: 72px; height: 72px; border-radius: 7px; }
+.school-logo img { width: 56px; height: 56px; }
+.career-tab-copy strong { font-size: 19px; }
+.career-tab-copy small { font-size: 12px; }
+.career-tab-copy > span { font-size: 13px; line-height: 1.6; }
+.career-panel { min-height: 530px; padding: 28px 32px 32px; }
+.career-panel-top { min-height: 35px; position: relative; z-index: 1; }
+.career-state { font-size: 12px; }
+.career-year { font-size: 44px; }
+.institution-visual { display: flex; justify-content: center; align-items: center; height: 168px; margin: 23px 0 26px; border-radius: 5px; background: #e5e9df; overflow: hidden; position: relative; }
+.institution-visual::before { content: ''; position: absolute; width: 320px; height: 320px; border: 1px solid #798e7625; border-radius: 50%; box-shadow: 0 0 0 35px #74866508; }
+.institution-logo { width: 116px; height: 116px; object-fit: contain; position: relative; }
+.career-jungle .institution-logo { width: 240px; height: 100px; max-width: 85%; }
+.career-board.is-in-view .institution-logo { animation: institution-breathe 4.2s ease-in-out both; }
+.award-visual { height: 220px; background: #22281f; }
+.award-visual::before { content: none; }
+.award-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.award-visual figcaption { position: absolute; bottom: 12px; left: 12px; font-size: 11px; background: #1b221adb; padding: 5px 9px; }
+.career-school { margin-block: 0 20px; }
+.career-school h3 { font-size: clamp(24px, 2.3vw, 32px); }
+.career-school p { font-size: 14px; }
+.career-detail p { font-size: 15px; }
+.career-learning p { font-size: 13px; line-height: 1.8; }
+.social-brand { display: flex; align-items: center; gap: 12px; }
+.social-brand img { width: 34px; height: 34px; object-fit: contain; background: #e9ece3; padding: 6px; border-radius: 5px; }
+
+#project-dialog { width: min(980px, calc(100% - 32px)); }
+.dialog-brand { margin-bottom: 20px; }
+.dialog-brand .brand-mark { width: 100px; height: 64px; padding: 10px; }
+.dialog-brand .brand-mark:has(img[src$="/paperbridge-wordmark.png"]),
+.dialog-brand .brand-mark:has(img[src$="/jungle.png"]),
+.dialog-brand .brand-mark:has(img[src$="/triniacle.png"]) { width: 190px; }
+.dialog-top > span { font-size: 12px; letter-spacing: 0; padding-right: 15px; }
+.dialog-close { flex-shrink: 0; }
+.dialog-intro { font-size: 17px; }
+.dialog-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 30px 0; }
+.dialog-gallery figure { margin: 0; min-width: 0; }
+.dialog-gallery figure:first-child { grid-column: 1 / -1; }
+.dialog-gallery figure:only-child { grid-column: 1 / -1; }
+.dialog-gallery a { display: block; border-radius: 5px; overflow: hidden; background: #e5e9e0; border: 1px solid #5c69534d; }
+.dialog-gallery img { display: block; width: 100%; height: 240px; object-fit: contain; }
+.dialog-gallery figure:first-child img { height: auto; max-height: 470px; }
+.dialog-gallery.gallery-portrait figure { grid-column: auto; }
+.dialog-gallery.gallery-portrait img { height: 320px; object-fit: contain; }
+.dialog-gallery figcaption { margin-top: 10px; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.dialog-detail { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 25px; padding-block: 26px; }
+.dialog-detail h3 { font-size: 15px; line-height: 1.7; }
+.dialog-detail p { font-size: 15px; line-height: 1.9; }
+.dialog-metric span { font-size: 12px; line-height: 1.6; }
+
+@keyframes evidence-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes evidence-pan { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+@keyframes institution-breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+@media (max-width: 1000px) {
+  .welcome { grid-template-columns: 1.2fr 1fr; }
+  .project-body { padding: 24px; }
+  #project-eum { grid-template-columns: 1fr 1fr; }
+  .project-art { height: 240px; }
+  .project-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .project-summary { font-size: 15px; }
+  .career-board { grid-template-columns: minmax(250px, .85fr) minmax(0, 1.15fr); gap: 18px; }
+  .career-tabs [role=tab] { padding: 20px 15px; gap: 13px; }
+  .school-logo { width: 58px; height: 58px; }
+  .school-logo img { width: 45px; height: 45px; }
+  .career-tab-copy strong { font-size: 16px; }
+  .career-tab-copy small { font-size: 11px; }
+  .career-tab-copy > span { font-size: 12px; }
+  .career-panel { padding: 24px; }
+  .library-visual { height: 190px; }
+  .library-copy { padding: 20px 40px 23px 20px; }
+  .library-arrow { right: 16px; }
+}
+@media (max-width: 700px) {
+  .welcome { grid-template-columns: minmax(0, 1fr); }
+  .welcome-documents { margin-top: 23px; }
+  .welcome h1 { font-size: clamp(31px, 7.8vw, 53px); }
+  .project-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  #project-eum { display: flex; }
+  #project-eum .project-art { min-height: 0; height: 250px; }
+  .project-art { height: 250px; }
+  .photo-art { padding: 24px 20px 42px; }
+  .photo-rolai { padding: 0; }
+  .project-body { padding: 22px; }
+  .project-brand { margin-bottom: 20px; }
+  .project-name { font-size: 16px; }
+  .project-summary-title { font-size: 25px; }
+  .project-footer { flex-direction: row; align-items: center; }
+  .project-detail-label { font-size: 11px; }
+  .project-library { margin-top: 42px; }
+  .library-panel { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .library-visual { height: 220px; }
+  .library-row strong { font-size: 18px; }
+  .library-summary { font-size: 14px; }
+  .profile-tools { grid-column: 1 / -1; margin-top: 0; }
+  .working-method { gap: 14px; }
+  .working-method h4 { font-size: 15px; }
+  .working-method p { font-size: 13px; }
+  .tab-tools { margin-top: 12px; gap: 5px; }
+  .tab-tools img { width: 25px; height: 25px; padding: 4px; }
+  .skill-panel-copy > p:not(.skill-proof) { font-size: 14px; }
+  .skill-panel .skill-tags { gap: 8px; }
+  .skill-panel .skill-tags > .tool-chip { padding: 7px 10px; font-size: 13px; }
+  .skill-panel .skill-tags .tool-chip > img { width: 32px; height: 32px; }
+  .pipeline-labels { font-size: 10px; align-items: flex-start; line-height: 1.5; }
+  .pipeline-labels span { flex: 1; }
+  .stack-visual { padding: 25px 16px; height: 190px; }
+  .stack-visual > div { padding: 12px 5px; }
+  .flow-logo { width: 36px; height: 36px; padding: 6px; }
+  .career-board { grid-template-columns: minmax(0, 1fr); }
+  .career-tabs [role=tab] { min-height: 110px; padding: 18px; }
+  .career-tab-copy strong { font-size: 17px; }
+  .career-panel { min-height: 0; padding: 22px; }
+  .institution-visual { margin-block: 20px; }
+  .career-panel-top { min-height: 35px; }
+  .career-school { margin-block: 0 20px; }
+  .career-school p { font-size: 13px; }
+  .career-detail p { font-size: 14px; }
+  .dialog-content { padding: 24px 22px; }
+  .dialog-top { padding: 16px 22px; }
+  .dialog-top > span { font-size: 11px; line-height: 1.6; }
+  .dialog-intro { font-size: 15px; }
+  .dialog-detail { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .dialog-detail p { font-size: 14px; }
+  .dialog-gallery { grid-template-columns: minmax(0, 1fr); }
+  .dialog-gallery figure, .dialog-gallery.gallery-portrait figure { grid-column: 1; }
+  .dialog-gallery img { height: auto; max-height: 360px; }
+  .dialog-gallery.gallery-portrait img { height: 300px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-mat, .institution-logo { animation: none !important; }
+  .library-photo { transition: none; }
+}

@@ -1,595 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Garam Kim — Software Engineer / AI Researcher</title>
-<meta name="description" content="Garam Kim. Software engineer becoming an AI researcher. Unreal AI, Unity Experience." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#000;
-    --bg2:#0a0a0a;
-    --bg3:#111;
-    --border:#1f1f1f;
-    --border2:#333;
-    --fg:#ededed;
-    --fg2:#a1a1a1;
-    --fg3:#6b6b6b;
-    --accent:#3d7bff;
-    --plate:#f4f4f5;
-    --maxw:840px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--fg);font-family:"Inter",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word}
-  a{color:inherit;text-decoration:none}
-  .mono{font-family:"JetBrains Mono",monospace}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .bi{width:22px;height:22px;display:block}
-
-  /* nav */
-  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.65);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-  nav .name{font-weight:600;letter-spacing:-.01em;font-size:15px}
-  nav .tools{display:flex;align-items:center;gap:4px}
-  .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;color:var(--fg2);transition:color .18s,background .18s;outline:none}
-  .iconbtn:hover, .iconbtn:focus{color:var(--fg);background:var(--bg2)}
-  .iconbtn .bi{width:18px;height:18px}
-  .langbtn{width:auto;gap:6px;padding:0 10px;font-family:"JetBrains Mono",monospace;font-size:12px}
-  .langbtn .bi{width:15px;height:15px}
-
-  /* hero */
-  .hero{position:relative;padding:98px 0 78px;overflow:hidden}
-  .hero-banner-img{width:100%;margin-bottom:38px;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--bg2);transition:border-color .2s}
-  .hero-banner-img img{width:100%;height:auto;display:block;object-fit:cover}
-  .hero-banner-img:hover, .hero-banner-img:focus-within{border-color:var(--border2)}
-  .hero-glow{position:absolute;left:0;right:0;top:-120px;height:520px;background:radial-gradient(58% 60% at 50% 0%,rgba(61,123,255,.20),transparent 72%);filter:blur(14px);pointer-events:none;animation:drift 13s ease-in-out infinite alternate}
-  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse 72% 58% at 50% 0%,#000,transparent 76%);mask-image:radial-gradient(ellipse 72% 58% at 50% 0%,#000,transparent 76%);pointer-events:none}
-  @keyframes drift{from{transform:translateX(-5%) scale(1);opacity:.85}to{transform:translateX(5%) scale(1.1);opacity:1}}
-  .hero .wrap{position:relative}
-  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);margin-bottom:22px;display:inline-flex;align-items:center;gap:9px}
-  .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:blink 2.4s ease-in-out infinite}
-  @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-  h1.title{font-weight:800;font-size:clamp(2.5rem,7.2vw,4.3rem);line-height:1.03;letter-spacing:-.035em}
-  h1.title .u-unreal{color:var(--accent)}
-  h1.title .u-unity{color:var(--accent)}
-  .subtitle{margin-top:22px;max-width:50ch;font-size:1.16rem;color:var(--fg2)}
-  .gloss{margin-top:12px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--fg3)}
-  .cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:11px}
-  .btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:500;padding:10px 17px;border-radius:8px;border:1px solid var(--border2);color:var(--fg);transition:border-color .18s,background .18s,transform .18s,color .18s;outline:none}
-  .btn:hover, .btn:focus{border-color:var(--fg2);transform:translateY(-1px)}
-  .btn.primary{background:var(--fg);border-color:var(--fg);color:#000;font-weight:600}
-  .btn.primary:hover, .btn.primary:focus{background:#fff;border-color:#fff}
-  .btn .bi{width:15px;height:15px;transition:transform .2s cubic-bezier(0.16, 1, 0.3, 1)}
-  .btn:hover .bi, .btn:focus .bi{transform:translate(2px,-2px)}
-
-  /* sections */
-  section{border-top:1px solid var(--border);padding:62px 0}
-  .label{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--fg3);letter-spacing:.06em;margin-bottom:24px;display:flex;align-items:center;gap:9px}
-  .label::before{content:"";width:14px;height:1px;background:var(--accent)}
-  h2{font-weight:600;font-size:1.55rem;letter-spacing:-.02em;margin-bottom:16px}
-  p.lede{font-size:1.0rem;color:var(--fg2);max-width:64ch}
-  p.lede strong{color:var(--fg);font-weight:600}
-
-  /* facts */
-  .facts{margin-top:24px;display:flex;flex-direction:column;gap:11px}
-  .fact{display:flex;gap:14px;font-size:.98rem;align-items:baseline}
-  .fact .k{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--accent);min-width:96px;text-transform:uppercase;letter-spacing:.04em}
-  .fact .v{color:var(--fg2)}
-
-  /* focus */
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-  .card{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2);border-radius:13px;padding:22px;transition:border-color .2s,transform .2s,background .2s;outline:none}
-  .card:hover, .card:focus-within{border-color:var(--border2);transform:translateY(-3px);background:var(--bg3)}
-  .card::before{content:"";position:absolute;inset:0;background:radial-gradient(350px circle at var(--mx, 0px) var(--my, 0px), rgba(61,123,255,0.08), transparent 80%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:0}
-  .card:hover::before{opacity:1}
-  .card > *{position:relative;z-index:1}
-  .card .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
-  .card h3{font-weight:600;font-size:1.06rem;margin:13px 0 7px}
-  .card p{font-size:.92rem;color:var(--fg2)}
-  @media(max-width:720px){ .grid3{grid-template-columns:1fr} }
-
-  /* stack */
-  .chgroup{margin-bottom:26px}
-  .chgroup:last-child{margin-bottom:0}
-  .chlabel{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--fg3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:13px}
-  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
-  .tile{border:1px solid var(--border);background:var(--bg2);border-radius:12px;padding:16px 10px 11px;display:flex;flex-direction:column;align-items:center;gap:9px;transition:border-color .2s,transform .2s,background .2s;outline:none}
-  .tile:hover, .tile:focus-within{border-color:var(--border2);transform:translateY(-3px);background:var(--bg3)}
-  .tile .bi{width:26px;height:26px;color:var(--fg2);transition:color .2s}
-  .tile:hover .bi, .tile:focus-within .bi{color:var(--fg)}
-  .tile img.bi{width:26px;height:26px;object-fit:contain;filter:grayscale(1) brightness(0.9) opacity(0.65);transition:filter .18s,opacity .18s}
-  .tile:hover img.bi, .tile:focus-within img.bi{filter:none;opacity:1}
-  .tile .glyph{height:26px;display:flex;align-items:center;font-weight:700;font-size:15px;color:var(--fg2);letter-spacing:-.02em;transition:color .2s}
-  .tile:hover .glyph, .tile:focus-within .glyph{color:var(--fg)}
-  .tile .tlabel{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--fg3);text-align:center;line-height:1.2;transition:color .2s}
-
-  /* brand colors on hover */
-  .tile:hover, .tile:focus-within{transform:translateY(-3px)}
-  .tile.python:hover, .tile.python:focus-within{border-color:#3776ab;background:rgba(55,118,171,0.06)}
-  .tile.python:hover .bi, .tile.python:focus-within .bi{color:#3776ab}
-  .tile.python:hover .tlabel, .tile.python:focus-within .tlabel{color:#3776ab}
-  .tile.csharp:hover, .tile.csharp:focus-within{border-color:#512bd4;background:rgba(81,43,212,0.06)}
-  .tile.csharp:hover .tlabel, .tile.csharp:focus-within .tlabel{color:#9b72ff}
-  .tile.c:hover, .tile.c:focus-within{border-color:#00599c;background:rgba(0,89,156,0.06)}
-  .tile.c:hover .tlabel, .tile.c:focus-within .tlabel{color:#007fff}
-  .tile.typescript:hover, .tile.typescript:focus-within{border-color:#3178c6;background:rgba(49,120,198,0.06)}
-  .tile.typescript:hover .bi, .tile.typescript:focus-within .bi{color:#3178c6}
-  .tile.typescript:hover .tlabel, .tile.typescript:focus-within .tlabel{color:#3178c6}
-  .tile.java:hover, .tile.java:focus-within{border-color:#ea2d2e;background:rgba(234,45,46,0.06)}
-  .tile.java:hover .bi, .tile.java:focus-within .bi{color:#ea2d2e}
-  .tile.java:hover .tlabel, .tile.java:focus-within .tlabel{color:#ea2d2e}
-  .tile.go:hover, .tile.go:focus-within{border-color:#00add8;background:rgba(0,173,216,0.06)}
-  .tile.go:hover .bi, .tile.go:focus-within .bi{color:#00add8}
-  .tile.go:hover .tlabel, .tile.go:focus-within .tlabel{color:#00add8}
-  .tile.asm:hover, .tile.asm:focus-within{border-color:#e2b13c;background:rgba(226,177,60,0.06)}
-  .tile.asm:hover .glyph, .tile.asm:focus-within .glyph{color:#e2b13c}
-  .tile.asm:hover .tlabel, .tile.asm:focus-within .tlabel{color:#e2b13c}
-  .tile.wgsl:hover, .tile.wgsl:focus-within{border-color:#ff3e00;background:rgba(255,62,0,0.06)}
-  .tile.wgsl:hover .glyph, .tile.wgsl:focus-within .glyph{color:#ff3e00}
-  .tile.wgsl:hover .tlabel, .tile.wgsl:focus-within .tlabel{color:#ff3e00}
-  .tile.pytorch:hover, .tile.pytorch:focus-within{border-color:#ee4c2c;background:rgba(238,76,44,0.06)}
-  .tile.pytorch:hover .bi, .tile.pytorch:focus-within .bi{color:#ee4c2c}
-  .tile.pytorch:hover .tlabel, .tile.pytorch:focus-within .tlabel{color:#ee4c2c}
-  .tile.cuda:hover, .tile.cuda:focus-within{border-color:#76b900;background:rgba(118,185,0,0.06)}
-  .tile.cuda:hover .bi, .tile.cuda:focus-within .bi{color:#76b900}
-  .tile.cuda:hover .tlabel, .tile.cuda:focus-within .tlabel{color:#76b900}
-  .tile.unity:hover, .tile.unity:focus-within{border-color:#fff;background:rgba(255,255,255,0.06)}
-  .tile.unity:hover .bi, .tile.unity:focus-within .bi{color:#fff}
-  .tile.unity:hover .tlabel, .tile.unity:focus-within .tlabel{color:#fff}
-  .tile.nextjs:hover, .tile.nextjs:focus-within{border-color:#fff;background:rgba(255,255,255,0.06)}
-  .tile.nextjs:hover .bi, .tile.nextjs:focus-within .bi{color:#fff}
-  .tile.nextjs:hover .tlabel, .tile.nextjs:focus-within .tlabel{color:#fff}
-  .tile.nodejs:hover, .tile.nodejs:focus-within{border-color:#339933;background:rgba(51,153,51,0.06)}
-  .tile.nodejs:hover .bi, .tile.nodejs:focus-within .bi{color:#339933}
-  .tile.nodejs:hover .tlabel, .tile.nodejs:focus-within .tlabel{color:#339933}
-  .tile.pixijs:hover, .tile.pixijs:focus-within{border-color:#e72264;background:rgba(231,34,100,0.06)}
-  .tile.pixijs:hover .tlabel, .tile.pixijs:focus-within .tlabel{color:#e72264}
-  .tile.webgpu:hover, .tile.webgpu:focus-within{border-color:#ff3e00;background:rgba(255,62,0,0.06)}
-  .tile.webgpu:hover .bi, .tile.webgpu:focus-within .bi{color:#ff3e00}
-  .tile.webgpu:hover .tlabel, .tile.webgpu:focus-within .tlabel{color:#ff3e00}
-  .tile.aws:hover, .tile.aws:focus-within{border-color:#ff9900;background:rgba(255,153,0,0.06)}
-  .tile.aws:hover .tlabel, .tile.aws:focus-within .tlabel{color:#ff9900}
-  .tile.vercel:hover, .tile.vercel:focus-within{border-color:#fff;background:rgba(255,255,255,0.06)}
-  .tile.vercel:hover .bi, .tile.vercel:focus-within .bi{color:#fff}
-  .tile.vercel:hover .tlabel, .tile.vercel:focus-within .tlabel{color:#fff}
-  .tile.render:hover, .tile.render:focus-within{border-color:#46e3b7;background:rgba(70,227,183,0.06)}
-  .tile.render:hover .bi, .tile.render:focus-within .bi{color:#46e3b7}
-  .tile.render:hover .tlabel, .tile.render:focus-within .tlabel{color:#46e3b7}
-  .tile.claude:hover, .tile.claude:focus-within{border-color:#d97757;background:rgba(217,119,87,0.06)}
-  .tile.claude:hover .tlabel, .tile.claude:focus-within .tlabel{color:#ea7e5c}
-  .tile.github:hover, .tile.github:focus-within{border-color:#fff;background:rgba(255,255,255,0.06)}
-  .tile.github:hover .bi, .tile.github:focus-within .bi{color:#fff}
-  .tile.github:hover .tlabel, .tile.github:focus-within .tlabel{color:#fff}
-  .tile.antigravity:hover, .tile.antigravity:focus-within{border-color:#3d7bff;background:rgba(61,123,255,0.06)}
-  .tile.antigravity:hover .tlabel, .tile.antigravity:focus-within .tlabel{color:#3d7bff}
-
-  /* work */
-  .work{display:flex;flex-direction:column;gap:14px;margin-top:28px}
-  .witem{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2);border-radius:14px;padding:26px;transition:border-color .2s,transform .2s,background .2s;outline:none}
-  .witem:hover, .witem:focus-within{border-color:var(--border2);transform:translateY(-3px);background:var(--bg3)}
-  .witem::before{content:"";position:absolute;inset:0;background:radial-gradient(450px circle at var(--mx, 0px) var(--my, 0px), rgba(61,123,255,0.07), transparent 80%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:0}
-  .witem:hover::before{opacity:1}
-  .witem > *{position:relative;z-index:1}
-  .witem.feature{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
-  .plogo{height:46px;width:auto;max-width:200px;object-fit:contain;display:block;margin-bottom:16px}
-  .plogo.small{height:36px}
-  .witem .ptag{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--accent);letter-spacing:.04em}
-  .witem p{font-size:.96rem;color:var(--fg2);margin-top:10px}
-  .witem .meta{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--fg3);margin-top:14px}
-  .witem .link{display:inline-flex;align-items:center;gap:5px;margin-top:15px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--fg);outline:none}
-  .wlinks{display:flex;gap:15px;margin-top:15px}
-  .wlinks .link{margin-top:0}
-  .witem .link .bi{width:13px;height:13px;transition:transform .2s}
-  .witem .link:hover, .witem .link:focus{color:var(--accent)}
-  .witem .link:hover .bi, .witem .link:focus .bi{transform:translate(2px,-2px)}
-  .statbox{border:1px solid var(--border);border-radius:11px;padding:20px;background:var(--bg)}
-  .statbox .sh{font-family:"JetBrains Mono",monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--fg3);margin-bottom:12px}
-  .statline{display:flex;align-items:baseline;gap:9px;font-family:"JetBrains Mono",monospace}
-  .statline .from{color:var(--fg3);font-size:1rem}
-  .statline .arrow{color:var(--fg3)}
-  .statline .to{color:var(--fg);font-size:1.7rem;font-weight:500}
-  .statline .unit{color:var(--fg3);font-size:.78rem}
-  .statbox .delta{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--accent);margin-top:7px}
-  .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:760px){ .witem.feature{grid-template-columns:1fr;gap:22px} .pair{grid-template-columns:1fr} }
-
-  /* timeline */
-  .tl{margin-top:28px;display:flex;flex-direction:column;gap:4px}
-  .trow{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}
-  .trow:last-child{border-bottom:0}
-  .plate{flex:none;width:64px;height:64px;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;background:transparent}
-  .plate img{max-width:100%;max-height:100%;object-fit:contain}
-  .trow .when{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--fg3)}
-  .trow .what{font-weight:600;font-size:1.02rem;margin-top:2px}
-  .trow .sub{font-size:.88rem;color:var(--fg2)}
-
-  /* footer */
-  footer{border-top:1px solid var(--border);padding:44px 0 60px}
-  .foot{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-  .foot .links{display:flex;gap:4px}
-  .credo{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--fg3);line-height:1.9;max-width:48ch}
-  .credo b{color:var(--fg2);font-weight:500}
-  .copyright{margin-top:26px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--fg3)}
-
-  /* reveal anim */
-  [data-reveal]{opacity:0;transform:translateY(8px);transition:opacity .8s cubic-bezier(0.16,1,0.3,1),transform .8s cubic-bezier(0.16,1,0.3,1)}
-  [data-reveal].in{opacity:1;transform:none}
-  .hero .anim{opacity:0;animation:upin .75s cubic-bezier(0.16,1,0.3,1) forwards}
-  .hero .anim:nth-child(1){animation-delay:.05s}
-  .hero .anim:nth-child(2){animation-delay:.14s}
-  .hero .anim:nth-child(3){animation-delay:.23s}
-  .hero .anim:nth-child(4){animation-delay:.32s}
-  .hero .anim:nth-child(5){animation-delay:.41s}
-  .hero .anim:nth-child(6){animation-delay:.50s}
-  @keyframes upin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  [data-i18n]{transition:opacity .12s ease-in-out}
-  .lang-fade{opacity:0}
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    [data-reveal]{opacity:1;transform:none}
-    .hero .anim{opacity:1}
-    html{scroll-behavior:auto}
-  }
-  @media (min-width: 1200px) {
-    body {
-      zoom: 1.5;
-    }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c1f1c">
+  <meta name="description" content="김가람 · 문제를 정의하고, 해결하는 개발자. 업무 자동화, 서비스와 게임을 개발한 경험을 소개합니다.">
+  <title>김가람 | AI Native Software Engineer</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./project-art.css">
+  <link rel="stylesheet" href="./intro.css">
+  <link rel="stylesheet" href="./experience.css">
+  <link rel="stylesheet" href="./reference-theme.css">
+  <link rel="stylesheet" href="./portfolio-visuals.css">
+  <script src="./content.js" defer></script>
+  <script src="./app.js" defer></script>
+  <script src="./motion-loop.js" defer></script>
 </head>
 <body>
-
-  <nav>
-    <div class="wrap">
-      <a class="name" href="#top" data-i18n="name">Garam Kim</a>
-      <div class="tools">
-        <a class="iconbtn" href="https://github.com/Kgr0831" target="_blank" rel="noopener" aria-label="GitHub"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-        <a class="iconbtn" href="https://kgr0831.tistory.com" target="_blank" rel="noopener" aria-label="Blog"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a>
-        <a class="iconbtn" href="https://www.linkedin.com/in/kimgalam0831/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-        <a class="iconbtn" href="mailto:kimgalam0831@gmail.com" aria-label="Email"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-        <button type="button" id="langbtn" class="iconbtn langbtn" aria-label="Toggle language"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span id="langcode">EN</span></button>
-      </div>
+  <dialog class="intro" id="intro-dialog" aria-labelledby="intro-title">
+    <h2 class="sr-only" id="intro-title" data-ko="김가람 포트폴리오" data-en="Garam Kim — portfolio">김가람 포트폴리오</h2>
+    <div class="intro-shutters" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="intro-stage" aria-hidden="true">
+      <div class="intro-axis"></div>
+      <div class="intro-frame"><span></span><span></span><span></span><span></span></div>
+      <div class="intro-orbit"></div>
+      <div class="intro-word intro-word-one"><span>IDEAS<span class="intro-dot">.</span></span></div>
+      <div class="intro-word intro-word-two"><span>INTO<span class="intro-dot">.</span></span></div>
+      <div class="intro-word intro-word-three"><span>REALITY<span class="intro-dot">.</span></span></div>
+      <div class="intro-signature"><span>Garam Kim<span class="intro-dot">.</span></span></div>
     </div>
-  </nav>
+  </dialog>
+  <script src="./intro.js"></script>
+  <a class="skip-link" href="#main" data-ko="본문으로 이동" data-en="Skip to content">본문으로 이동</a>
 
-  <header class="hero" id="top">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="wrap">
-      <div class="hero-banner-img anim" tabindex="0">
-        <img src="assets/banner.png?v=2" alt="Garam Kim Profile Banner">
-      </div>
-      <div class="eyebrow anim"><span class="pulse"></span> <span data-i18n="sb_status">open to · AI R&amp;D</span></div>
-      <h1 class="title anim" data-i18n="hero_title"><span class="u-unreal">Unreal</span> AI,<br><span class="u-unity">Unity</span> Experience</h1>
-      <p class="subtitle anim" data-i18n="hero_sub">Making AI feel real. A software engineer turning game-dev fundamentals into AI research.</p>
-      <p class="gloss anim" data-i18n="hero_gloss">// Making distant AI familiar to everyone.</p>
-      <div class="cta anim">
-        <a class="btn primary" href="https://www.miricanvas.com/v2/ko/design2/v/ef3be32a-b2e9-49ec-af6e-994dce526871" target="_blank" rel="noopener"><span data-i18n="btn_portfolio">View Portfolio</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-        <a class="btn" href="Garam_Kim_CV.pdf" target="_blank" rel="noopener"><span data-i18n="btn_cv">View CV</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-        <a class="btn" href="https://kgr0831.tistory.com" target="_blank" rel="noopener"><span data-i18n="btn_blog">Blog</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-        <a class="btn" href="mailto:kimgalam0831@gmail.com" data-i18n="btn_contact">Get in touch</a>
-      </div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="김가람 — 처음으로" data-ko-label="김가람 — 처음으로" data-en-label="Garam Kim — home">Garam Kim</a>
+    <nav class="desktop-nav" aria-label="주 메뉴" data-ko-label="주 메뉴" data-en-label="Main navigation">
+      <a href="#work" data-ko="프로젝트" data-en="Projects">프로젝트</a><a href="#about" data-ko="소개" data-en="About">소개</a><a href="#expertise" data-ko="개발 방식" data-en="Approach">개발 방식</a><a href="#career" data-ko="이력" data-en="Experience">이력</a>
+    </nav>
+    <div class="header-actions">
+      <button class="language-button" id="language-button" aria-label="Switch to English">EN</button>
+      <a class="nav-contact" href="#contact"><span data-ko="연락하기" data-en="Contact">연락하기</span> <span aria-hidden="true">↗</span></a>
+      <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="mobile-nav" aria-label="메뉴 열기"><span></span><span></span></button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="모바일 메뉴" data-ko-label="모바일 메뉴" data-en-label="Mobile navigation" hidden><a href="#work" data-ko="프로젝트" data-en="Projects">프로젝트</a><a href="#about" data-ko="소개" data-en="About">소개</a><a href="#expertise" data-ko="개발 방식" data-en="Approach">개발 방식</a><a href="#career" data-ko="이력" data-en="Experience">이력</a><a href="#contact" data-ko="연락처" data-en="Contact">연락처</a></nav>
   </header>
 
-  <main>
-  <section>
-    <div class="wrap">
-      <div class="label" data-reveal data-i18n="lbl_about">about</div>
-      <p class="lede" data-reveal data-i18n="about_lede">Fundamentals forged at <strong>Krafton Jungle</strong>, plus the execution to absorb unfamiliar tech <strong>top-down</strong> — prototype fast by pairing with AI agents, then verify by hand. A long-time game developer at heart, now aiming to help make AI <strong>more familiar and intuitive</strong>.</p>
-      <div class="facts" data-reveal>
-        <div class="fact"><span class="k" data-i18n="fk_goal">goal</span><span class="v" data-i18n="fv_goal">AI Researcher (AI R&amp;D), at the intersection of games and AI</span></div>
-        <div class="fact"><span class="k" data-i18n="fk_learning">learning</span><span class="v" data-i18n="fv_learning">Mesa · LangGraph · Building RAG &amp; pipeline utilization</span></div>
-        <div class="fact"><span class="k" data-i18n="fk_open">open to</span><span class="v" data-i18n="fv_open">AI Research · AI FDE · AI Native</span></div>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="label" data-reveal data-i18n="lbl_focus">research focus</div>
-      <h2 data-reveal data-i18n="focus_h2">Where I want to push.</h2>
-      <div class="grid3" data-reveal-group>
-        <div class="card" data-reveal tabindex="0"><span class="n">01</span><h3 data-i18n="f1_t">LLM &amp; SLM optimization</h3><p data-i18n="f1_d">Squeezing quality and cost out of large and small language models alike.</p></div>
-        <div class="card" data-reveal tabindex="0"><span class="n">02</span><h3 data-i18n="f2_t">Heterogeneous multi-agent systems</h3><p data-i18n="f2_d">Heterogeneous models cooperating to reduce hallucination and minimize API cost.</p></div>
-        <div class="card" data-reveal tabindex="0"><span class="n">03</span><h3 data-i18n="f3_t">On-device LM compression</h3><p data-i18n="f3_d">Focusing on lightweight model research so language models run fast and efficiently on-device.</p></div>
-      </div>
-    </div>
-  </section>
+  <main id="main">
 
-  <section>
-    <div class="wrap">
-      <div class="label" data-reveal data-i18n="lbl_stack">stack</div>
-      <h2 data-reveal data-i18n="stack_h2">What I build with.</h2>
-
-      <div class="chgroup" data-reveal>
-        <div class="chlabel" data-i18n="cl_lang">languages</div>
-        <div class="tiles">
-          <div class="tile python" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg><span class="tlabel">Python</span></div>
-          <div class="tile csharp" tabindex="0"><img class="bi" src="assets/csharp.png" alt="C#"><span class="tlabel">C#</span></div>
-          <div class="tile c" tabindex="0"><img class="bi" src="assets/c.png" alt="C"><span class="tlabel">C</span></div>
-          <div class="tile typescript" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg><span class="tlabel">TypeScript</span></div>
-          <div class="tile java" tabindex="0"><svg class="bi" viewBox="0 0 128 128" fill="currentColor" aria-hidden="true"><path d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/><path d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468z"/><path d="M51.849 71.045c.983 2.651 3.52 4.606 5.753 4.417 2.235-.19 3.255-2.5 2.271-5.151-1.002-2.651-3.692-4.509-5.928-4.32-2.236.19-3.08 2.403-2.096 5.054zm16.514 10.654c1.171.391 2.222.091 2.345-.674.123-.765-.724-1.63-1.895-2.021-1.172-.39-2.223-.092-2.346.673-.122.766.725 1.63 1.896 2.022zm-3.83-16.744c-12.016 1.704-20.979 6.828-20.979 6.828s13.435-5.594 25.109-5.263c11.673.332 23.36 5.253 23.36 5.253s-12.28-7.502-27.49-6.818zm14.73 3.659s4.891 1.721 8.868.51c3.978-1.21 6.549-3.906 6.549-3.906s-4.686 2.378-8.862 2.259c-4.175-.119-6.555-1.801-6.555-1.801z"/><path d="M80.467 86.883c-1.579.52-5.719 1.411-9.988 1.488-8.232.149-14.734-2.868-20.198-5.328-5.736-2.584-12.441-5.132-20.893-2.128-4.992 1.774-8.854 4.887-8.854 4.887s5.111-2.999 10.231-3.916c6.012-1.077 12.355.617 17.653 3.036 5.922 2.705 12.569 5.869 21.059 4.394 6.744-1.17 11.238-3.975 11.238-3.975s.969.9-.248 1.542zm-53.18-28.73s12.569-4.857 28.535-3.033c0 0-14.022-2.115-25.109 1.214 0 0-4.043 1.343-6.56 2.825l3.134-1.006z"/></svg><span class="tlabel">Java</span></div>
-          <div class="tile go" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.082.07-.117.07zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.328c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07zm2.828 1.075c-.047 0-.059-.035-.035-.07l.163-.292c.023-.035.07-.07.117-.07h2.337c.047 0 .07.035.07.082l-.023.28c0 .047-.047.082-.082.082zm12.129-2.36c-.736.187-1.239.327-1.963.514-.176.046-.187.058-.34-.117-.174-.199-.303-.327-.548-.444-.737-.362-1.45-.257-2.115.175-.795.514-1.204 1.274-1.192 2.22.011.935.654 1.706 1.577 1.835.795.105 1.46-.175 1.987-.77.105-.13.198-.27.315-.434H10.47c-.245 0-.304-.152-.222-.35.152-.362.432-.97.596-1.274a.315.315 0 01.292-.187h4.253c-.023.316-.023.631-.07.947a4.983 4.983 0 01-.958 2.29c-.841 1.11-1.94 1.8-3.33 1.986-1.145.152-2.209-.07-3.143-.77-.865-.655-1.356-1.52-1.484-2.595-.152-1.274.222-2.419.993-3.424.83-1.086 1.928-1.776 3.272-2.02 1.098-.2 2.15-.07 3.096.571.62.41 1.063.97 1.356 1.648.07.105.023.164-.117.2m3.868 6.461c-1.064-.024-2.034-.328-2.852-1.029a3.665 3.665 0 01-1.262-2.255c-.21-1.32.152-2.489.947-3.529.853-1.122 1.881-1.706 3.272-1.95 1.192-.21 2.314-.095 3.33.595.923.63 1.496 1.484 1.648 2.605.198 1.578-.257 2.863-1.344 3.962-.771.783-1.718 1.273-2.805 1.495-.315.06-.63.07-.934.106zm2.78-4.72c-.011-.153-.011-.27-.034-.387-.21-1.157-1.274-1.81-2.384-1.554-1.087.245-1.788.935-2.045 2.033-.21.912.234 1.835 1.075 2.21.643.28 1.285.244 1.905-.07.923-.48 1.425-1.228 1.484-2.233z"/></svg><span class="tlabel">Go</span></div>
-          <div class="tile asm" tabindex="0"><span class="glyph">ASM</span><span class="tlabel">Assembly</span></div>
-          <div class="tile wgsl" tabindex="0"><span class="glyph">WGSL</span><span class="tlabel">WGSL</span></div>
+    <section class="welcome section-shell" id="top" aria-labelledby="hero-title">
+      <div class="welcome-story">
+        <p class="welcome-name" data-ko="김가람" data-en="Garam Kim">김가람</p>
+        <h1 id="hero-title">
+          <span data-ko="문제를 정의하고," data-en="Defining problems.">문제를 정의하고,</span>
+          <span data-ko="해결하는 개발자." data-en="Building solutions.">해결하는 개발자.</span>
+        </h1>
+        <p class="welcome-description" data-ko="해결할 문제를 먼저 정하고, 필요한 기술을 선택합니다." data-en="I start by defining the problem, then choose the technology it needs.">해결할 문제를 먼저 정하고, 필요한 기술을 선택합니다.</p>
+        <div class="welcome-documents">
+          <a class="text-link welcome-resume" href="./CV.pdf" target="_blank" rel="noopener"><span>CV.pdf</span><span aria-hidden="true">↗</span></a>
+          <a class="text-link welcome-resume" href="./portfolio.pdf" target="_blank" rel="noopener"><span>portfolio.pdf</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
-
-      <div class="chgroup" data-reveal>
-        <div class="chlabel" data-i18n="cl_fw">frameworks &amp; libraries</div>
-        <div class="tiles">
-          <div class="tile pytorch" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></svg><span class="tlabel">PyTorch</span></div>
-          <div class="tile cuda" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></svg><span class="tlabel">CUDA</span></div>
-          <div class="tile unity" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg><span class="tlabel">Unity</span></div>
-          <div class="tile nextjs" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></svg><span class="tlabel">Next.js</span></div>
-          <div class="tile nodejs" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z"/></svg><span class="tlabel">Node.js</span></div>
-          <div class="tile pixijs" tabindex="0"><img class="bi" src="assets/pixijs.png" alt="PixiJS"><span class="tlabel">PixiJS</span></div>
-          <div class="tile webgpu" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m0 4.784 8.652 14.432 8.652-14.432zm22.032.145L20.07 8.202H24L22.032 4.93zm-4.46 0-4.192 6.993h8.384zm2.498 3.575 1.962 3.273L24 8.504zm-6.69 3.72 4.192 6.992 4.192-6.992z"/></svg><span class="tlabel">WebGPU</span></div>
-        </div>
+      <div class="welcome-art" data-welcome-art data-continuous-motion aria-hidden="true">
+        <svg viewBox="0 0 620 560" fill="none">
+          <defs>
+            <radialGradient id="plane-haze"><stop stop-color="#dbe3ef" stop-opacity=".45"/><stop offset="1" stop-color="#f5f5ef" stop-opacity="0"/></radialGradient>
+            <linearGradient id="plane-lilac" x1="210" y1="90" x2="415" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="#c7c9e9"/><stop offset="1" stop-color="#a7b6d8"/></linearGradient>
+            <linearGradient id="plane-blue" x1="100" y1="215" x2="420" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#87a7c8"/><stop offset="1" stop-color="#6289b3"/></linearGradient>
+            <linearGradient id="plane-cream" x1="320" y1="250" x2="495" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="#f6f0e5"/><stop offset="1" stop-color="#e3ddce"/></linearGradient>
+          </defs>
+          <ellipse cx="310" cy="290" rx="274" ry="252" fill="url(#plane-haze)"/>
+          <g class="color-plane plane-back"><rect x="196" y="86" width="230" height="344" rx="108" fill="url(#plane-lilac)" fill-opacity=".9"/></g>
+          <g class="color-plane plane-main"><path d="M183 192H360C407 192 436 224 436 269V365C436 412 402 442 357 442H180C133 442 102 409 102 364V270C102 225 133 192 183 192Z" fill="url(#plane-blue)" fill-opacity=".82"/></g>
+          <g class="color-plane plane-front"><path d="M337 243H447C481 243 503 267 503 301V396C503 431 479 453 445 453H337C302 453 280 429 280 395V300C280 266 303 243 337 243Z" fill="url(#plane-cream)" fill-opacity=".86"/></g>
+        </svg>
       </div>
-
-      <div class="chgroup" data-reveal>
-        <div class="chlabel" data-i18n="cl_infra">infra &amp; ai agents</div>
-        <div class="tiles">
-          <div class="tile aws" tabindex="0"><img class="bi" src="assets/aws.png" alt="AWS"><span class="tlabel">AWS</span></div>
-          <div class="tile vercel" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 1.608 12 20.784H0Z"/></svg><span class="tlabel">Vercel</span></div>
-          <div class="tile render" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.263.007c-3.121-.147-5.744 2.109-6.192 5.082-.018.138-.045.272-.067.405-.696 3.703-3.936 6.507-7.827 6.507-1.388 0-2.691-.356-3.825-.979a.2024.2024 0 0 0-.302.178V24H12v-8.999c0-1.656 1.338-3 2.987-3h2.988c3.382 0 6.103-2.817 5.97-6.244-.12-3.084-2.61-5.603-5.682-5.75"/></svg><span class="tlabel">Render</span></div>
-          <div class="tile claude" tabindex="0"><img class="bi" src="assets/claude.png?v=2" alt="Claude Code"><span class="tlabel">Claude Code</span></div>
-          <div class="tile github" tabindex="0"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.819-.26.819-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span class="tlabel">GitHub</span></div>
-          <div class="tile antigravity" tabindex="0"><img class="bi" src="assets/antigravity.png" alt="Antigravity"><span class="tlabel">Antigravity</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="label" data-reveal data-i18n="lbl_work">selected work</div>
-      <h2 data-reveal data-i18n="work_h2">Things I shipped.</h2>
-      <div class="work" data-reveal-group>
-        <!-- Project 1: Triniacle (Game Dev Foundations) -->
-        <div class="witem feature" data-reveal tabindex="0">
-          <div>
-            <img class="plogo" style="height: 63px;" src="assets/triniacle.png" alt="Triniacle logo">
-            <span class="ptag" data-i18n="uni_tag">Unitrio · ongoing</span>
-            <p data-i18n="uni_p">Triniacle — a 2D top-down action-RPG sandbox, built with a five-person indie team (three engineers, one designer, one planner). The game I grew up wanting to make.</p>
-            <div class="meta" data-i18n="uni_meta">role · leader &amp; gameplay &amp; rendering programming &nbsp;|&nbsp; C#, Unity</div>
-            <div class="wlinks">
-              <a class="link" href="https://github.com/kgr0831/UniTrio-Game-2026" target="_blank" rel="noopener"><span data-i18n="lbl_github">github</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-            </div>
-          </div>
-          <div class="statbox">
-            <div class="sh" data-i18n="uni_sh">indie team size</div>
-            <div class="statline" data-i18n="uni_stat"><span class="to">5</span><span class="unit">members</span></div>
-            <div class="delta" data-i18n="uni_delta">built rendering &amp; physics pipelines from scratch</div>
-          </div>
-        </div>
-
-        <!-- Project 2: EUM (High-Performance Graphics & WebGPU) -->
-        <div class="witem feature" data-reveal tabindex="0">
-          <div>
-            <img class="plogo" src="assets/eum.png" alt="EUM logo">
-            <span class="ptag" data-i18n="eum_tag">2025.12 — 2026.01</span>
-            <p data-i18n="eum_p">A browser-based AI video-meeting platform with real-time interpretation and a WebGPU infinite-canvas whiteboard. I owned the whiteboard full-stack: I replaced heavy third-party libraries with a custom renderer on PixiJS v8 / WebGPU, handing the heavy graphics work to the GPU to kill the single-thread CPU bottleneck. The drawing pipeline combines a One Euro Filter, the Douglas–Peucker algorithm, and Bézier interpolation for smooth, drop-free lines.</p>
-            <div class="meta" data-i18n="eum_meta">role · full-stack &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js</div>
-            <div class="wlinks">
-              <a class="link" href="https://github.com/jb0xyz/EUM" target="_blank" rel="noopener"><span data-i18n="lbl_github">github</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-              <a class="link" href="https://jungle.krafton.com/news/103" target="_blank" rel="noopener"><span data-i18n="eum_link">demo &amp; write-up</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-            </div>
-          </div>
-          <div class="statbox">
-            <div class="sh" data-i18n="eum_sh">avg frame rate · 60Hz</div>
-            <div class="statline" data-i18n="eum_stat"><span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span></div>
-            <div class="delta" data-i18n="eum_delta">+147% · smooth, drop-free drawing</div>
-          </div>
-        </div>
-
-        <!-- Project 3: HELIX (AI Agents & Optimization) -->
-        <div class="witem feature" data-reveal tabindex="0">
-          <div>
-            <img class="plogo small" src="assets/helix.png" alt="HELIX logo">
-            <span class="ptag" data-i18n="helix_tag">2026.04</span>
-            <p data-i18n="helix_p">A heterogeneous multi-agent collaboration system built to reduce model hallucination while minimizing API cost.</p>
-            <div class="meta" data-i18n="helix_meta">solo developer &nbsp;|&nbsp; LangGraph · LlamaIndex · FastAPI · Vercel</div>
-            <div class="wlinks">
-              <a class="link" href="https://github.com/kgr0831/HELIX" target="_blank" rel="noopener"><span data-i18n="lbl_github">github</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-              <a class="link" href="https://helix-ssu.vercel.app/" target="_blank" rel="noopener"><span data-i18n="helix_link">live</span> <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-            </div>
-          </div>
-          <div class="statbox">
-            <div class="sh" data-i18n="helix_sh">api cost reduction</div>
-            <div class="statline" data-i18n="helix_stat"><span class="to">1.47</span><span class="unit">x cheaper</span></div>
-            <div class="delta" data-i18n="helix_delta">model routing &amp; caching</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="label" data-reveal data-i18n="lbl_path">path</div>
-      <h2 data-reveal data-i18n="path_h2">From game dev to AI.</h2>
-      <div class="tl" data-reveal-group>
-        <div class="trow" data-reveal>
-          <span class="plate"><img src="assets/gamehs.svg" alt="Korea Game Science High School"></span>
-          <div><div class="when">2023.03 — 2026.02</div><div class="what" data-i18n="e1_what">Korea Game Science High School</div><div class="sub" data-i18n="e1_sub">Computer Game Development · Cohort 20</div></div>
-        </div>
-        <div class="trow" data-reveal>
-          <span class="plate"><img src="assets/jungle.png" alt="Krafton Jungle"></span>
-          <div><div class="when">2025.09 — 2026.01</div><div class="what" data-i18n="e2_what">Krafton Jungle — SW·AI Lab</div><div class="sub" data-i18n="e2_sub">SW-AI Lab · Cohort 11</div></div>
-        </div>
-        <div class="trow" data-reveal>
-          <span class="plate"><img src="assets/soongsil.svg" alt="Soongsil University"></span>
-          <div><div class="when">2026.03 — present</div><div class="what" data-i18n="e3_what">Soongsil University</div><div class="sub" data-i18n="e3_sub">B.E. in AI Software · Class of '26</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+    <section class="work section-shell" id="work" aria-labelledby="work-title"><h2 class="work-heading" id="work-title" data-ko="프로젝트" data-en="Projects">프로젝트</h2><div class="project-grid"><article class="project" id="project-eum" aria-labelledby="eum-name"><div class="project-art photo-art photo-eum"><div class="photo-mat"><img src="./assets/eum-whiteboard-original.png" class="project-photo" alt="실시간 화이트보드 화면" width="960" height="960" loading="lazy" decoding="async" data-ko-alt="실시간 화이트보드 화면" data-en-alt="Real-time whiteboard"></div><span class="art-caption" data-ko="실시간 화이트보드 화면" data-en="Real-time whiteboard">실시간 화이트보드 화면</span></div><div class="project-body"><div class="project-brand"><span class="brand-mark logo-dark"><img src="./assets/icons/eum.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><h3 class="project-name" id="eum-name" data-ko="EUM" data-en="EUM">EUM</h3></div><button class="project-open" data-project="eum" aria-haspopup="dialog" aria-controls="project-dialog" aria-describedby="eum-summary"><span class="project-summary-title" data-ko="느려진 협업 화면을 부드럽게" data-en="Making collaboration feel responsive">느려진 협업 화면을 부드럽게</span><span class="project-arrow" aria-hidden="true">↗</span></button><p class="project-summary" id="eum-summary" data-ko="화상회의와 드로잉을 함께 쓸 때의 렌더링 병목을 개선했습니다." data-en="Resolved the rendering bottleneck when video meetings and drawing run together.">화상회의와 드로잉을 함께 쓸 때의 렌더링 병목을 개선했습니다.</p><p class="project-result" data-ko="23.7 → 58.7 FPS" data-en="23.7 → 58.7 FPS">23.7 → 58.7 FPS</p><p class="project-role" data-ko="화이트보드 풀스택 개발 · 5인 팀" data-en="Whiteboard full-stack developer · Team of five">화이트보드 풀스택 개발 · 5인 팀</p><div class="project-footer"><div class="tool-chips"><span class="tool-chip"><img src="./assets/icons/webgpu.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>WebGPU</span></span><span class="tool-chip"><img src="./assets/icons/pixijs.png" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>PixiJS v8</span></span></div><span class="project-detail-label" aria-hidden="true" data-ko="자세히 보기" data-en="Details">자세히 보기</span></div></div></article><article class="project" id="project-moai" aria-labelledby="moai-name"><div class="project-art moai-art brand-network" aria-hidden="true">
+            <svg class="moai-network" viewBox="0 0 540 310">
+              <g class="network-lines" fill="none" stroke="currentColor" stroke-width="1"><path d="M270 155L126 74 116 234 270 155 414 74 426 234 270 155 270 28M126 74L414 74 426 234 116 234 126 74M270 155L270 284"/><circle cx="270" cy="155" r="119" stroke-dasharray="3 8"/></g>
+              <g class="network-flow" fill="none" stroke="#58701c" stroke-width="3" stroke-linecap="round"><path class="network-pulse pulse-one" pathLength="1" d="M126 74L270 155 426 234"/><path class="network-pulse pulse-two" pathLength="1" d="M414 74L270 155 116 234"/></g>
+              <g class="network-nodes"><circle cx="126" cy="74" r="29"/><circle cx="414" cy="74" r="29"/><circle cx="116" cy="234" r="29"/><circle cx="426" cy="234" r="29"/><circle cx="270" cy="28" r="10"/><circle cx="270" cy="284" r="10"/></g>
+              <g><image href="./assets/ui/archive.svg" x="111" y="59" width="30" height="30"/><image href="./assets/ui/filter.svg" x="399" y="59" width="30" height="30"/><image href="./assets/ui/chat.svg" x="101" y="219" width="30" height="30"/><image href="./assets/ui/check.svg" x="411" y="219" width="30" height="30"/></g>
+              <g class="network-core"><rect x="226" y="111" width="88" height="88" rx="12" fill="#f0f1eb"/><image href="./assets/icons/moai.png" x="233" y="118" width="74" height="74"/></g>
+            </svg>
+            <span class="art-caption" data-ko="기록 · 조회 · 후속 업무" data-en="Records · Queries · Follow-up">기록 · 조회 · 후속 업무</span>
+          </div><div class="project-body"><div class="project-brand"><span class="brand-mark logo-light"><img src="./assets/icons/moai.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><h3 class="project-name" id="moai-name" data-ko="MOAI" data-en="MOAI">MOAI</h3></div><button class="project-open" data-project="moai" aria-haspopup="dialog" aria-controls="project-dialog" aria-describedby="moai-summary"><span class="project-summary-title" data-ko="업무 현황을 정확히 확인하도록" data-en="A consistent view of ongoing work">업무 현황을 정확히 확인하도록</span><span class="project-arrow" aria-hidden="true">↗</span></button><p class="project-summary" id="moai-summary" data-ko="검색 조건을 바꿔도 현재 결과를 유지하고, 통계와 목록의 업무 분류 기준을 맞췄습니다." data-en="Kept results consistent after filter changes and aligned the status rules used by lists and totals.">검색 조건을 바꿔도 현재 결과를 유지하고, 통계와 목록의 업무 분류 기준을 맞췄습니다.</p><p class="project-role" data-ko="AX Engineer 인턴 · 2026.09 — 현재" data-en="AX Engineer intern · Sep 2026 — Present">AX Engineer 인턴 · 2026.09 — 현재</p><div class="project-footer"><div class="tool-chips"><span class="tool-chip"><img src="./assets/icons/nextjs.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Next.js</span></span></div><span class="project-detail-label" aria-hidden="true" data-ko="자세히 보기" data-en="Details">자세히 보기</span></div></div></article><article class="project" id="project-rolai" aria-labelledby="rolai-name"><div class="project-art photo-art photo-rolai"><div class="photo-mat"><img src="./assets/rol-poster.jpg" class="project-photo" alt="게임 플레이 영상의 한 장면" width="960" height="960" loading="lazy" decoding="async" data-ko-alt="게임 플레이 영상의 한 장면" data-en-alt="A frame from the gameplay video"></div><span class="art-caption" data-ko="게임 플레이 영상의 한 장면" data-en="A frame from the gameplay video">게임 플레이 영상의 한 장면</span></div><div class="project-body"><div class="project-brand"><span class="brand-mark logo-dark"><img src="./assets/icons/rol.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><h3 class="project-name" id="rolai-name" data-ko="Remnents of Light / ROLAI" data-en="Remnents of Light / ROLAI">Remnents of Light / ROLAI</h3></div><button class="project-open" data-project="rolai" aria-haspopup="dialog" aria-controls="project-dialog" aria-describedby="rolai-summary"><span class="project-summary-title" data-ko="게임 제작을 원격 개발로 확장" data-en="Taking game development beyond the desk">게임 제작을 원격 개발로 확장</span><span class="project-arrow" aria-hidden="true">↗</span></button><p class="project-summary" id="rolai-summary" data-ko="직접 만든 게임을 배포하고, PC 앞에 없어도 Discord에서 구현·검증을 요청하는 흐름을 만들었습니다." data-en="Released a game and built a Discord workflow to request implementation and verification away from the PC.">직접 만든 게임을 배포하고, PC 앞에 없어도 Discord에서 구현·검증을 요청하는 흐름을 만들었습니다.</p><p class="project-role" data-ko="개발·기획·아트 · 원격 개발 루프 구축" data-en="Development, design, art · Remote development loop">개발·기획·아트 · 원격 개발 루프 구축</p><div class="project-footer"><div class="tool-chips"><span class="tool-chip"><img src="./assets/icons/unity.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Unity</span></span></div><span class="project-detail-label" aria-hidden="true" data-ko="자세히 보기" data-en="Details">자세히 보기</span></div></div></article></div><div class="project-library" data-tab-group><h3 id="library-title" data-ko="다른 프로젝트" data-en="More projects">다른 프로젝트</h3><div class="library-tabs" role="tablist" aria-labelledby="library-title"><button type="button" id="library-tab-automation" role="tab" aria-selected="true" aria-controls="library-panel-automation" tabindex="0" data-ko="업무 자동화" data-en="Automation">업무 자동화</button><button type="button" id="library-tab-systems" role="tab" aria-selected="false" aria-controls="library-panel-systems" tabindex="-1" data-ko="기술·연구" data-en="Systems &amp; research">기술·연구</button><button type="button" id="library-tab-games" role="tab" aria-selected="false" aria-controls="library-panel-games" tabindex="-1" data-ko="게임·제작" data-en="Games &amp; production">게임·제작</button><button type="button" id="library-tab-services" role="tab" aria-selected="false" aria-controls="library-panel-services" tabindex="-1" data-ko="서비스·AI" data-en="Services &amp; AI">서비스·AI</button></div><div class="library-panel" id="library-panel-automation" role="tabpanel" aria-labelledby="library-tab-automation" tabindex="0"><button class="library-row" data-project="gammaru" aria-haspopup="dialog" aria-controls="project-dialog"><span class="library-visual visual-gammaru"><img src="./assets/gammaru-site.png" class="library-photo" alt="" width="600" height="600" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/gammaru.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="겜마루 웹 · 데일리 브리프" data-en="Gammaru Web · Daily Brief">겜마루 웹 · 데일리 브리프</strong></span><span class="library-summary" data-ko="매일 찾던 지원 정보를 보고서 보관함과 Discord 알림으로 연결했습니다." data-en="Connected daily funding research to a report archive and Discord notifications.">매일 찾던 지원 정보를 보고서 보관함과 Discord 알림으로 연결했습니다.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="abstraction" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-abstraction logo-light" aria-hidden="true"><img src="./assets/ui/chat.svg" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/ui/chat.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="Abstraction Bot" data-en="Abstraction Bot">Abstraction Bot</strong></span><span class="library-summary" data-ko="대화에 묻히는 논의와 결정을 모아 요약하고 기록합니다." data-en="Collects, summarizes, and records decisions buried in conversations.">대화에 묻히는 논의와 결정을 모아 요약하고 기록합니다.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="golf" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-golf logo-light" aria-hidden="true"><img src="./assets/ui/grid.svg" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/ui/grid.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="무인 스크린골프 CMS" data-en="Unstaffed Golf CMS">무인 스크린골프 CMS</strong></span><span class="library-summary" data-ko="예약·기기·결제를 관리하고 거래별 원장으로 정산 근거를 추적." data-en="Managed bookings, devices, and payments with transaction-ledger-based settlement.">예약·기기·결제를 관리하고 거래별 원장으로 정산 근거를 추적.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="paperbridge" aria-haspopup="dialog" aria-controls="project-dialog"><span class="library-visual visual-paperbridge"><img src="./assets/paperbridge-reader.png" class="library-photo" alt="" width="600" height="600" loading="lazy" decoding="async"><span class="image-note" data-ko="샘플 문서 화면" data-en="Sample document">샘플 문서 화면</span></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/paperbridge-wordmark.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="PaperBridge" data-en="PaperBridge">PaperBridge</strong></span><span class="library-summary" data-ko="논문의 선택 문맥을 AI 질문으로 전달하고 리더 안에서 근거를 확인." data-en="Connected selected paper passages to AI questions and source checking inside the reader.">논문의 선택 문맥을 AI 질문으로 전달하고 리더 안에서 근거를 확인.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button></div><div class="library-panel" id="library-panel-systems" role="tabpanel" aria-labelledby="library-tab-systems" tabindex="0" hidden><button class="library-row" data-project="pintos" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-pintos logo-light" aria-hidden="true"><img src="./assets/icons/jungle.png" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/jungle.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="PintOS" data-en="PintOS">PintOS</strong></span><span class="library-summary" data-ko="기부 관계와 락 해제를 재설계해 경쟁 상태를 해결했습니다." data-en="Redesigned donation tracking and lock release to resolve race conditions.">기부 관계와 락 해제를 재설계해 경쟁 상태를 해결했습니다.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="simulation" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-simulation logo-light" aria-hidden="true"><img src="./assets/icons/soongsil.svg" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/soongsil.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="평성시 사회 시뮬레이션" data-en="Pyongsong Social Simulation">평성시 사회 시뮬레이션</strong></span><span class="library-summary" data-ko="ABM·LLM 연구의 에이전트 구조와 기억·성찰·계획 루프 구현." data-en="Built agent structures and memory, reflection, and planning loops for ABM and LLM research.">ABM·LLM 연구의 에이전트 구조와 기억·성찰·계획 루프 구현.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button></div><div class="library-panel" id="library-panel-games" role="tabpanel" aria-labelledby="library-tab-games" tabindex="0" hidden><button class="library-row" data-project="spell" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-spell logo-light" aria-hidden="true"><img src="./assets/ui/game.svg" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/ui/game.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="Spell Thrower" data-en="Spell Thrower">Spell Thrower</strong></span><span class="library-summary" data-ko="1:1 대전의 멀티플레이·매칭·플레이 UI 구현과 인증·재시도 문제 수정." data-en="Built multiplayer, matchmaking, and gameplay UI, fixing authentication and retry issues.">1:1 대전의 멀티플레이·매칭·플레이 UI 구현과 인증·재시도 문제 수정.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="planet" aria-haspopup="dialog" aria-controls="project-dialog"><span class="library-visual visual-planet"><img src="./assets/planet-concept.jpg" class="library-photo" alt="" width="600" height="600" loading="lazy" decoding="async"><span class="image-note" data-ko="콘셉트 스케치" data-en="Concept sketch">콘셉트 스케치</span></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/ui/game.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="PlanetGame" data-en="PlanetGame">PlanetGame</strong></span><span class="library-summary" data-ko="은하·카메라·튜토리얼·시네마틱을 하나의 플레이 흐름으로 구성." data-en="Connected galaxy exploration, cameras, tutorials, and cinematics into a playable flow.">은하·카메라·튜토리얼·시네마틱을 하나의 플레이 흐름으로 구성.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="triniacle" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-triniacle logo-dark" aria-hidden="true"><img src="./assets/icons/triniacle.png" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-dark"><img src="./assets/icons/triniacle.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="Unitrio / Triniacle" data-en="Unitrio / Triniacle">Unitrio / Triniacle</strong></span><span class="library-summary" data-ko="팀 리딩과 함께 보스·몬스터·전투 스킬·튜토리얼을 구현했습니다." data-en="Led the team and implemented bosses, monsters, combat skills, and tutorials.">팀 리딩과 함께 보스·몬스터·전투 스킬·튜토리얼을 구현했습니다.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="sprite" aria-haspopup="dialog" aria-controls="project-dialog"><span class="brand-stage library-visual stage-sprite logo-light" aria-hidden="true"><img src="./assets/icons/sprite.svg" class="stage-logo" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/sprite.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="SpriteAIMaker" data-en="SpriteAIMaker">SpriteAIMaker</strong></span><span class="library-summary" data-ko="캐릭터 생성부터 방향별 애니메이션·프레임 정규화·Unity 출력까지 연결." data-en="Connected character generation, directional animation, frame normalization, and Unity export.">캐릭터 생성부터 방향별 애니메이션·프레임 정규화·Unity 출력까지 연결.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button></div><div class="library-panel" id="library-panel-services" role="tabpanel" aria-labelledby="library-tab-services" tabindex="0" hidden><button class="library-row" data-project="duduri" aria-haspopup="dialog" aria-controls="project-dialog"><span class="library-visual visual-duduri"><img src="./assets/dudri-studio-original.png" class="library-photo" alt="" width="600" height="600" loading="lazy" decoding="async"></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/dudri.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="두드리" data-en="Duduri">두드리</strong></span><span class="library-summary" data-ko="경험을 자기 PR 문서와 커피챗 기회로 연결했습니다. 연합 경진대회 대상." data-en="Connected experience to self-introductions and coffee chats. Grand prize at a joint university competition.">경험을 자기 PR 문서와 커피챗 기회로 연결했습니다. 연합 경진대회 대상.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button><button class="library-row" data-project="vfriend" aria-haspopup="dialog" aria-controls="project-dialog"><span class="library-visual visual-vfriend"><img src="./assets/vfriend-star-mender.png" class="library-photo" alt="" width="600" height="600" loading="lazy" decoding="async"><span class="image-note" data-ko="프로토타입 일러스트" data-en="Prototype illustration">프로토타입 일러스트</span></span><span class="library-copy"><span class="library-brand"><span class="brand-mark logo-light"><img src="./assets/icons/vfriend.svg" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong  data-ko="Virtual Friend" data-en="Virtual Friend">Virtual Friend</strong></span><span class="library-summary" data-ko="캐릭터 대화·기억·음성 메시지 프로토타입. 실시간 STS·LoRA는 후속 과제." data-en="Character conversation, memory, and voice-message prototypes; real-time STS and LoRA remain future work.">캐릭터 대화·기억·음성 메시지 프로토타입. 실시간 STS·LoRA는 후속 과제.</span><span class="library-arrow" aria-hidden="true">↗</span></span></button></div></div></section>
+<section class="about section-spacing" id="about" aria-labelledby="about-title"><div class="section-shell"><div class="about-layout">
+  <div class="about-identity"><h2 id="about-title" data-ko="소개" data-en="About">소개</h2><p class="about-signature" aria-hidden="true">Garam<br> Kim<span>.</span></p><p class="about-role">AI Native Software Engineer</p><div class="profile-tools"><span class="tool-chip"><img src="./assets/icons/unity.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Unity</span></span><span class="tool-chip"><img src="./assets/icons/nextjs.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Next.js</span></span></div></div>
+  <div class="about-story">
+    <h3   data-ko="문제를 먼저 찾고,
+해결할 수단을 선택합니다." data-en="Find the problem first.
+Choose the tools it needs.">문제를 먼저 찾고,
+해결할 수단을 선택합니다.</h3>
+    <p   data-ko="업무와 제작 과정의 불편에서 문제를 찾습니다. 정글에서 다진 CS 기본기와 AI를 바탕으로 필요한 기술을 익히고, 처음 발견한 문제가 해결됐는지 확인합니다." data-en="I look for problems in everyday work and production. With CS foundations from Jungle and AI, I learn what is needed and check whether the original problem has been solved.">업무와 제작 과정의 불편에서 문제를 찾습니다. 정글에서 다진 CS 기본기와 AI를 바탕으로 필요한 기술을 익히고, 처음 발견한 문제가 해결됐는지 확인합니다.</p>
+    <p class="about-current"><img src="./assets/icons/moai.png" class="current-logo" alt="" width="36" height="36" loading="lazy" decoding="async"><strong data-ko="MOAI · AX Engineer 인턴" data-en="MOAI · AX Engineer intern">MOAI · AX Engineer 인턴</strong><span data-ko="2026.09 — 현재" data-en="Sep 2026 — Present">2026.09 — 현재</span></p>
+    <div class="working-method">
+<div><svg viewBox="0 0 60 44" aria-hidden="true"><path d="M8 8h18v12H8zM34 24h18v12H34zM26 14h17v10"/></svg><h4 data-ko="문제 발견" data-en="Find the problem">문제 발견</h4><p data-ko="누가 어떤 불편을 겪는지 먼저 살핍니다." data-en="Start with who needs help and what gets in the way.">누가 어떤 불편을 겪는지 먼저 살핍니다.</p></div>
+<div><svg viewBox="0 0 60 44" aria-hidden="true"><path d="m19 10-12 12 12 12m22-24 12 12-12 12M34 5 26 39"/></svg><h4 data-ko="학습·구현" data-en="Learn &amp; build">학습·구현</h4><p data-ko="AI와 필요한 기술을 익혀 구현합니다." data-en="Learn the tools needed with AI, then build.">AI와 필요한 기술을 익혀 구현합니다.</p></div>
+<div><svg viewBox="0 0 60 44" aria-hidden="true"><path d="M48 22a18 18 0 1 1-7-14M18 21l9 9L49 8"/></svg><h4 data-ko="결과 검증" data-en="Verify">결과 검증</h4><p data-ko="실제 동작과 통과 조건을 대조합니다." data-en="Check behavior against defined pass conditions.">실제 동작과 통과 조건을 대조합니다.</p></div>
+</div></div></div></div></section>
+<section class="expertise section-shell section-spacing" id="expertise" aria-labelledby="expertise-title"><div class="experience-heading"><h2 id="expertise-title" data-ko="문제에 맞춰 쓰는 기술" data-en="Tools chosen for the problem">문제에 맞춰 쓰는 기술</h2></div><div class="skill-workspace" data-tab-group><div class="skill-tabs" role="tablist" aria-label="개발 방식" data-ko-label="개발 방식" data-en-label="Development approach">
+<button type="button" id="skill-tab-graphics" role="tab" aria-selected="true" aria-controls="skill-panel-graphics" tabindex="0"><span data-ko="그래픽·게임" data-en="Graphics &amp; games">그래픽·게임</span><span class="tab-tools" aria-hidden="true"><img src="./assets/icons/unity.svg" class="" alt="" width="26" height="26" loading="lazy" decoding="async"><img src="./assets/icons/webgpu.svg" class="" alt="" width="26" height="26" loading="lazy" decoding="async"></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+<button type="button" id="skill-tab-automation" role="tab" aria-selected="false" aria-controls="skill-panel-automation" tabindex="-1"><span data-ko="업무 자동화" data-en="Work automation">업무 자동화</span><span class="tab-tools" aria-hidden="true"><img src="./assets/icons/nextjs.svg" class="" alt="" width="26" height="26" loading="lazy" decoding="async"></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+<button type="button" id="skill-tab-ai" role="tab" aria-selected="false" aria-controls="skill-panel-ai" tabindex="-1"><span data-ko="AI와 개발·검증" data-en="Build &amp; verify with AI">AI와 개발·검증</span><span class="tab-tools" aria-hidden="true"><img src="./assets/icons/orca.svg" class="" alt="" width="26" height="26" loading="lazy" decoding="async"><img src="./assets/icons/codex.svg" class="" alt="" width="26" height="26" loading="lazy" decoding="async"><img src="./assets/icons/hermes.png" class="" alt="" width="26" height="26" loading="lazy" decoding="async"></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+</div><div class="skill-panels">
+<div class="skill-panel" id="skill-panel-graphics" role="tabpanel" aria-labelledby="skill-tab-graphics" tabindex="0"><div class="pipeline-visual motion-detail" aria-hidden="true"><svg viewBox="0 0 620 140" fill="none"><path class="raw-stroke" d="M20 92 40 77 50 83 73 47 90 70 108 34 122 54 148 41 159 62 180 58 202 101 221 77 244 97 262 69 280 77 299 49 322 67 340 41 359 57 381 28 399 42 422 37 447 58 473 47 491 72 511 66 530 100 550 83 575 106 600 94"/><path class="smooth-stroke" pathLength="1" d="M20 92C100 5 140 24 200 82S285 79 335 53 405 15 465 53 535 115 600 94"/></svg><div class="pipeline-labels"><span  data-ko="입력의 떨림 보정" data-en="Input smoothing">입력의 떨림 보정</span><span  data-ko="전송 좌표 줄이기" data-en="Fewer points to transfer">전송 좌표 줄이기</span><span  data-ko="표시할 선 보간" data-en="Smooth displayed strokes">표시할 선 보간</span></div></div><div class="skill-panel-copy"><h3 data-ko="성능과 조작감을
+직접 확인합니다." data-en="Check performance
+and how it feels.">성능과 조작감을
+직접 확인합니다.</h3><p data-ko="EUM에서는 렌더링 병목과 드로잉 품질을 개선했고, Unity 게임에서는 전투·입력·튜토리얼을 구현했습니다. 제작 중 반복되는 자산 가공은 SpriteAIMaker로 연결했습니다." data-en="Improved EUM’s rendering and stroke quality, and built combat, input, and tutorials in Unity games. Connected recurring asset processing through SpriteAIMaker.">EUM에서는 렌더링 병목과 드로잉 품질을 개선했고, Unity 게임에서는 전투·입력·튜토리얼을 구현했습니다. 제작 중 반복되는 자산 가공은 SpriteAIMaker로 연결했습니다.</p><p class="skill-proof"><strong data-ko="23.7 → 58.7 FPS" data-en="23.7 → 58.7 FPS">23.7 → 58.7 FPS</strong><span data-ko="EUM · 프로젝트 당시 평균 프레임" data-en="EUM · Average frame rate measured during the project">EUM · 프로젝트 당시 평균 프레임</span></p><div class="skill-tags tool-chips"><span class="tool-chip"><img src="./assets/icons/unity.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Unity</span></span><span class="tool-chip"><img src="./assets/icons/webgpu.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>WebGPU</span></span><span class="tool-chip"><img src="./assets/icons/pixijs.png" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>PixiJS v8</span></span></div><button class="text-link" data-project="eum" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="EUM 개발 내용" data-en="EUM implementation">EUM 개발 내용</span><span aria-hidden="true">↗</span></button></div></div>
+<div class="skill-panel" id="skill-panel-automation" role="tabpanel" aria-labelledby="skill-tab-automation" tabindex="0" hidden><div class="skill-network"><div class="project-art moai-art brand-network" aria-hidden="true">
+            <svg class="moai-network" viewBox="0 0 540 310">
+              <g class="network-lines" fill="none" stroke="currentColor" stroke-width="1"><path d="M270 155L126 74 116 234 270 155 414 74 426 234 270 155 270 28M126 74L414 74 426 234 116 234 126 74M270 155L270 284"/><circle cx="270" cy="155" r="119" stroke-dasharray="3 8"/></g>
+              <g class="network-flow" fill="none" stroke="#58701c" stroke-width="3" stroke-linecap="round"><path class="network-pulse pulse-one" pathLength="1" d="M126 74L270 155 426 234"/><path class="network-pulse pulse-two" pathLength="1" d="M414 74L270 155 116 234"/></g>
+              <g class="network-nodes"><circle cx="126" cy="74" r="29"/><circle cx="414" cy="74" r="29"/><circle cx="116" cy="234" r="29"/><circle cx="426" cy="234" r="29"/><circle cx="270" cy="28" r="10"/><circle cx="270" cy="284" r="10"/></g>
+              <g><image href="./assets/ui/archive.svg" x="111" y="59" width="30" height="30"/><image href="./assets/ui/filter.svg" x="399" y="59" width="30" height="30"/><image href="./assets/ui/chat.svg" x="101" y="219" width="30" height="30"/><image href="./assets/ui/check.svg" x="411" y="219" width="30" height="30"/></g>
+              <g class="network-core"><rect x="226" y="111" width="88" height="88" rx="12" fill="#f0f1eb"/><image href="./assets/icons/moai.png" x="233" y="118" width="74" height="74"/></g>
+            </svg>
+            <span class="art-caption" data-ko="기록 · 조회 · 후속 업무" data-en="Records · Queries · Follow-up">기록 · 조회 · 후속 업무</span>
+          </div></div><div class="skill-panel-copy"><h3 data-ko="반복 업무를
+하나의 흐름으로." data-en="Connect recurring work
+into a workflow.">반복 업무를
+하나의 흐름으로.</h3><p data-ko="MOAI의 사용량 원장·관리자 기능, 겜마루의 보고서·알림, Abstraction Bot의 대화 결산을 개발했습니다. 결과 생성 이후의 보관·권한·운영 비용까지 살핍니다." data-en="Contributed to MOAI’s usage ledger and admin features, Gammaru reports and notifications, and Abstraction Bot reporting. Consider storage, access, and operating cost after generation.">MOAI의 사용량 원장·관리자 기능, 겜마루의 보고서·알림, Abstraction Bot의 대화 결산을 개발했습니다. 결과 생성 이후의 보관·권한·운영 비용까지 살핍니다.</p><p class="skill-proof"><strong   data-ko="조회·집계의 일관성" data-en="Consistent queries and totals">조회·집계의 일관성</strong><span data-ko="MOAI · 관리자 조회·집계 개선" data-en="MOAI · Admin queries and totals">MOAI · 관리자 조회·집계 개선</span></p><div class="skill-tags tool-chips"><span class="tool-chip"><img src="./assets/icons/nextjs.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Next.js</span></span></div><button class="text-link" data-project="moai" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="MOAI 개발 내용" data-en="MOAI implementation">MOAI 개발 내용</span><span aria-hidden="true">↗</span></button></div></div>
+<div class="skill-panel" id="skill-panel-ai" role="tabpanel" aria-labelledby="skill-tab-ai" tabindex="0" hidden><div class="stack-visual motion-detail" aria-hidden="true"><div><span data-ko="명세" data-en="Specify">명세</span><img src="./assets/icons/codex.svg" class="flow-logo" alt="" width="40" height="40" loading="lazy" decoding="async"><strong>AI</strong></div><i></i><div><span data-ko="구현" data-en="Implement">구현</span><img src="./assets/icons/unity.svg" class="flow-logo" alt="" width="40" height="40" loading="lazy" decoding="async"><strong>Unity</strong></div><i></i><div><span data-ko="검증" data-en="Verify">검증</span><img src="./assets/ui/check.svg" class="flow-logo" alt="" width="40" height="40" loading="lazy" decoding="async"><strong  data-ko="로그 · 영상" data-en="Logs · Video">로그 · 영상</strong></div></div><div class="skill-panel-copy"><h3 data-ko="통과 조건을 정하고,
+구현과 검증을 반복합니다." data-en="Define what passes.
+Build, check, repeat.">통과 조건을 정하고,
+구현과 검증을 반복합니다.</h3><p data-ko="두드리에서는 명세·개발·검증을 연결했고, ROLAI에서는 Discord 요청을 AI·Unity 실행과 로그·영상 확인으로 이어갔습니다. 실패 원인을 구분할 수 있도록 테스트 조건을 고정합니다." data-en="Connected specification, development, and verification in Duduri. In ROLAI, linked Discord requests to AI and Unity execution with log and video checks, fixing test conditions to distinguish failure causes.">두드리에서는 명세·개발·검증을 연결했고, ROLAI에서는 Discord 요청을 AI·Unity 실행과 로그·영상 확인으로 이어갔습니다. 실패 원인을 구분할 수 있도록 테스트 조건을 고정합니다.</p><p class="skill-proof"><strong data-ko="요청 → 구현 → 검증" data-en="Request → Build → Verify">요청 → 구현 → 검증</strong><span data-ko="ROLAI · 원격 개발 흐름" data-en="ROLAI · Remote development workflow">ROLAI · 원격 개발 흐름</span></p><div class="skill-tags tool-chips"><span class="tool-chip"><img src="./assets/icons/orca.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Orca</span></span><span class="tool-chip"><img src="./assets/icons/codex.svg" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Codex</span></span><span class="tool-chip"><img src="./assets/icons/hermes.png" class="" alt="" width="32" height="32" loading="lazy" decoding="async"><span>Hermes</span></span></div><button class="text-link" data-project="rolai" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="ROLAI 개발 내용" data-en="ROLAI implementation">ROLAI 개발 내용</span><span aria-hidden="true">↗</span></button></div></div>
+</div></div></section>
+<section class="journey section-shell section-spacing" id="career" aria-labelledby="career-title"><div class="experience-heading"><h2 id="career-title" data-ko="경력·연구·수상" data-en="Work, research &amp; awards">경력·연구·수상</h2></div><div class="career-board" data-tab-group><div class="career-tabs" role="tablist" aria-label="경력·연구·수상" data-ko-label="경력·연구·수상" data-en-label="Work, research, and awards"><button type="button" id="work-tab-moai" role="tab" aria-selected="true" aria-controls="work-panel-moai" tabindex="0"><span class="school-logo"><img src="./assets/icons/moai.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="career-tab-copy"><small data-ko="2026.09 — 현재" data-en="Sep 2026 — Present">2026.09 — 현재</small><strong data-ko="MOAI" data-en="MOAI">MOAI</strong><span data-ko="인턴 · AX Engineer" data-en="AX Engineer intern">인턴 · AX Engineer</span></span><span class="tab-arrow" aria-hidden="true">↗</span></button><button type="button" id="work-tab-research" role="tab" aria-selected="false" aria-controls="work-panel-research" tabindex="-1"><span class="school-logo"><img src="./assets/icons/soongsil.svg" alt="" width="44" height="44" loading="lazy"></span><span class="career-tab-copy"><small data-ko="2026.04 — 2026.08" data-en="Apr — Aug 2026">2026.04 — 2026.08</small><strong data-ko="시뮬레이션 연구" data-en="Simulation Research">시뮬레이션 연구</strong><span data-ko="SmartAI Lab · 학부연구생" data-en="SmartAI Lab · Undergraduate researcher">SmartAI Lab · 학부연구생</span></span><span class="tab-arrow" aria-hidden="true">↗</span></button><button type="button" id="work-tab-award" role="tab" aria-selected="false" aria-controls="work-panel-award" tabindex="-1"><span class="school-logo"><img src="./assets/icons/dudri.png" class="" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="career-tab-copy"><small data-ko="2026" data-en="2026">2026</small><strong data-ko="2026 KOSSCCHTHON" data-en="2026 KOSSCCHTHON">2026 KOSSCCHTHON</strong><span data-ko="대상 · 1위" data-en="Grand prize · 1st">대상 · 1위</span></span><span class="tab-arrow" aria-hidden="true">↗</span></button></div><div class="career-panels"><div class="career-panel career-moai" id="work-panel-moai" role="tabpanel" aria-labelledby="work-tab-moai" tabindex="0"><div class="career-panel-top"><span class="career-state" data-ko="재직 중" data-en="Current role">재직 중</span><span class="career-year" aria-hidden="true">2026</span></div><div class="institution-visual" aria-hidden="true"><img src="./assets/icons/moai.png" class="institution-logo" alt="" width="160" height="160" loading="lazy" decoding="async"></div><div class="career-school"><div><h3 data-ko="MOAI" data-en="MOAI">MOAI</h3><p data-ko="인턴 · AX Engineer" data-en="AX Engineer intern">인턴 · AX Engineer</p></div></div><div class="career-detail"><h4 data-ko="2026.09 — 현재" data-en="Sep 2026 — Present">2026.09 — 현재</h4><p data-ko="AI 사용량 원장 운영에 참여하고, 관리자 API·필터·집계 기준을 개선했습니다. 웹 채팅·Google Chat에서 업무 도구로 이어지는 리드봇 개발에 참여하고 있습니다." data-en="Contribute to AI usage ledger operations and improve admin APIs, filters, and aggregation rules. Currently working on a lead bot connecting web chat and Google Chat to work tools.">AI 사용량 원장 운영에 참여하고, 관리자 API·필터·집계 기준을 개선했습니다. 웹 채팅·Google Chat에서 업무 도구로 이어지는 리드봇 개발에 참여하고 있습니다.</p></div><div class="career-learning"><p   data-ko="현재 조건을 유지하는 조회 · 실제 업무 상태와 맞는 통계" data-en="Queries that preserve current filters · Totals reflecting task state">현재 조건을 유지하는 조회 · 실제 업무 상태와 맞는 통계</p></div><button class="text-link" data-project="moai" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="관련 프로젝트 보기" data-en="View related project">관련 프로젝트 보기</span><span aria-hidden="true">↗</span></button></div><div class="career-panel career-research" id="work-panel-research" role="tabpanel" aria-labelledby="work-tab-research" tabindex="0" hidden><div class="career-panel-top"><span class="career-state" data-ko="연구 참여" data-en="Research participation">연구 참여</span><span class="career-year" aria-hidden="true">2026</span></div><div class="institution-visual" aria-hidden="true"><img src="./assets/icons/soongsil.svg" class="institution-logo" alt="" width="160" height="160" loading="lazy" decoding="async"></div><div class="career-school"><div><h3 data-ko="시뮬레이션 연구" data-en="Simulation Research">시뮬레이션 연구</h3><p data-ko="SmartAI Lab · 학부연구생" data-en="SmartAI Lab · Undergraduate researcher">SmartAI Lab · 학부연구생</p></div></div><div class="career-detail"><h4 data-ko="2026.04 — 2026.08" data-en="Apr — Aug 2026">2026.04 — 2026.08</h4><p data-ko="평성시 사회 시뮬레이션 연구에 참여했습니다. 초기 라이브러리의 에이전트·공간·월드 구조와 기억·성찰·계획 루프를 구현했습니다." data-en="Contributed to the Pyongsong social simulation, implementing shared agent, space, and world structures and memory, reflection, and planning loops in the initial library.">평성시 사회 시뮬레이션 연구에 참여했습니다. 초기 라이브러리의 에이전트·공간·월드 구조와 기억·성찰·계획 루프를 구현했습니다.</p></div><div class="career-learning"><p data-ko="에이전트 기반 모델링 · LLM · 인터뷰·이벤트 기록" data-en="Agent-based modeling · LLMs · Interviews and event records">에이전트 기반 모델링 · LLM · 인터뷰·이벤트 기록</p></div><button class="text-link" data-project="simulation" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="관련 프로젝트 보기" data-en="View related project">관련 프로젝트 보기</span><span aria-hidden="true">↗</span></button></div><div class="career-panel career-award" id="work-panel-award" role="tabpanel" aria-labelledby="work-tab-award" tabindex="0" hidden><div class="career-panel-top"><span class="career-state" data-ko="수상" data-en="Award">수상</span><span class="career-year" aria-hidden="true">2026</span></div><figure class="institution-visual award-visual"><img src="./assets/dudri-award.jpg" class="award-photo" alt="2026 KOSSCCHTHON 대상 수상" width="900" height="900" loading="lazy" decoding="async" data-ko-alt="2026 KOSSCCHTHON 대상 수상" data-en-alt="2026 KOSSCCHTHON grand prize"><figcaption  data-ko="2026 KOSSCCHTHON · 대상" data-en="2026 KOSSCCHTHON · Grand prize">2026 KOSSCCHTHON · 대상</figcaption></figure><div class="career-school"><div><h3 data-ko="2026 KOSSCCHTHON" data-en="2026 KOSSCCHTHON">2026 KOSSCCHTHON</h3><p data-ko="대상 · 1위" data-en="Grand prize · 1st">대상 · 1위</p></div></div><div class="career-detail"><h4 data-ko="2026" data-en="2026">2026</h4><p data-ko="국민대·숭실대·순천향대 연합 경진대회에서 두드리 프로젝트로 대상(1위)을 수상했습니다. 짧은 일정에서 AI와 명세 작성·구현·검증을 연결했습니다." data-en="Won the grand prize with Duduri at the joint competition of Kookmin, Soongsil, and Soonchunhyang universities. Connected specifications, implementation, and verification with AI within the short schedule.">국민대·숭실대·순천향대 연합 경진대회에서 두드리 프로젝트로 대상(1위)을 수상했습니다. 짧은 일정에서 AI와 명세 작성·구현·검증을 연결했습니다.</p></div><div class="career-learning"><p data-ko="수상 이후 생성 데이터 일관성과 편집 기능 개선" data-en="Continued improving generated-data consistency and editing after the award">수상 이후 생성 데이터 일관성과 편집 기능 개선</p></div><button class="text-link" data-project="duduri" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="관련 프로젝트 보기" data-en="View related project">관련 프로젝트 보기</span><span aria-hidden="true">↗</span></button></div></div></div></section>
+<section class="journey section-shell section-spacing" id="education" aria-labelledby="journey-title"><div class="experience-heading"><h2 id="journey-title" data-ko="학력·교육" data-en="Education">학력·교육</h2></div><div class="career-board" data-tab-group><div class="career-tabs" role="tablist" aria-label="학력·교육" data-ko-label="학력·교육" data-en-label="Education and training"><button type="button" id="career-tab-ssu" role="tab" aria-selected="true" aria-controls="career-panel-ssu" tabindex="0"><span class="school-logo"><img src="./assets/icons/soongsil.svg" alt="" width="44" height="44" loading="lazy"></span><span class="career-tab-copy"><small data-ko="2026.03 — 현재" data-en="Mar 2026 — Present">2026.03 — 현재</small><strong data-ko="숭실대학교" data-en="Soongsil University">숭실대학교</strong><span data-ko="AI소프트웨어학부" data-en="School of AI Software">AI소프트웨어학부</span></span><span class="tab-arrow" aria-hidden="true">↗</span></button><button type="button" id="career-tab-jungle" role="tab" aria-selected="false" aria-controls="career-panel-jungle" tabindex="-1"><span class="school-logo"><img src="./assets/icons/jungle.png" alt="" width="44" height="44" loading="lazy"></span><span class="career-tab-copy"><small data-ko="2025.09 — 2026.01" data-en="Sep 2025 — Jan 2026">2025.09 — 2026.01</small><strong data-ko="크래프톤 정글" data-en="Krafton Jungle">크래프톤 정글</strong><span data-ko="SW-AI Lab · 11기" data-en="SW-AI Lab · Cohort 11">SW-AI Lab · 11기</span></span><span class="tab-arrow" aria-hidden="true">↗</span></button><button type="button" id="career-tab-gamehs" role="tab" aria-selected="false" aria-controls="career-panel-gamehs" tabindex="-1"><span class="school-logo"><img src="./assets/icons/gamehs.svg" alt="" width="44" height="44" loading="lazy"></span><span class="career-tab-copy"><small data-ko="2023.03 — 2026.02" data-en="Mar 2023 — Feb 2026">2023.03 — 2026.02</small><strong data-ko="한국게임과학고등학교" data-en="Korea Game Science High School">한국게임과학고등학교</strong><span data-ko="컴퓨터게임개발과" data-en="Computer Game Development">컴퓨터게임개발과</span></span><span class="tab-arrow" aria-hidden="true">↗</span></button></div><div class="career-panels"><div class="career-panel career-ssu" id="career-panel-ssu" role="tabpanel" aria-labelledby="career-tab-ssu" tabindex="0"><div class="career-panel-top"><span class="career-state" data-ko="재학 중" data-en="Currently enrolled">재학 중</span><span class="career-year" aria-hidden="true">2026</span></div><div class="institution-visual" aria-hidden="true"><img src="./assets/icons/soongsil.svg" class="institution-logo" alt="" width="160" height="160" loading="lazy" decoding="async"></div><div class="career-school"><div><h3 data-ko="숭실대학교" data-en="Soongsil University">숭실대학교</h3><p data-ko="AI소프트웨어학부" data-en="School of AI Software">AI소프트웨어학부</p></div></div><div class="career-detail"><h4 data-ko="2026.03 — 현재" data-en="Mar 2026 — Present">2026.03 — 현재</h4><p data-ko="AI소프트웨어학부에 재학 중입니다. 게임 제작 동아리 겜마루의 소개·게임 아카이브 웹과 보고서 공간을 개발했습니다." data-en="Studying AI Software. Built the introduction, game archive, and report space for the Gammaru game development club.">AI소프트웨어학부에 재학 중입니다. 게임 제작 동아리 겜마루의 소개·게임 아카이브 웹과 보고서 공간을 개발했습니다.</p></div><div class="career-learning"><p data-ko="겜마루 웹 · 데일리 브리프" data-en="Gammaru Web · Daily Brief">겜마루 웹 · 데일리 브리프</p></div><button class="text-link" data-project="gammaru" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="관련 프로젝트 보기" data-en="View related project">관련 프로젝트 보기</span><span aria-hidden="true">↗</span></button></div><div class="career-panel career-jungle" id="career-panel-jungle" role="tabpanel" aria-labelledby="career-tab-jungle" tabindex="0" hidden><div class="career-panel-top"><span class="career-state" data-ko="교육 과정" data-en="Training program">교육 과정</span><span class="career-year" aria-hidden="true">2025</span></div><div class="institution-visual" aria-hidden="true"><img src="./assets/icons/jungle.png" class="institution-logo" alt="" width="160" height="160" loading="lazy" decoding="async"></div><div class="career-school"><div><h3 data-ko="크래프톤 정글" data-en="Krafton Jungle">크래프톤 정글</h3><p data-ko="SW-AI Lab · 11기" data-en="SW-AI Lab · Cohort 11">SW-AI Lab · 11기</p></div></div><div class="career-detail"><h4 data-ko="2025.09 — 2026.01" data-en="Sep 2025 — Jan 2026">2025.09 — 2026.01</h4><p   data-ko="CS 기본기를 다지고 PintOS의 스레드 스케줄링·사용자 프로그램·가상 메모리를 구현했습니다. EUM에서는 화이트보드 풀스택 개발을 담당했습니다." data-en="Built CS foundations and implemented PintOS thread scheduling, user programs, and virtual memory. Owned EUM’s whiteboard full-stack development.">CS 기본기를 다지고 PintOS의 스레드 스케줄링·사용자 프로그램·가상 메모리를 구현했습니다. EUM에서는 화이트보드 풀스택 개발을 담당했습니다.</p></div><div class="career-learning"><p data-ko="PintOS · EUM" data-en="PintOS · EUM">PintOS · EUM</p></div><button class="text-link" data-project="pintos" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="관련 프로젝트 보기" data-en="View related project">관련 프로젝트 보기</span><span aria-hidden="true">↗</span></button></div><div class="career-panel career-gamehs" id="career-panel-gamehs" role="tabpanel" aria-labelledby="career-tab-gamehs" tabindex="0" hidden><div class="career-panel-top"><span class="career-state" data-ko="졸업" data-en="Graduated">졸업</span><span class="career-year" aria-hidden="true">2023</span></div><div class="institution-visual" aria-hidden="true"><img src="./assets/icons/gamehs.svg" class="institution-logo" alt="" width="160" height="160" loading="lazy" decoding="async"></div><div class="career-school"><div><h3 data-ko="한국게임과학고등학교" data-en="Korea Game Science High School">한국게임과학고등학교</h3><p data-ko="컴퓨터게임개발과" data-en="Computer Game Development">컴퓨터게임개발과</p></div></div><div class="career-detail"><h4 data-ko="2023.03 — 2026.02" data-en="Mar 2023 — Feb 2026">2023.03 — 2026.02</h4><p data-ko="컴퓨터게임개발과에서 게임 제작을 공부했습니다. 학생부회장·학생회장을 맡았고, 개발 동아리 Dash를 창립해 회장으로 활동했습니다." data-en="Studied game development, served as student vice president and president, and founded and led the Dash development club.">컴퓨터게임개발과에서 게임 제작을 공부했습니다. 학생부회장·학생회장을 맡았고, 개발 동아리 Dash를 창립해 회장으로 활동했습니다.</p></div><div class="career-learning"><p data-ko="이후에도 Unity 게임 제작과 팀 협업을 이어가고 있습니다." data-en="Continue building Unity games and collaborating with teams.">이후에도 Unity 게임 제작과 팀 협업을 이어가고 있습니다.</p></div><button class="text-link" data-project="triniacle" aria-haspopup="dialog" aria-controls="project-dialog"><span data-ko="관련 프로젝트 보기" data-en="View related project">관련 프로젝트 보기</span><span aria-hidden="true">↗</span></button></div></div></div></section>
+    <section class="contact" id="contact" aria-labelledby="contact-title"><div class="section-shell"><div class="contact-main"><h2 id="contact-title" data-ko="연락처" data-en="Contact">연락처</h2></div><div class="contact-bottom"><p data-ko="업무 자동화, 서비스·게임 개발에 함께할 기회를 찾습니다." data-en="Open to opportunities in work automation, services, and game development.">업무 자동화, 서비스·게임 개발에 함께할 기회를 찾습니다.</p><div class="email-actions"><a href="mailto:kimgalam0831@gmail.com">kimgalam0831@gmail.com</a><button id="copy-email" aria-label="이메일 주소 복사"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div></div><div class="contact-resources">
+  <a href="https://github.com/kgr0831" target="_blank" rel="noopener"><span class="social-brand"><img src="./assets/icons/github.svg" class="" alt="" width="30" height="30" loading="lazy" decoding="async"><span>GitHub</span></span><span data-ko="프로젝트 코드" data-en="Project code">프로젝트 코드</span><span aria-hidden="true">↗</span></a>
+  <a href="https://kgr0831.tistory.com" target="_blank" rel="noopener"><span class="social-brand"><img src="./assets/icons/blog.svg" class="" alt="" width="30" height="30" loading="lazy" decoding="async"><span>Blog</span></span><span data-ko="개발 기록" data-en="Development notes">개발 기록</span><span aria-hidden="true">↗</span></a>
+  <a href="https://www.linkedin.com/in/kimgalam0831/" target="_blank" rel="noopener"><span class="social-brand"><img src="./assets/icons/linkedin.svg" class="" alt="" width="30" height="30" loading="lazy" decoding="async"><span>LinkedIn</span></span><span data-ko="프로필" data-en="Profile">프로필</span><span aria-hidden="true">↗</span></a>
+</div></div></section>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="foot">
-        <div class="credo" data-i18n="credo"><b>// dev style</b> &nbsp; top-down methodology &amp; pair programming for fast prototyping and manual verification<br><b>// philosophy</b> &nbsp; in the spirit of Eiji Aonuma &amp; Satoru Iwata · a lifelong Zelda fan</div>
-        <div class="links">
-          <a class="iconbtn" href="https://github.com/Kgr0831" target="_blank" rel="noopener" aria-label="GitHub"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-          <a class="iconbtn" href="https://kgr0831.tistory.com" target="_blank" rel="noopener" aria-label="Blog"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a>
-          <a class="iconbtn" href="https://www.linkedin.com/in/kimgalam0831/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="bi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a class="iconbtn" href="mailto:kimgalam0831@gmail.com" aria-label="Email"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-        </div>
-      </div>
-      <div class="copyright" data-i18n="copyright">Designed &amp; built by Garam Kim · 2026</div>
-    </div>
-  </footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- i18n ---- */
-  var i18n = {
-    name:        { en:"Garam Kim", ko:"김가람" },
-    sb_status:   { en:"open to · AI R&amp;D", ko:"제안 환영 · AI R&amp;D" },
-    hero_title:  { en:'<span class="u-unreal">Unreal</span> AI,<br><span class="u-unity">Unity</span> Experience',
-                   ko:'<span class="u-unreal">Unreal</span>한 AI를<br><span class="u-unity">Unity</span>하게.' },
-    hero_sub:    { en:"Making AI feel real. A software engineer turning game-dev fundamentals into AI research.",
-                   ko:"AI에 현실감을 불어넣는 소프트웨어 엔지니어입니다. 게임 개발의 탄탄한 기초 체력을 AI R&D 연구로 이어가고 있습니다." },
-    hero_gloss:  { en:"// Making distant AI familiar to everyone.",
-                   ko:"// 멀게만 느껴지는 AI를 모두에게, 친숙하게." },
-    btn_portfolio: { en:"View Portfolio", ko:"포트폴리오 보기" },
-    btn_cv:      { en:"View CV", ko:"이력서 보기" },
-    btn_blog:    { en:"Blog", ko:"블로그" },
-    btn_contact: { en:"Get in touch", ko:"연락하기" },
-    lbl_github:  { en:"github", ko:"깃허브" },
-
-    lbl_about:   { en:"about", ko:"소개" },
-    about_lede:  { en:'Fundamentals forged at <strong>Krafton Jungle</strong>, plus the execution to absorb unfamiliar tech <strong>top-down</strong> — prototype fast by pairing with AI agents, then verify by hand. A long-time game developer at heart, now aiming to help make AI <strong>more familiar and intuitive</strong>.',
-                   ko:'<strong>크래프톤 정글</strong>에서 다진 탄탄한 기본기 위에, 낯선 기술도 <strong>탑다운</strong>으로 빠르게 흡수하는 실행력을 더했습니다. AI 에이전트와 페어링하여 신속하게 프로토타입을 빌드하고, 이를 직접 한 땀 한 땀 검증합니다. 뼈대 깊은 게임 개발자의 마음가짐으로, AI를 <strong>더 친숙하고 직관적인 도구</strong>로 만드는 일에 기여하고자 합니다.' },
-    fk_goal:     { en:"goal", ko:"목표" },
-    fv_goal:     { en:"AI Researcher (AI R&amp;D), at the intersection of games and AI", ko:"게임과 AI의 교차점에서 활동하는 AI 리서처 (AI R&amp;D)" },
-    fk_learning: { en:"learning", ko:"학습 중" },
-    fv_learning: { en:"Mesa · LangGraph · Building RAG &amp; pipeline utilization", ko:"Mesa · LangGraph · RAG 구축 및 파이프라인 활용" },
-    fk_open:     { en:"open to", ko:"관심 분야" },
-    fv_open:     { en:"AI Research · AI FDE · AI Native", ko:"AI 리서치 · AI FDE · AI Native" },
-
-    lbl_focus:   { en:"research focus", ko:"연구 관심사" },
-    focus_h2:    { en:"Where I want to push.", ko:"더 깊이 파고들고 싶은 것." },
-    f1_t:        { en:"LLM &amp; SLM optimization", ko:"LLM·SLM 최적화" },
-    f1_d:        { en:"Squeezing quality and cost out of large and small language models alike.", ko:"LLM과 sLM 모두에서 최소한의 비용으로 극대화된 품질을 이끌어냅니다." },
-    f2_t:        { en:"Heterogeneous multi-agent systems", ko:"이기종 다중 에이전트 시스템" },
-    f2_d:        { en:"Heterogeneous models cooperating to reduce hallucination and minimize API cost.", ko:"서로 다른 특성의 모델들이 유기적으로 협업하게 하여 환각 현상을 줄이고 API 비용을 최소화합니다." },
-    f3_t:        { en:"On-device LM compression", ko:"온디바이스 LM 경량화" },
-    f3_d:        { en:"Focusing on lightweight model research so language models run fast and efficiently on-device.", ko:"On-Device에서 언어모델이 즉각적이고 가볍게 동작하도록 경량화 모델 연구에 주력합니다." },
-
-    lbl_stack:   { en:"stack", ko:"기술 스택" },
-    stack_h2:    { en:"What I build with.", ko:"이런 것들로 만듭니다." },
-    cl_lang:     { en:"languages", ko:"언어" },
-    cl_fw:       { en:"frameworks &amp; libraries", ko:"프레임워크·라이브러리" },
-    cl_infra:    { en:"infra &amp; ai agents", ko:"인프라 · AI 에이전트" },
-
-    lbl_work:    { en:"selected work", ko:"주요 작업" },
-    work_h2:     { en:"Things I shipped.", ko:"지금까지의 작업물들." },
-    eum_tag:     { en:"FEATURED · 2025.12 — 2026.01", ko:"대표 · 2025.12 — 2026.01" },
-    eum_p:       { en:"A browser-based AI video-meeting platform with real-time interpretation and a WebGPU infinite-canvas whiteboard. I owned the whiteboard full-stack: I replaced heavy third-party libraries with a custom renderer on PixiJS v8 / WebGPU, handing the heavy graphics work to the GPU to kill the single-thread CPU bottleneck. The drawing pipeline combines a One Euro Filter, the Douglas–Peucker algorithm, and Bézier interpolation for smooth, drop-free lines.",
-                   ko:"실시간 AI 통역 및 WebGPU 무한 캔버스 화이트보드를 탑재한 브라우저 기반 AI 화상회의 플랫폼. 화이트보드 파트의 풀스택 개발을 주도했습니다. 무거운 서드파티 라이브러리 대신 PixiJS v8 및 WebGPU 기반의 자체 렌더러를 구축하여 고부하 그래픽 연산을 GPU에 완전히 위임하고 단일 스레드 CPU 병목 현상을 극복했습니다. 드로잉 파이프라인에는 One Euro Filter, 더글라스-푸커 알고리즘, 베지어 보간법을 적용하여 끊김 없이 극도로 매끄러운 그리기 품질을 구현했습니다." },
-    eum_meta:    { en:"role · full-stack &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js",
-                   ko:"담당 · 풀스택 &nbsp;|&nbsp; WebGPU · PixiJS v8 · Next.js · Nest.js" },
-    eum_sh:      { en:"avg frame rate · 60Hz", ko:"평균 프레임 레이트 · 60Hz" },
-    eum_stat:    { en:'<span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span>',
-                   ko:'<span class="from">23.7</span><span class="arrow">→</span><span class="to">58.7</span><span class="unit">fps</span>' },
-    eum_delta:   { en:"+147% · smooth, drop-free drawing", ko:"+147% · 매끄럽고 끊김 없는 드로잉" },
-    eum_link:    { en:"demo &amp; write-up", ko:"데모 & 소개" },
-    helix_tag:   { en:"2026.04", ko:"2026.04" },
-    helix_p:     { en:"A heterogeneous multi-agent collaboration system built to reduce model hallucination while minimizing API cost.",
-                   ko:"모델의 환각 현상을 억제하고 API 호출 비용을 최소화하는 이기종 다중 에이전트 협업 시스템." },
-    helix_meta:  { en:"solo developer &nbsp;|&nbsp; LangGraph · LlamaIndex · FastAPI · Vercel",
-                   ko:"1인 개발 &nbsp;|&nbsp; LangGraph · LlamaIndex · FastAPI · Vercel" },
-    helix_sh:    { en:"api cost reduction", ko:"API 호출 비용 절감" },
-    helix_stat:  { en:'<span class="to">1.47</span><span class="unit">x cheaper</span>',
-                   ko:'<span class="to">1.47</span><span class="unit">배 저렴</span>' },
-    helix_delta: { en:"model routing &amp; caching", ko:"모델 라우팅 및 캐싱" },
-    helix_link:  { en:"live", ko:"라이브" },
-    uni_tag:     { en:"Unitrio · ongoing", ko:"Unitrio · 진행 중" },
-    uni_p:       { en:"Triniacle — a 2D top-down action-RPG sandbox, built with a five-person indie team (three engineers, one designer, one planner). The game I grew up wanting to make.",
-                   ko:"Triniacle — 개발자 3명, 디자이너 1명, 기획자 1명으로 구성된 5인 인디 팀에서 제작한 2D 탑다운 액션 RPG 샌드박스 게임. 어릴 때부터 꼭 만들어보고 싶었던 꿈의 프로젝트입니다." },
-    uni_meta:    { en:"role · leader &amp; gameplay &amp; rendering programming &nbsp;|&nbsp; C#, Unity",
-                   ko:"담당 · 리더 & 게임플레이 및 렌더링 프로그래밍 &nbsp;|&nbsp; C#, Unity" },
-    uni_sh:      { en:"indie team size", ko:"인디 팀 규모" },
-    uni_stat:    { en:'<span class="to">5</span><span class="unit">members</span>', ko:'<span class="to">5</span><span class="unit">인 팀</span>' },
-    uni_delta:   { en:"built rendering &amp; physics pipelines from scratch", ko:"렌더링 및 물리 파이프라인을 프레임워크 밑바닥부터 직접 설계 및 구현" },
-
-    lbl_path:    { en:"path", ko:"걸어온 길" },
-    path_h2:     { en:"From game dev to AI.", ko:"게임 개발에서 AI로." },
-    e1_what:     { en:"Korea Game Science High School", ko:"한국게임과학고등학교" },
-    e1_sub:      { en:"Computer Game Development · Cohort 20", ko:"컴퓨터게임개발과 · 20기" },
-    e2_what:     { en:"Krafton Jungle — SW·AI Lab", ko:"크래프톤 정글 — SW·AI Lab" },
-    e2_sub:      { en:"SW-AI Lab · Cohort 11", ko:"SW-AI Lab · 11기" },
-    e3_what:     { en:"Soongsil University", ko:"숭실대학교" },
-    e3_sub:      { en:"B.E. in AI Software · Class of '26", ko:"AI소프트웨어학부 · 26학번" },
-
-    credo:       { en:'<b>// dev style</b> &nbsp; top-down methodology &amp; pair programming for fast prototyping and manual verification<br><b>// philosophy</b> &nbsp; in the spirit of Eiji Aonuma &amp; Satoru Iwata · a lifelong Zelda fan',
-                   ko:'<b>// 개발 스타일</b> &nbsp; 탑다운 기법과 페어 프로그래밍을 통한 고속 프로토타이핑 및 직접 검증<br><b>// 철학</b> &nbsp; 아오누마 에이지 &amp; 이와타 사토루의 장인 정신 지향 · 평생의 젤다 팬' },
-    copyright:   { en:"Designed &amp; built by Garam Kim · 2026", ko:"디자인 · 제작 김가람 · 2026" }
-  };
-
-  var nodes = document.querySelectorAll('[data-i18n]');
-  var lang = 'en';
-  function apply(l){
-    lang = l;
-    nodes.forEach(function(n){
-      var k = n.getAttribute('data-i18n');
-      if(i18n[k] && i18n[k][l] != null){ n.innerHTML = i18n[k][l]; }
-    });
-    document.documentElement.lang = l;
-    document.getElementById('langcode').textContent = l.toUpperCase();
-  }
-  apply(lang);
-  document.getElementById('langbtn').addEventListener('click', function(){
-    nodes.forEach(function(n){ n.classList.add('lang-fade'); });
-    setTimeout(function(){
-      apply(lang === 'en' ? 'ko' : 'en');
-      nodes.forEach(function(n){ n.classList.remove('lang-fade'); });
-    }, 120);
-  });
-
-  /* ---- scroll reveal ---- */
-  if(reduce){
-    document.querySelectorAll('[data-reveal]').forEach(function(e){ e.classList.add('in'); });
-  } else {
-    document.querySelectorAll('[data-reveal-group]').forEach(function(g){
-      Array.prototype.slice.call(g.querySelectorAll('[data-reveal]')).forEach(function(el,i){
-        el.style.transitionDelay = (i*70) + 'ms';
-      });
-    });
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){
-          en.target.classList.add('in');
-        } else {
-          en.target.classList.remove('in');
-        }
-      });
-    }, {threshold:.10, rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('[data-reveal]').forEach(function(e){ io.observe(e); });
-  }
-
-  /* ---- hover radial glow tracker ---- */
-  if(!reduce) {
-    document.querySelectorAll('.card, .witem').forEach(function(el){
-      el.addEventListener('mousemove', function(e){
-        var rect = el.getBoundingClientRect();
-        el.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-        el.style.setProperty('--my', (e.clientY - rect.top) + 'px');
-      });
-    });
-  }
-})();
-</script>
+  <footer class="site-footer section-shell"><a class="wordmark" href="#top">Garam Kim</a><span>© 2026 Garam Kim</span><div class="footer-links"><a href="https://github.com/kgr0831" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/kimgalam0831/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://kgr0831.tistory.com" target="_blank" rel="noopener">Blog ↗</a><a href="#top" aria-label="맨 위로">↑</a></div></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-eyebrow"></span><button class="dialog-close" id="dialog-close" aria-label="닫기">×</button></div><div class="dialog-content"><div class="dialog-brand" id="dialog-brand"></div><h2 id="dialog-title"></h2><p class="dialog-intro" id="dialog-intro"></p><div class="dialog-metric" id="dialog-metric"></div><div class="dialog-gallery" id="dialog-gallery"></div><div id="dialog-details"></div><div class="dialog-links" id="dialog-links"></div></div></dialog>
 </body>
 </html>
