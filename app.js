@@ -4,10 +4,31 @@
   const root = document.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let language = 'ko';
+  let currentProjectId;
+  const pdfDocuments = {
+    ko: { cv: './CV.pdf', portfolio: './portfolio.pdf' },
+    en: { cv: './CV.en.pdf', portfolio: './portfolio.en.pdf' },
+  };
+  const portfolioPages = {
+    moai: 6, gammaru: 8, abstraction: 10, golf: 11, paperbridge: 13,
+    eum: 15, pintos: 19, simulation: 20, duduri: 21, spell: 27,
+    planet: 28, triniacle: 29, sprite: 31, rolai: 33, vfriend: 37,
+  };
   let toastTimer;
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const translate = (ko, en) => language === 'ko' ? ko : en;
+
+  function updateDocumentLinks() {
+    $$('[data-document]').forEach((link) => {
+      link.href = pdfDocuments[language][link.dataset.document];
+    });
+    const caseStudy = $('#dialog-portfolio');
+    if (caseStudy && currentProjectId) {
+      const page = portfolioPages[currentProjectId];
+      caseStudy.href = pdfDocuments[language].portfolio + (page ? `#page=${page}` : '');
+    }
+  }
 
   function setMotion(paused) {
     root.classList.toggle('motion-paused', paused);
@@ -148,6 +169,7 @@
 
   function applyLanguage(next) {
     language = next;
+    updateDocumentLinks();
     root.lang = next;
     document.title = translate('김가람 | AI Native Software Engineer', 'Garam Kim | AI Native Software Engineer');
     $$('[data-ko][data-en]').forEach((element) => {
@@ -234,6 +256,8 @@
   function showProject(id, trigger) {
     const project = projects[id];
     if (!project) return;
+    currentProjectId = id;
+    updateDocumentLinks();
     dialogTrigger = trigger;
     $('#dialog-title').textContent = localText(project.title);
     $('#dialog-eyebrow').textContent = localText(project.period);

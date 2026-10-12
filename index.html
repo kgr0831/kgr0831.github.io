@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="./intro.css">
   <link rel="stylesheet" href="./experience.css">
   <link rel="stylesheet" href="./reference-theme.css">
-  <link rel="stylesheet" href="./portfolio-visuals.css">
+  <link rel="stylesheet" href="./portfolio-visuals.css?v=20261013-pdfs">
   <script src="./content.js" defer></script>
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=20261013-pdfs" defer></script>
   <script src="./motion-loop.js" defer></script>
 </head>
 <body>
@@ -60,8 +60,8 @@
         </h1>
         <p class="welcome-description" data-ko="해결할 문제를 먼저 정하고, 필요한 기술을 선택합니다." data-en="I start by defining the problem, then choose the technology it needs.">해결할 문제를 먼저 정하고, 필요한 기술을 선택합니다.</p>
         <div class="welcome-documents">
-          <a class="text-link welcome-resume" href="./CV.pdf" target="_blank" rel="noopener"><span>CV.pdf</span><span aria-hidden="true">↗</span></a>
-          <a class="text-link welcome-resume" href="./portfolio.pdf" target="_blank" rel="noopener"><span>portfolio.pdf</span><span aria-hidden="true">↗</span></a>
+          <a class="text-link welcome-resume" href="./CV.pdf" data-document="cv" target="_blank" rel="noopener"><span>CV</span><span aria-hidden="true">↗</span></a>
+          <a class="text-link welcome-resume" href="./portfolio.pdf" data-document="portfolio" target="_blank" rel="noopener"><span data-ko="포트폴리오" data-en="Portfolio">포트폴리오</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="welcome-art" data-welcome-art data-continuous-motion aria-hidden="true">
@@ -140,6 +140,6 @@ Build, check, repeat.">통과 조건을 정하고,
   </main>
   <footer class="site-footer section-shell"><a class="wordmark" href="#top">Garam Kim</a><span>© 2026 Garam Kim</span><div class="footer-links"><a href="https://github.com/kgr0831" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/kimgalam0831/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://kgr0831.tistory.com" target="_blank" rel="noopener">Blog ↗</a><a href="#top" aria-label="맨 위로">↑</a></div></footer>
   <div class="toast" id="toast" role="status"></div>
-  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-eyebrow"></span><button class="dialog-close" id="dialog-close" aria-label="닫기">×</button></div><div class="dialog-content"><div class="dialog-brand" id="dialog-brand"></div><h2 id="dialog-title"></h2><p class="dialog-intro" id="dialog-intro"></p><div class="dialog-metric" id="dialog-metric"></div><div class="dialog-gallery" id="dialog-gallery"></div><div id="dialog-details"></div><div class="dialog-links" id="dialog-links"></div></div></dialog>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-eyebrow"></span><button class="dialog-close" id="dialog-close" aria-label="닫기">×</button></div><div class="dialog-content"><div class="dialog-brand" id="dialog-brand"></div><h2 id="dialog-title"></h2><p class="dialog-intro" id="dialog-intro"></p><div class="dialog-metric" id="dialog-metric"></div><div class="dialog-gallery" id="dialog-gallery"></div><div id="dialog-details"></div><div class="dialog-links" id="dialog-links"></div><aside class="dialog-portfolio"><p data-ko="구현 과정과 문제 해결 사례를 포트폴리오에서 더 자세히 소개합니다." data-en="Explore the implementation and problem-solving process in the portfolio.">구현 과정과 문제 해결 사례를 포트폴리오에서 더 자세히 소개합니다.</p><a id="dialog-portfolio" class="text-link" href="./portfolio.pdf" target="_blank" rel="noopener"><span data-ko="포트폴리오에서 자세히 보기" data-en="Read the full case study">포트폴리오에서 자세히 보기</span><span aria-hidden="true">↗</span></a></aside></div></dialog>
 </body>
 </html>
