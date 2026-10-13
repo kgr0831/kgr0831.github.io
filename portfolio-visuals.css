@@ -1,6 +1,7 @@
 /* Original portfolio logos and evidence images, within the existing sage theme. */
 .welcome { grid-template-columns: 1.2fr 1fr; }
 .welcome h1 { font-size: clamp(40px, 4.55vw, 74px); }
+:root:lang(ko) .welcome h1 { font-weight: 400; letter-spacing: -.025em; line-height: 1.35; }
 .welcome h1 > span { white-space: normal; word-break: keep-all; }
 .welcome-description { max-width: 460px; }
 .welcome-documents { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 32px; }
