@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1791882051" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1791884228" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **e2fb992** - Use SUIT for Korean portfolio typography (10 seconds ago)
-- **0a42381** - chore: auto-update recent commits in README [skip ci] (6 minutes ago)
-- **61d0175** - Remove opening intro from portfolio site (6 minutes ago)
-- **b05a1ba** - chore: auto-update recent commits in README [skip ci] (16 hours ago)
-- **aa82124** - Add English portfolio and route documents by selected language (16 hours ago)
+- **caf9262** - Apply Gowun Dodum Korean typography from selected concept (10 seconds ago)
+- **67232c0** - chore: auto-update recent commits in README [skip ci] (36 minutes ago)
+- **e2fb992** - Use SUIT for Korean portfolio typography (36 minutes ago)
+- **0a42381** - chore: auto-update recent commits in README [skip ci] (42 minutes ago)
+- **61d0175** - Remove opening intro from portfolio site (42 minutes ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
