@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">61d0175</tspan> - <tspan class="commit-msg">Remove opening intro from portfolio site</tspan> <tspan class="commit-time">(9 seconds ago)</tspan>
+        <tspan class="commit-hash">e2fb992</tspan> - <tspan class="commit-msg">Use SUIT for Korean portfolio typography</tspan> <tspan class="commit-time">(10 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">b05a1ba</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(16 hours ago)</tspan>
+        <tspan class="commit-hash">0a42381</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(6 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">aa82124</tspan> - <tspan class="commit-msg">Add English portfolio and route documents by se...</tspan> <tspan class="commit-time">(16 hours ago)</tspan>
+        <tspan class="commit-hash">61d0175</tspan> - <tspan class="commit-msg">Remove opening intro from portfolio site</tspan> <tspan class="commit-time">(6 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">6ef6aa1</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(17 hours ago)</tspan>
+        <tspan class="commit-hash">b05a1ba</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(16 hours ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">dffefac</tspan> - <tspan class="commit-msg">Publish redesigned portfolio site and updated CV</tspan> <tspan class="commit-time">(17 hours ago)</tspan>
+        <tspan class="commit-hash">aa82124</tspan> - <tspan class="commit-msg">Add English portfolio and route documents by se...</tspan> <tspan class="commit-time">(16 hours ago)</tspan>
       </text>
     </g>
   </g>
