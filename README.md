@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1791823523" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1791881705" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **aa82124** - Add English portfolio and route documents by selected language (14 seconds ago)
-- **6ef6aa1** - chore: auto-update recent commits in README [skip ci] (31 minutes ago)
-- **dffefac** - Publish redesigned portfolio site and updated CV (32 minutes ago)
-- **cd1c0e8** - chore: auto-update recent commits in README [skip ci] (3 weeks ago)
-- **3807902** - Update index.html (3 weeks ago)
+- **61d0175** - Remove opening intro from portfolio site (9 seconds ago)
+- **b05a1ba** - chore: auto-update recent commits in README [skip ci] (16 hours ago)
+- **aa82124** - Add English portfolio and route documents by selected language (16 hours ago)
+- **6ef6aa1** - chore: auto-update recent commits in README [skip ci] (17 hours ago)
+- **dffefac** - Publish redesigned portfolio site and updated CV (17 hours ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
