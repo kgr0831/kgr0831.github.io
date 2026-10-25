@@ -1170,22 +1170,22 @@ const portfolioProjects = {
       "WIP · Personal project · Business concept"
     ],
     "summary": [
-      "실시간 통화와 채팅의 기억을 연결한 캐릭터 서비스. 응답 지연·LoRA는 개선 과제.",
-      "A character service connecting real-time calls and chat memory. Latency and LoRA remain development work."
+      "맞장구·끼어들기·기억의 불일치를 찾아, 같은 AI 친구와 이어지는 대화를 연구합니다.",
+      "Building continuity with an AI friend by tackling interruptions, turn-taking, and inconsistent memory."
     ],
     "intro": [
-      "취향에 맞는 캐릭터의 목소리·일러스트·기억이 이어지는 대화 서비스를 개발하고 있습니다.",
-      "Developing a character conversation service connecting personalized voices, illustrations, and memories."
+      "목소리·외형·기억이 이어지는 AI 친구 서비스입니다. 통화와 채팅을 연결한 앱을 만들고, 자연스러운 대화의 조건을 별도 음성 연구 프로토타입에서 검증하고 있습니다.",
+      "An AI companion service built around a consistent voice, appearance, and memory. The app connects calls and chat, while a separate voice research prototype explores what makes conversations feel natural."
     ],
     "details": [
       [
         [
-          "발견한 문제 · 끊기는 대화와 어긋나는 기억",
-          "Problem · Interrupted speech and inconsistent memory"
+          "발견한 문제 · 빠르기만 해서는 자연스럽지 않은 대화",
+          "Problem · Speed alone does not make a natural conversation"
         ],
         [
-          "말끝을 너무 빨리 판단하면 문장 중간에 답변을 시작하고, 들려주지 않은 답변을 저장하면 이후 대화가 어긋났습니다. 통화의 입력·재생·기억 저장을 서로 다른 상태로 다뤘습니다.",
-          "Premature turn detection started replies before the user finished speaking. Saving unheard replies disrupted later conversations. I separated input, playback, and memory persistence into distinct states."
+          "문제를 “빠른 응답” 하나로 보면 놓치는 것이 있었습니다. 맞장구에도 통화가 끊기고, 사용자가 말을 고치면 미리 만든 답이 틀려지며, 듣지 않은 답변이 기억에 남으면 다음 대화가 어긋났습니다. 응답 속도·차례 전환·기억의 일관성을 나눠 다뤘습니다.",
+          "Latency alone missed important failures: acknowledgments cut off replies, corrections invalidated prepared answers, and unheard replies distorted later memories. I treated latency, turn-taking, and memory consistency as separate problems."
         ]
       ],
       [
@@ -1210,12 +1210,42 @@ const portfolioProjects = {
       ],
       [
         [
-          "실측 결과와 남은 과제",
-          "Measured result and remaining work"
+          "음성 연구 · 맞장구와 끼어들기 구분",
+          "Voice research · Acknowledgments versus interruptions"
         ],
         [
-          "2026.10.14 실제 API에 합성 마이크 입력을 보낸 1회 시험에서 첫 음성 재생까지 3.48초로 측정됐습니다. 0.5초 목표에는 미달했고 사람의 마이크 환경·다수 표본은 미검증입니다. 응답 지연 개선과 로컬 LoRA를 통한 외형 일관성은 후속 과제입니다.",
-          "In one real-API trial with synthetic microphone input on October 14, 2026, first audio playback took 3.48 seconds. The 0.5-second target remains unmet; human microphone use and larger samples are untested. Further work covers latency and visual consistency through local LoRA training."
+          "“응·어”는 재생을 유지하고, “잠깐·그만”은 생성·합성·재생을 취소하도록 구현했습니다. 짧은 말이 긴 문장으로 확장되면 전체 입력을 보존해 차례를 넘깁니다. 캐릭터도 사용자의 긴 발화 중 짧게 반응하되 듣기를 끝내지 않습니다. 2026.10.25의 실제 API·텍스트 입력 브라우저 기록에서 맞장구·중단·긴 발화 시나리오를 확인했습니다. 자막 규칙 기반의 로컬 연구이며, 사람의 마이크와 억양까지 검증된 완성형 통화는 아닙니다.",
+          "Implemented playback preservation for “mm-hm,” cancellation for “wait/stop,” and turn transfer when a short fragment grows into a sentence. The character can also react briefly while still listening. Recorded browser checks on October 25 used real APIs and text input for acknowledgment, stop, and long-utterance scenarios. This local research uses transcript rules; human microphone input and prosody still need evaluation."
+        ]
+      ],
+      [
+        [
+          "기술적 챌린지 · 먼저 준비하고 안전하게 취소",
+          "Technical challenge · Prepare early and cancel safely"
+        ],
+        [
+          "중간 자막으로 답변을 미리 준비하되 최종 발화와 입력이 일치할 때만 재사용합니다. 달라지면 기존 생성을 취소하고 최종 입력으로 새 답을 만듭니다. 아직 시작하지 않은 추임새보다 본답을 우선하며, 생성 시작·음성 준비·실제 재생 예약을 따로 계측합니다. 현재 검증은 정규화한 입력의 일치 여부를 보는 방식으로, 학습형 라우터나 의미 기반 답변 비교는 후속 과제입니다.",
+          "Prepare a draft from partial transcripts and reuse it only when the normalized final input matches. Otherwise, cancel and regenerate. Prioritize the main answer over fillers that have not started, and measure generation, audio readiness, and playback scheduling separately. Current validation checks input equality; a trained router and semantic answer comparison remain future work."
+        ]
+      ],
+      [
+        [
+          "실험 결과 · 서로 다른 지연을 구분",
+          "Experiment · Keep latency measurements distinct"
+        ],
+        [
+          "텍스트 입력을 사용한 3개 경로의 각 1회 시험에서, 최종 자막 수신부터 본답 재생 예약까지 2.063초·1.359초·1.893초를 기록했습니다. 음성 인식과 실제 스피커 출력은 제외되며, 같은 조건의 전후 비교가 아닙니다. 짧은 추임새의 속도는 본답 속도와 구분합니다. 잘게 나눈 음성의 억양 단절도 발견해 문장 단위 합성을 실험했습니다.",
+          "One text-input trial per path recorded 2.063s, 1.359s, and 1.893s from final-transcript receipt to main-audio scheduling. These exclude recognition and physical speaker output and are not a controlled before/after comparison. Quick fillers are measured separately from the answer. I also tested sentence grouping after tiny audio chunks broke intonation."
+        ]
+      ],
+      [
+        [
+          "앱과 연구 데모의 범위 · 남은 과제",
+          "App and research scope · Remaining work"
+        ],
+        [
+          "기존 앱에는 계정별 통화·채팅 기억이 연결돼 있지만, 새 음성 연구 데모는 세션 문맥과 수동 테스트 기억을 사용하며 계정 기억에는 아직 연결하지 않았습니다. 초기 앱의 실제 API·합성 마이크 입력 1회 시험은 첫 음성 3.48초였고, 0.5초 목표는 미달입니다. 다른 조건의 후속 실험과 속도 개선률로 비교하지 않습니다. 실제 마이크·장시간 통화, 의미 기반 차례 판단, 로컬 LoRA를 통한 외형 일관성은 검증·연구 과제입니다.",
+          "The main app connects account-level call and chat memory. The new voice research demo uses session context and manually entered test memories and is not yet connected to account memory. An earlier app trial with real APIs and synthetic microphone input recorded 3.48s to first audio; the 0.5s target remains unmet. Its different conditions do not support a speedup claim against later trials. Human microphone use, long calls, semantic turn decisions, and LoRA-based visual consistency remain open."
         ]
       ],
       [
@@ -1241,6 +1271,15 @@ const portfolioProjects = {
     "logo": "./assets/icons/vfriend.svg",
     "logoStyle": "light",
     "media": [
+      {
+        "src": "./assets/vfriend-voice-lab.png",
+        "caption": [
+          "로컬 음성 연구 화면 · 정해진 테스트 문장으로 맞장구·중단·긴 발화를 검사",
+          "Local voice research prototype · Scripted checks for acknowledgment, interruption, and long utterances"
+        ],
+        "width": 1280,
+        "height": 1298
+      },
       {
         "src": "./assets/vfriend-star-mender.png",
         "caption": [
