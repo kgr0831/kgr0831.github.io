@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">0d22eeb</tspan> - <tspan class="commit-msg">Update Gammaru deployment and Virtual Friend pr...</tspan> <tspan class="commit-time">(13 seconds ago)</tspan>
+        <tspan class="commit-hash">7b8755b</tspan> - <tspan class="commit-msg">Expand Virtual Friend voice research case study</tspan> <tspan class="commit-time">(15 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">379b818</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(12 days ago)</tspan>
+        <tspan class="commit-hash">46fbe08</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(2 hours ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">7801f6e</tspan> - <tspan class="commit-msg">Apply selected SUITE typography to Korean text</tspan> <tspan class="commit-time">(12 days ago)</tspan>
+        <tspan class="commit-hash">0d22eeb</tspan> - <tspan class="commit-msg">Update Gammaru deployment and Virtual Friend pr...</tspan> <tspan class="commit-time">(2 hours ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">e408ab8</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(12 days ago)</tspan>
+        <tspan class="commit-hash">379b818</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(12 days ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">29be5f5</tspan> - <tspan class="commit-msg">Enlarge Korean hero slogan across desktop and m...</tspan> <tspan class="commit-time">(12 days ago)</tspan>
+        <tspan class="commit-hash">7801f6e</tspan> - <tspan class="commit-msg">Apply selected SUITE typography to Korean text</tspan> <tspan class="commit-time">(12 days ago)</tspan>
       </text>
     </g>
   </g>
