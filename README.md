@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1791885397" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1792935881" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **7801f6e** - Apply selected SUITE typography to Korean text (9 seconds ago)
-- **e408ab8** - chore: auto-update recent commits in README [skip ci] (7 minutes ago)
-- **29be5f5** - Enlarge Korean hero slogan across desktop and mobile (8 minutes ago)
-- **f94e274** - chore: auto-update recent commits in README [skip ci] (19 minutes ago)
-- **caf9262** - Apply Gowun Dodum Korean typography from selected concept (20 minutes ago)
+- **0d22eeb** - Update Gammaru deployment and Virtual Friend progress (13 seconds ago)
+- **379b818** - chore: auto-update recent commits in README [skip ci] (12 days ago)
+- **7801f6e** - Apply selected SUITE typography to Korean text (12 days ago)
+- **e408ab8** - chore: auto-update recent commits in README [skip ci] (12 days ago)
+- **29be5f5** - Enlarge Korean hero slogan across desktop and mobile (12 days ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
