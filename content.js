@@ -387,6 +387,16 @@ const portfolioProjects = {
       ],
       [
         [
+          "공개 소개와 회원 보고서의 분리",
+          "Separate public pages and member reports"
+        ],
+        [
+          "누구나 볼 동아리 소개·게임 아카이브와 회원용 보고서는 접근 범위가 달랐습니다. 공개 화면은 GitHub Pages에 배포하고 로그인·보고서·알림은 기존 AWS에 유지했습니다. 공개 빌드에 회원 데이터나 로그인 세션을 넣지 않았습니다.",
+          "The club introduction and game archive are public, while reports require member access. Deployed public pages on GitHub Pages and retained login, reports, and notifications on AWS, keeping member data and login sessions out of the public build."
+        ]
+      ],
+      [
+        [
           "배운 점",
           "What I learned"
         ],
@@ -402,14 +412,14 @@ const portfolioProjects = {
           "동아리 웹",
           "Club website"
         ],
-        "https://gammarupage.vercel.app/"
+        "https://gammaru.dev/"
       ],
       [
         [
           "보고서 보관함",
           "Report archive"
         ],
-        "https://gammarupage.vercel.app/reports"
+        "https://d3ktbkaahtexzk.cloudfront.net/reports"
       ],
       [
         [
@@ -424,6 +434,13 @@ const portfolioProjects = {
           "Brief source"
         ],
         "https://github.com/kgr0831/DailyScrum_Bundle"
+      ],
+      [
+        [
+          "공개 홈페이지 코드",
+          "Public homepage source"
+        ],
+        "https://github.com/gammaru-dev/homepage"
       ]
     ],
     "logo": "./assets/icons/gammaru.png",
@@ -432,8 +449,8 @@ const portfolioProjects = {
       {
         "src": "./assets/gammaru-site.png",
         "caption": [
-          "겜마루 웹사이트",
-          "Gammaru website"
+          "겜마루 공개 홈페이지 · 2026.10 배포 화면",
+          "Gammaru public homepage · October 2026 deployment"
         ],
         "width": 1440,
         "height": 900
@@ -1153,8 +1170,8 @@ const portfolioProjects = {
       "WIP · Personal project · Business concept"
     ],
     "summary": [
-      "캐릭터 대화·기억·음성 메시지 프로토타입. 실시간 STS·LoRA는 후속 과제.",
-      "Character conversation, memory, and voice-message prototypes; real-time STS and LoRA remain future work."
+      "실시간 통화와 채팅의 기억을 연결한 캐릭터 서비스. 응답 지연·LoRA는 개선 과제.",
+      "A character service connecting real-time calls and chat memory. Latency and LoRA remain development work."
     ],
     "intro": [
       "취향에 맞는 캐릭터의 목소리·일러스트·기억이 이어지는 대화 서비스를 개발하고 있습니다.",
@@ -1163,22 +1180,42 @@ const portfolioProjects = {
     "details": [
       [
         [
-          "구현된 프로토타입",
-          "Implemented prototypes"
+          "발견한 문제 · 끊기는 대화와 어긋나는 기억",
+          "Problem · Interrupted speech and inconsistent memory"
         ],
         [
-          "캐릭터별 대화·기억, 사진 이해와 앨범, 기록 조회·수정, 캐릭터 목소리 연결, 감정·연기 태그와 음원 생성·재시도를 구현했습니다.",
-          "Prototyped character-specific conversation and memory, photo understanding and albums, record editing, character voices, emotion and acting tags, and audio generation with retries."
+          "말끝을 너무 빨리 판단하면 문장 중간에 답변을 시작하고, 들려주지 않은 답변을 저장하면 이후 대화가 어긋났습니다. 통화의 입력·재생·기억 저장을 서로 다른 상태로 다뤘습니다.",
+          "Premature turn detection started replies before the user finished speaking. Saving unheard replies disrupted later conversations. I separated input, playback, and memory persistence into distinct states."
         ]
       ],
       [
         [
-          "후속 기술 과제",
-          "Remaining technical work"
+          "실시간 통화와 기억 연결",
+          "Real-time calls and connected memory"
         ],
         [
-          "실시간 STS의 응답 지연·턴 전환·중간 끊기와, 로컬 모델·LoRA를 활용한 일러스트·캐릭터 일관성은 연구·개발 과제입니다.",
-          "Low-latency real-time STS, turn transitions, interruptions, and consistent illustrations and characters using local models and LoRA remain research and development tasks."
+          "로컬 앱에서 자동 말끝 감지, 끼어들기, 캐릭터 목소리의 스트리밍 재생을 구현했습니다. 확정 발화와 재생 완료 답변만 기록하고 통화 기억을 다음 채팅·통화에 전달합니다. 기억 추출은 응답 재생을 막지 않으며, 중단된 작업은 재시작 후 복구합니다.",
+          "Implemented automatic turn detection, interruptions, and streaming character voices in the local app. Only confirmed speech and played replies enter the record, with call memories carried into later chats and calls. Memory extraction runs without blocking playback and resumes after interruption."
+        ]
+      ],
+      [
+        [
+          "계정별 기록과 이미지 생성",
+          "Per-account records and image generation"
+        ],
+        [
+          "기록·설정·초안을 계정별 서버 저장소로 옮기고, 캐릭터 이미지 후보를 생성·비교·선택하도록 구현했습니다. 생성 실패 시 재시도와 진행 상태 복원을 포함합니다. 관련 기능은 모의 외부 API를 사용하는 자동 검사로 검증했습니다.",
+          "Moved records, settings, and drafts to per-account server storage. Added generation, comparison, and selection of character images, with retries and progress recovery. Automated checks use mock external providers."
+        ]
+      ],
+      [
+        [
+          "실측 결과와 남은 과제",
+          "Measured result and remaining work"
+        ],
+        [
+          "2026.10.14 실제 API에 합성 마이크 입력을 보낸 1회 시험에서 첫 음성 재생까지 3.48초로 측정됐습니다. 0.5초 목표에는 미달했고 사람의 마이크 환경·다수 표본은 미검증입니다. 응답 지연 개선과 로컬 LoRA를 통한 외형 일관성은 후속 과제입니다.",
+          "In one real-API trial with synthetic microphone input on October 14, 2026, first audio playback took 3.48 seconds. The 0.5-second target remains unmet; human microphone use and larger samples are untested. Further work covers latency and visual consistency through local LoRA training."
         ]
       ],
       [
