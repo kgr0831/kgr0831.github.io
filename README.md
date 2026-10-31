@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1792944240" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1793412634" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **7b8755b** - Expand Virtual Friend voice research case study (15 seconds ago)
-- **46fbe08** - chore: auto-update recent commits in README [skip ci] (2 hours ago)
-- **0d22eeb** - Update Gammaru deployment and Virtual Friend progress (2 hours ago)
-- **379b818** - chore: auto-update recent commits in README [skip ci] (12 days ago)
-- **7801f6e** - Apply selected SUITE typography to Korean text (12 days ago)
+- **76ff018** - Document verified voice integration and Orca-STS preview milestones (16 seconds ago)
+- **19e6140** - chore: auto-update recent commits in README [skip ci] (5 days ago)
+- **7b8755b** - Expand Virtual Friend voice research case study (5 days ago)
+- **46fbe08** - chore: auto-update recent commits in README [skip ci] (6 days ago)
+- **0d22eeb** - Update Gammaru deployment and Virtual Friend progress (6 days ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
