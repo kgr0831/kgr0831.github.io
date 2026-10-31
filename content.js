@@ -1166,16 +1166,16 @@ const portfolioProjects = {
       "Virtual Friend"
     ],
     "period": [
-      "WIP · 개인 프로젝트 · 사업화 구상",
-      "WIP · Personal project · Business concept"
+      "웹 베타 · 개인 프로젝트 · 사업화 검증 전",
+      "Web beta · Personal project · Business validation pending"
     ],
     "summary": [
       "맞장구·끼어들기·기억의 불일치를 찾아, 같은 AI 친구와 이어지는 대화를 연구합니다.",
       "Building continuity with an AI friend by tackling interruptions, turn-taking, and inconsistent memory."
     ],
     "intro": [
-      "목소리·외형·기억이 이어지는 AI 친구 서비스입니다. 통화와 채팅을 연결한 앱을 만들고, 자연스러운 대화의 조건을 별도 음성 연구 프로토타입에서 검증하고 있습니다.",
-      "An AI companion service built around a consistent voice, appearance, and memory. The app connects calls and chat, while a separate voice research prototype explores what makes conversations feel natural."
+      "목소리·외형·기억이 이어지는 AI 친구 서비스입니다. 음성 연구 엔진을 기존 계정의 통화·기억 경로에 연결해 웹 베타에 배포했습니다.",
+      "An AI companion service with consistent voice, appearance and memory. I integrated the voice research engine with account calls and memory, then deployed it in a web beta."
     ],
     "details": [
       [
@@ -1210,8 +1210,8 @@ const portfolioProjects = {
       ],
       [
         [
-          "음성 연구 · 맞장구와 끼어들기 구분",
-          "Voice research · Acknowledgments versus interruptions"
+          "10월 25일 연구 · 맞장구와 끼어들기",
+          "Oct 25 research · Acknowledgments and interruptions"
         ],
         [
           "“응·어”는 재생을 유지하고, “잠깐·그만”은 생성·합성·재생을 취소하도록 구현했습니다. 짧은 말이 긴 문장으로 확장되면 전체 입력을 보존해 차례를 넘깁니다. 캐릭터도 사용자의 긴 발화 중 짧게 반응하되 듣기를 끝내지 않습니다. 2026.10.25의 실제 API·텍스트 입력 브라우저 기록에서 맞장구·중단·긴 발화 시나리오를 확인했습니다. 자막 규칙 기반의 로컬 연구이며, 사람의 마이크와 억양까지 검증된 완성형 통화는 아닙니다.",
@@ -1224,8 +1224,8 @@ const portfolioProjects = {
           "Technical challenge · Prepare early and cancel safely"
         ],
         [
-          "중간 자막으로 답변을 미리 준비하되 최종 발화와 입력이 일치할 때만 재사용합니다. 달라지면 기존 생성을 취소하고 최종 입력으로 새 답을 만듭니다. 아직 시작하지 않은 추임새보다 본답을 우선하며, 생성 시작·음성 준비·실제 재생 예약을 따로 계측합니다. 현재 검증은 정규화한 입력의 일치 여부를 보는 방식으로, 학습형 라우터나 의미 기반 답변 비교는 후속 과제입니다.",
-          "Prepare a draft from partial transcripts and reuse it only when the normalized final input matches. Otherwise, cancel and regenerate. Prioritize the main answer over fillers that have not started, and measure generation, audio readiness, and playback scheduling separately. Current validation checks input equality; a trained router and semantic answer comparison remain future work."
+          "중간 자막으로 답변을 미리 준비하되 최종 발화와 입력이 일치할 때만 재사용합니다. 달라지면 기존 생성을 취소하고 최종 입력으로 새 답을 만듭니다. 아직 시작하지 않은 추임새보다 본답을 우선하며, 생성 시작·음성 준비·실제 재생 예약을 따로 계측합니다. 이 실험의 검증은 정규화한 입력의 일치 여부를 보는 방식으로, 학습형 라우터나 의미 기반 답변 비교는 후속 과제입니다.",
+          "Prepare a draft from partial transcripts and reuse it only when the normalized final input matches. Otherwise, cancel and regenerate. Prioritize the main answer over fillers that have not started, and measure generation, audio readiness, and playback scheduling separately. This experiment checked input equality; a trained router and semantic answer comparison remain future work."
         ]
       ],
       [
@@ -1240,12 +1240,22 @@ const portfolioProjects = {
       ],
       [
         [
-          "앱과 연구 데모의 범위 · 남은 과제",
-          "App and research scope · Remaining work"
+          "연구에서 웹 베타로 · 계정 통화 연결",
+          "From research to web beta · Account-call integration"
         ],
         [
-          "기존 앱에는 계정별 통화·채팅 기억이 연결돼 있지만, 새 음성 연구 데모는 세션 문맥과 수동 테스트 기억을 사용하며 계정 기억에는 아직 연결하지 않았습니다. 초기 앱의 실제 API·합성 마이크 입력 1회 시험은 첫 음성 3.48초였고, 0.5초 목표는 미달입니다. 다른 조건의 후속 실험과 속도 개선률로 비교하지 않습니다. 실제 마이크·장시간 통화, 의미 기반 차례 판단, 로컬 LoRA를 통한 외형 일관성은 검증·연구 과제입니다.",
-          "The main app connects account-level call and chat memory. The new voice research demo uses session context and manually entered test memories and is not yet connected to account memory. An earlier app trial with real APIs and synthetic microphone input recorded 3.48s to first audio; the 0.5s target remains unmet. Its different conditions do not support a speedup claim against later trials. Human microphone use, long calls, semantic turn decisions, and LoRA-based visual consistency remain open."
+          "연구 데모와 별도로, 새 엔진을 기존 계정의 일대일 통화에 연결했습니다. 캐릭터 설정·최근 대화·허용된 기억을 불러오고 실제 재생된 구절만 기록합니다. 10월 27일 실제 API와 합성 마이크로 연속 두 응답의 재생·앞선 취향 회상·기록 저장을 확인한 배포 기록이 있습니다. 10월 31일 관련 모의 검사 21개가 통과했고 공개 클라이언트 파일이 감사한 소스와 일치했습니다. 그룹 통화는 기존 엔진을 유지합니다.",
+          "Integrated the new engine into existing accounts’ one-to-one calls, separately from the research demo. It loads character settings, recent chat and permitted memories, recording only played phrases. An Oct 27 deployment check used real APIs and a synthetic microphone to verify two played replies, recall of an earlier preference and saved call records. On Oct 31, 21 related mock tests passed and public client files matched the audited source. Group calls retain the prior engine."
+        ]
+      ],
+      [
+        [
+          "남은 검증",
+          "Remaining evaluation"
+        ],
+        [
+          "초기 앱의 실제 API·합성 마이크 1회 기록은 첫 음성 3.48초이며 0.5초 목표는 미달이었습니다. 다른 파이프라인과 입력 조건의 수치를 개선율로 비교하지 않습니다. 실제 사람의 마이크·장시간 통화·지연 분포·외형 일관성과 사업성은 추가 검증이 필요합니다. 새 디자인과 관계·아키텍처 설계는 진행 중입니다.",
+          "An earlier real-API trial with synthetic microphone input recorded 3.48s to first audio, missing the 0.5s target. Results from different pipelines and input conditions do not establish a speedup. Human microphones, long calls, latency distributions, visual consistency and business viability still need evaluation. New design, relationship and architecture work remains in progress."
         ]
       ],
       [
@@ -1299,5 +1309,105 @@ const portfolioProjects = {
         "height": 1024
       }
     ]
+  },
+  "orca": {
+    "title": [
+      "Orca-STS",
+      "Orca-STS"
+    ],
+    "period": [
+      "2026.10 · 오픈소스 포크 기여",
+      "Oct 2026 · Open-source fork contribution"
+    ],
+    "headline": [
+      "말을 이어가는 개발 도구",
+      "Voice conversations for development"
+    ],
+    "summary": [
+      "연속 듣기·말차례 판단·중단 처리를 구현하고 Windows 미리보기를 배포했습니다.",
+      "Built continuous listening, turn handling and cancellation, and released a Windows preview."
+    ],
+    "role": [
+      "Orca 기반 음성 기능 개발",
+      "Voice feature development on Orca"
+    ],
+    "stack": "TypeScript · React · Electron · ONNX",
+    "intro": [
+      "Orca는 AI 개발 작업을 관리하는 도구입니다. 코드를 보며 말로 생각을 정리할 수 있도록, 기존 도구 위에 음성 입력·Codex 대화·스트리밍 재생을 연결했습니다.",
+      "Orca manages AI development work. I extended it with speech input, Codex conversations and streamed replies so users can think aloud while reading code."
+    ],
+    "metric": "Windows Preview",
+    "metricLabel": [
+      "개인 포크 미리보기 배포 · 원본 PR 검토 중",
+      "Fork preview released · Upstream PR open"
+    ],
+    "details": [
+      [
+        [
+          "발견한 문제",
+          "Problem"
+        ],
+        [
+          "받아쓰기만으로는 응답을 듣는 동안 이어 말하거나 잘못 보낸 입력을 복구하기 어려웠습니다. 듣기·답변 재생·중단을 하나의 대화 흐름으로 구성했습니다.",
+          "Dictation alone did not support speaking during replies or recovering uncertain sends. I connected listening, reply playback and cancellation into one conversation flow."
+        ]
+      ],
+      [
+        [
+          "본인 구현",
+          "My contribution"
+        ],
+        [
+          "기존 권한·승인 경로를 유지하며 음성 대화를 연결했습니다. 로컬 모델로 말끝과 겹친 발화의 의도를 판단하고, 늦게 도착한 판단·오디오를 취소합니다. 전송 여부가 불명확하면 입력을 보존하며 자동 중복 전송하지 않습니다.",
+          "Connected voice conversations while preserving permissions and approvals. Local models judge turn endpoints and overlap intent; stale decisions and audio are cancelled. Uncertain sends retain the input without automatic duplicate submission."
+        ]
+      ],
+      [
+        [
+          "배포·검증",
+          "Release and verification"
+        ],
+        [
+          "개인 포크의 v1.4.214-sts.5 Windows 미리보기를 공개했습니다. 관련 CI에서 음성 계약·타입 검사·Windows 빌드·로컬 모델 검사가 통과했습니다. 10월 31일 관련 모의 검사 23개도 통과했습니다.",
+          "Published the v1.4.214-sts.5 Windows preview in my fork. Relevant CI passed voice contracts, typechecking, Windows build and local-model verification. On Oct 31, 23 related mock tests also passed."
+        ]
+      ],
+      [
+        [
+          "기여 범위와 남은 일",
+          "Scope and open work"
+        ],
+        [
+          "기반 IDE는 기존 Orca의 성과입니다. 기존 채팅·터미널에 음성을 연결하는 원본 저장소 PR은 검토 중이며 아직 병합되지 않았습니다. 합성 예문 기반 모델 검사를 실제 다국어 정확도로 해석하지 않으며, 실물 마이크·장시간 품질·응답 속도 향상은 별도 검증이 필요합니다.",
+          "The base IDE is existing Orca work. My upstream PR connecting voice to existing chats and terminals is still open. Synthetic model examples do not establish real multilingual accuracy; hardware microphone quality, long sessions and faster replies need separate evaluation."
+        ]
+      ]
+    ],
+    "links": [
+      [
+        [
+          "구현 코드",
+          "Source"
+        ],
+        "https://github.com/kgr0831/Orca-STS"
+      ],
+      [
+        [
+          "Windows 미리보기",
+          "Windows preview"
+        ],
+        "https://github.com/kgr0831/Orca-STS/releases/tag/v1.4.214-sts.5"
+      ],
+      [
+        [
+          "원본 저장소 기여 · 검토 중",
+          "Upstream contribution · Open"
+        ],
+        "https://github.com/stablyai/orca/pull/33850"
+      ]
+    ],
+    "logo": "./assets/icons/orca.svg",
+    "logoStyle": "light",
+    "media": []
   }
 };

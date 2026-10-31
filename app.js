@@ -12,7 +12,7 @@
   const portfolioPages = {
     moai: 6, gammaru: 8, abstraction: 10, golf: 11, paperbridge: 13,
     eum: 15, pintos: 19, simulation: 20, duduri: 21, spell: 27,
-    planet: 28, triniacle: 29, sprite: 31, rolai: 33, vfriend: 37,
+    planet: 28, triniacle: 29, sprite: 31, rolai: 33, vfriend: 37, orca: 42,
   };
   let toastTimer;
   const $ = (selector) => document.querySelector(selector);
