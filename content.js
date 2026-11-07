@@ -1250,12 +1250,22 @@ const portfolioProjects = {
       ],
       [
         [
+          "관계 성장과 모바일 사용 흐름",
+          "Relationship progress and mobile navigation"
+        ],
+        [
+          "대화 뒤의 변화를 보여 주도록 10단계 관계와 정보 카드 20개, 대표 사건 3개를 연결했습니다. 사건은 선택·보류·재접속을 지원하고 중복 보상을 막습니다. 모바일은 서버 조회를 기다리는 동안에도 메뉴를 바꿀 수 있게 하고 콘텐츠만 전환합니다. 11월 4일 main 병합과 CI 성공, 앞선 웹 베타 배포 기록을 확인했습니다. 11월 7일 관련 모의 회귀 검사를 재실행했습니다. 실제 AI의 관계 표현·재방문 효과와 실물 휴대폰 평가는 남아 있습니다.",
+          "Connected 10 relationship stages, 20 information cards and 3 resumable stories so conversations have visible consequences. Choices, pauses and reconnects preserve progress without duplicate rewards. Mobile tabs can switch while remote data loads, with transitions confined to content. Verified the Nov 4 main merge and passing CI, plus earlier web beta deployment records. Reran related mock regression tests on Nov 7. AI relationship quality, return visits and physical phone usability still need evaluation."
+        ]
+      ],
+      [
+        [
           "남은 검증",
           "Remaining evaluation"
         ],
         [
-          "초기 앱의 실제 API·합성 마이크 1회 기록은 첫 음성 3.48초이며 0.5초 목표는 미달이었습니다. 다른 파이프라인과 입력 조건의 수치를 개선율로 비교하지 않습니다. 실제 사람의 마이크·장시간 통화·지연 분포·외형 일관성과 사업성은 추가 검증이 필요합니다. 새 디자인과 관계·아키텍처 설계는 진행 중입니다.",
-          "An earlier real-API trial with synthetic microphone input recorded 3.48s to first audio, missing the 0.5s target. Results from different pipelines and input conditions do not establish a speedup. Human microphones, long calls, latency distributions, visual consistency and business viability still need evaluation. New design, relationship and architecture work remains in progress."
+          "초기 앱의 실제 API·합성 마이크 1회 기록은 첫 음성 3.48초이며 0.5초 목표는 미달이었습니다. 다른 파이프라인과 입력 조건의 수치를 개선율로 비교하지 않습니다. 실제 사람의 마이크·장시간 통화·지연 분포·외형 일관성과 사업성은 추가 검증이 필요합니다. 최근 큰 글자·포커스 수정과 별도 아키텍처 실험은 로컬 작업으로 구분합니다.",
+          "An earlier real-API trial with synthetic microphone input recorded 3.48s to first audio, missing the 0.5s target. Results from different pipelines and input conditions do not establish a speedup. Human microphones, long calls, latency distributions, visual consistency and business viability still need evaluation. Recent large-text and focus fixes and the separate architecture experiment remain local work."
         ]
       ],
       [
@@ -1407,6 +1417,85 @@ const portfolioProjects = {
       ]
     ],
     "logo": "./assets/icons/orca.svg",
+    "logoStyle": "light",
+    "media": []
+  },
+  "timetable": {
+    "title": [
+      "시간표 추천 데모",
+      "Timetable planner"
+    ],
+    "period": [
+      "2026.11 · 개인 구현 · 로컬 실행 데모",
+      "2026.11 · Personal implementation · Local demo"
+    ],
+    "summary": [
+      "충돌하는 수강 조건에서 가능한 시간표와 최소 변경안을 계산합니다.",
+      "Find feasible schedules and minimal changes when course constraints conflict."
+    ],
+    "intro": [
+      "요일·학점·점심시간을 맞춰 수업이 겹치지 않는 시간표를 비교하는 데모입니다. 제공된 규칙 명세를 실제 OR-Tools CP-SAT 엔진과 결과 검증 경로로 연결했습니다.",
+      "A local demo for comparing schedules against day, credit and lunch constraints. I connected a supplied rule specification to an OR-Tools CP-SAT solver and independent result checks."
+    ],
+    "details": [
+      [
+        [
+          "발견한 문제",
+          "Problem"
+        ],
+        [
+          "설명이 그럴듯해도 시간표의 충돌이나 조건 위반은 해결되지 않습니다. 자연어 요청의 해석과 조합의 유효성 계산을 분리하고, 저장 전 바뀐 조건을 확인하도록 했습니다.",
+          "A plausible explanation cannot fix a timetable conflict. I separated request interpretation from feasibility checks and made changed constraints visible before saving."
+        ]
+      ],
+      [
+        [
+          "본인 구현",
+          "My implementation"
+        ],
+        [
+          "실제 제약 해결 엔진으로 추천·분반 대체·허용된 최소 조건 완화를 계산하고 Node에서 반환 결과를 독립 재검증합니다. 취소·시간 제한·불완전 탐색을 구분하며 학기 캘린더와 ICS 내보내기로 연결했습니다. 기존 규칙 패키지는 제공 자료입니다.",
+          "Implemented solver integration for recommendations, section alternatives and permitted minimal relaxation, with independent Node validation. Handles cancellation, time limits and incomplete search, and connects results to a semester calendar and ICS export. The rule package was supplied."
+        ]
+      ],
+      [
+        [
+          "구현·검증 범위",
+          "Implementation and evidence"
+        ],
+        [
+          "공개 저장소에 병합된 소스를 확인하고 11월 7일 Node 통합·Python 엔진 검사를 재실행했습니다. Python 검사는 실제 엔진 사례와 상태 경계를 제어한 대역을 구분합니다. 이전 브라우저 검증 기록은 합성 데이터에서 저장·조건 완화·모바일 화면을 확인한 결과입니다.",
+          "Verified the merged public source and reran Node integration and Python solver tests on Nov 7. Python tests distinguish actual solver cases from controlled status doubles. Earlier browser records cover saving, relaxation and responsive layouts with synthetic data."
+        ]
+      ],
+      [
+        [
+          "데이터와 남은 검증",
+          "Data and remaining work"
+        ],
+        [
+          "50과목·150개 가상 분반을 사용하는 로컬 데모입니다. 실제 개설 시간·졸업 요건·수강 가능 여부, 제공 명세의 676개 결과는 검증하지 않았습니다. 공개 웹 배포와 실제 AI 계정 요청은 이번 점검 범위에 포함하지 않았습니다.",
+          "A local demo with 50 courses and 150 synthetic sections. Actual offerings, graduation eligibility and the supplied specification’s 676-result claim remain unverified. This audit did not deploy a hosted app or make real AI account requests."
+        ]
+      ]
+    ],
+    "links": [
+      [
+        [
+          "공개 소스",
+          "Public source"
+        ],
+        "https://github.com/kgr0831/openSourceProject"
+      ],
+      [
+        [
+          "실행 검증 기록",
+          "Validation record"
+        ],
+        "https://github.com/kgr0831/openSourceProject/blob/main/timetable-demo/solver/VALIDATION.md"
+      ]
+    ],
+    "logo": "./assets/ui/grid.svg",
     "logoStyle": "light",
     "media": []
   }
