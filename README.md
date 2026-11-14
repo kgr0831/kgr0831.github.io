@@ -83,7 +83,7 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
 <!-- START_SECTION:activity_svg -->
 <p align="center">
   <a href="https://github.com/Kgr0831/kgr0831.github.io/commits/main">
-    <img src="assets/commits_terminal.svg?v=1794622537" alt="Garam's Recent Activity" width="100%">
+    <img src="assets/commits_terminal.svg?v=1794622890" alt="Garam's Recent Activity" width="100%">
   </a>
 </p>
 <!-- END_SECTION:activity_svg -->
@@ -93,11 +93,11 @@ Fundamentals forged at **Krafton Jungle**, plus the execution to absorb unfamili
   <br>
 
 <!-- START_SECTION:activity_list -->
-- **f040c32** - Add verified LMS and character knowledge case studies (12 seconds ago)
+- **5f107a0** - Align English portfolio contents with timetable coverage (10 seconds ago)
+- **2112b4a** - chore: auto-update recent commits in README [skip ci] (6 minutes ago)
+- **f040c32** - Add verified LMS and character knowledge case studies (6 minutes ago)
 - **6131822** - chore: auto-update recent commits in README [skip ci] (7 days ago)
 - **254ebf1** - Document relationship continuity and constraint-based timetable planning (7 days ago)
-- **f8c8467** - chore: auto-update recent commits in README [skip ci] (2 weeks ago)
-- **76ff018** - Document verified voice integration and Orca-STS preview milestones (2 weeks ago)
 <!-- END_SECTION:activity_list -->
 </details>
 
