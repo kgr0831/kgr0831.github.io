@@ -1260,6 +1260,16 @@ const portfolioProjects = {
       ],
       [
         [
+          "공개 지식과 개인 기억의 경계",
+          "Public knowledge and private memories"
+        ],
+        [
+          "역사 인물의 공개 배경과 사용자 기억을 별도 경로로 관리하고 질문에 맞는 자료·출처를 대화에 연결했습니다. 다른 참가자의 개인 대화는 전달하지 않으며 자료의 요약·해설·전승을 구분합니다. 원전 검색 거부를 우선하고 25명 인물의 첫 만남에 선택·보류·재개와 중복 보상 방지를 연결했습니다. 11월 13일 웹 베타 배포와 14일 공개 화면 파일 일치, 관련 모의 검사 10개 통과를 확인했습니다. 실제 답변의 사실 정확도·장기 대화·음성 품질과 3D·Live2D 제작은 별도 검증 범위입니다.",
+          "Separated historical characters’ public background from user memories and connected relevant sources to conversations. Other participants’ private chats stay outside that context. Evidence types distinguish summaries, commentary and traditions, and search refusal takes priority. First encounters for 25 personas support choices, pauses and resumption without duplicate rewards. Verified the Nov 13 web beta deployment, matching public UI code on Nov 14 and 10 passing mock tests. Model answer accuracy, long conversations, voice quality, 3D and Live2D remain separate evaluation or development work."
+        ]
+      ],
+      [
+        [
           "남은 검증",
           "Remaining evaluation"
         ],
@@ -1430,12 +1440,12 @@ const portfolioProjects = {
       "2026.11 · Personal implementation · Local demo"
     ],
     "summary": [
-      "충돌하는 수강 조건에서 가능한 시간표와 최소 변경안을 계산합니다.",
-      "Find feasible schedules and minimal changes when course constraints conflict."
+      "가능한 시간표를 찾고 수업·LMS 마감을 함께 관리합니다.",
+      "Find feasible schedules and keep classes and LMS deadlines together."
     ],
     "intro": [
-      "요일·학점·점심시간을 맞춰 수업이 겹치지 않는 시간표를 비교하는 데모입니다. 제공된 규칙 명세를 실제 OR-Tools CP-SAT 엔진과 결과 검증 경로로 연결했습니다.",
-      "A local demo for comparing schedules against day, credit and lunch constraints. I connected a supplied rule specification to an OR-Tools CP-SAT solver and independent result checks."
+      "요일·학점·점심시간을 맞춰 수업이 겹치지 않는 시간표를 비교하는 데모입니다. 제공된 규칙 명세를 실제 OR-Tools CP-SAT 엔진과 결과 검증 경로로 연결했습니다. 학교 학습관리시스템(LMS)의 선택 과목 일정을 가져와 기존 학기 캘린더에 연결했습니다.",
+      "A local demo for comparing schedules against day, credit and lunch constraints. I connected a supplied rule specification to an OR-Tools CP-SAT solver and independent result checks. A shared learning management system (LMS) collector now brings selected course events into the semester calendar."
     ],
     "details": [
       [
@@ -1460,6 +1470,26 @@ const portfolioProjects = {
       ],
       [
         [
+          "학교 일정 연결",
+          "School calendar integration"
+        ],
+        [
+          "시간표를 만든 뒤에도 과제·시험 마감은 학교 LMS에서 따로 확인해야 했습니다. Canvas·LearningX 수집 모듈을 독립 도구와 캘린더에서 재사용하도록 분리했습니다. 계정별 안정 ID로 갱신·중복 제거하고, 일부 조회가 실패하면 이전 마감을 보존합니다. 일정 가져오기에서는 파일·영상을 내려받지 않으며 기존 수업·개인 일정은 유지합니다.",
+          "Assignment and exam deadlines still lived separately from planned classes. I extracted a Canvas and LearningX collector shared by a standalone tool and the calendar. Stable IDs separate accounts and prevent duplicate entries; partial failures preserve prior deadlines. Calendar imports leave materials undownloaded and keep existing classes and personal events."
+        ]
+      ],
+      [
+        [
+          "LMS 연결 검증",
+          "LMS validation"
+        ],
+        [
+          "11월 10일 병합된 공개 소스와 주요 구현·테스트 10개 파일을 대조했습니다. 11월 14일 파서 45개·캘린더 연동 10개 검사와 Chrome 흐름 1개가 통과했습니다. 합성 LMS 데이터로 과목 선택·재조회·재접속·ICS 내보내기·계정 전환과 모바일 화면을 확인했으며 실제 학교 계정에는 접속하지 않았습니다.",
+          "Ten selected implementation and test files matched the public source merged on Nov 10. On Nov 14, 45 parser tests, 10 calendar tests and one Chrome flow passed. Synthetic LMS data covered course selection, refresh, reopening, ICS export, account changes and mobile layout. No real school account was accessed."
+        ]
+      ],
+      [
+        [
           "구현·검증 범위",
           "Implementation and evidence"
         ],
@@ -1474,8 +1504,8 @@ const portfolioProjects = {
           "Data and remaining work"
         ],
         [
-          "50과목·150개 가상 분반을 사용하는 로컬 데모입니다. 실제 개설 시간·졸업 요건·수강 가능 여부, 제공 명세의 676개 결과는 검증하지 않았습니다. 공개 웹 배포와 실제 AI 계정 요청은 이번 점검 범위에 포함하지 않았습니다.",
-          "A local demo with 50 courses and 150 synthetic sections. Actual offerings, graduation eligibility and the supplied specification’s 676-result claim remain unverified. This audit did not deploy a hosted app or make real AI account requests."
+          "50과목·150개 가상 분반을 사용하는 로컬 데모입니다. 실제 개설 시간·졸업 요건·수강 가능 여부, 제공 명세의 676개 결과는 검증하지 않았습니다. 공개 웹 배포와 실제 AI 계정 요청은 이번 점검 범위에 포함하지 않았습니다. 학교 일정 변경은 다시 가져와 반영하며 외부 캘린더 자동 동기화·AI 요약은 제공하지 않습니다.",
+          "A local demo with 50 courses and 150 synthetic sections. Actual offerings, graduation eligibility and the supplied specification’s 676-result claim remain unverified. This audit did not deploy a hosted app or make real AI account requests. School changes require another import; external calendar auto-sync and AI summarization are not provided."
         ]
       ]
     ],
@@ -1493,6 +1523,13 @@ const portfolioProjects = {
           "Validation record"
         ],
         "https://github.com/kgr0831/openSourceProject/blob/main/timetable-demo/solver/VALIDATION.md"
+      ],
+      [
+        [
+          "LMS 연결 안내",
+          "LMS integration"
+        ],
+        "https://github.com/kgr0831/openSourceProject/tree/main/lms-parser"
       ]
     ],
     "logo": "./assets/ui/grid.svg",
