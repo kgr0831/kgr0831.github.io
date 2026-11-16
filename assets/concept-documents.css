@@ -1,0 +1,25 @@
+﻿/* The PDF uses the same palette, type and surface as its associated site proposal. */
+html[data-concept=metallic]{--paper:#f4f5f4;--ink:#202428;--muted:#4d565e;--line:#b2b9bd;--soft:#e4e8ea}
+html[data-concept=metallic] .cover{background:#d7d9da url('./brand/satin-silver.png') center/cover;color:#202428}
+html[data-concept=metallic] .cover:before{display:none}
+html[data-concept=metallic] .cover .sheet-head,html[data-concept=metallic] .cover .sheet-foot{color:#394650;border-color:#929da4}
+html[data-concept=metallic] .cover .sheet-body{padding-top:90px}
+html[data-concept=metallic] .cover h1{display:flex;gap:.22em;font-size:142px;line-height:1.05;white-space:nowrap}
+html[data-concept=metallic] .cover h1 span{margin:0;display:block}
+html[data-concept=metallic] .cover-bottom{border-top:1px solid #929da4;padding-top:22px;margin-bottom:20px}
+html[data-concept=metallic] .doc-principle{background:#d7d9da url('./brand/satin-silver.png') center/cover;color:#202428}
+html[data-concept=metallic] .closing-sheet{background:#d7d9da url('./brand/satin-silver.png') center/cover;color:#202428}
+html[data-concept=motion]{--paper:#f2efe7;--ink:#172d2b;--muted:#566b65;--line:#b2c1b7;--soft:#dfe6dc}
+html[data-concept=motion] .cover{background:#174c48;color:#f2efe7}
+html[data-concept=motion] .cover:before{display:none}
+html[data-concept=motion] .cover .sheet-head,html[data-concept=motion] .cover .sheet-foot{color:#d9e5da;border-color:#9bb5a8}
+html[data-concept=motion] .cover .sheet-body{padding-top:25px}
+html[data-concept=motion] .cover h1{font-size:170px;line-height:1;font-weight:600}
+html[data-concept=motion] .cover h1 span{display:block;text-align:right;background:#f2efe7;color:#174c48;margin:18px -52px 0;padding:0 52px 16px}
+html[data-concept=motion] .sheet:not(.cover) h2,html[data-concept=motion] .work-index h3{color:#174c48}
+html[data-concept=motion] .doc-principle{background:#174c48;color:#f2efe7}
+html[data-concept=motion] .doc-metric strong{color:#174c48}
+html[data-concept=motion] .closing-sheet{background:#f2efe7;color:#174c48}
+html[data-concept=motion] .cv-head>div>p,html[data-concept=motion] .cv-section h2{color:#174c48}
+@media screen and (max-width:850px){html[data-concept=metallic] .cover h1{font-size:11vw;gap:.2em}html[data-concept=metallic] .cover .sheet-body{padding-top:45px}html[data-concept=motion] .cover h1{font-size:14vw}html[data-concept=motion] .cover h1 span{margin-inline:-30px;padding-inline:30px}}
+@media screen and (max-width:540px){html[data-concept=metallic] .cover h1{display:block;font-size:18vw}html[data-concept=metallic] .cover h1 span{margin-left:30%}html[data-concept=motion] .cover h1{font-size:15.2vw}html[data-concept=motion] .cover h1 span{margin-inline:-22px;padding:10px 22px}}
