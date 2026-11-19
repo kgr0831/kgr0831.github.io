@@ -9,3 +9,17 @@
 @page{size:1200px 675px;margin:0}@page cv{size:A4;margin:0}@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:var(--paper)}.doc-nav{display:none}.deck,.cv-document{display:block;padding:0}.sheet{box-shadow:none;break-after:page;break-inside:avoid}.sheet:last-child{break-after:auto}.cv-page{page:cv;box-shadow:none;break-inside:avoid;height:1122px}}
 /* Keep the one-page CV comfortably readable in print. */
 @media screen and (min-width:541px),print{.cv-entry p,.cv-entry li{font-size:12px}.cv-entry h3{font-size:13px}.cv-entry header>span{font-size:10.5px}.cv-skills{font-size:12px}}
+
+.closing .additional-work {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line, #b6c5be);
+}
+.closing .additional-work h3 { margin: 0 0 12px; font-size: 15px; }
+.closing .additional-work ul { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; list-style: none; padding: 0; margin: 0; }
+.closing .additional-work a { font-size: 16px; font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
+.closing .additional-work p { font-size: 15px; line-height: 1.55; margin: 6px 0 0; word-break: keep-all; }
+@media screen and (max-width: 650px) {
+  .closing .additional-work ul { grid-template-columns: 1fr; gap: 15px; }
+  .closing .additional-work { margin-top: 24px; }
+}

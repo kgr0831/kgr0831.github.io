@@ -1,4 +1,4 @@
-import {projects,career,labels,email} from './content.mjs';
+import {projects,career,labels,email,additionalWorkHtml} from './content.mjs';
 const site='https://kgr0831.github.io/';
 function head(lang,title,base,options={}){return `<!doctype html><html lang="${lang}"${options.concept?` data-concept="${options.concept}"`:""}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><link rel="icon" href="${base}assets/brand/mark.svg"><link rel="stylesheet" href="${base}assets/documents.css">${options.concept?`<link rel="stylesheet" href="${base}assets/concept-documents.css">`:""}</head><body>`;}
 const external=(href,label)=>`<a class="doc-link" href="${href}">${label}</a>`;
@@ -17,7 +17,7 @@ export function createPortfolio(lang='ko',options={}){
   pages.push(page(p.page+1,`${name} · ${t.tabs[1]}`,`<h2 class="decision-heading">${c.decisionTitle}</h2>${metric}${steps}<div class="doc-result"><strong>${c.result}</strong><p>${c.evidence}</p></div><p class="doc-note">${c.note}</p><div class="doc-links">${p.code?external(p.code,t.code):''}${p.video?external(p.video,t.video):''}</div>`));
  }
  pages.push(page(9,t.about,`<h2>${t.name}</h2><div class="experience-grid"><div><p class="doc-lead">${t.aboutText}</p><h3>${t.skills}</h3><p>TypeScript · Next.js · Python<br>PixiJS · WebGPU · WebGL<br>C · C# · Unity · PintOS</p>${external('https://kgr0831.tistory.com/',en?'Writing':'기술 블로그')}</div><dl class="doc-career">${career.map(c=>`<div><dt>${c.date[i]}</dt><dd><strong>${c.name[i]}</strong><span>${c.role[i]}</span></dd></div>`).join('')}</dl></div>`));
- pages.push(page(10,t.contact,`<div class="closing"><p>Garam Kim · Problem Solver</p><h2><a href="mailto:${email}">${email}</a></h2><div class="closing-links">${external(site+(en?'en/':''),t.site)}${external('https://github.com/kgr0831','GitHub')}${external('https://www.linkedin.com/in/kimgalam0831/','LinkedIn')}${external(site+(en?'Garam_Kim_CV_EN.pdf':'Garam_Kim_CV.pdf'),'CV')}</div></div>`,'closing-sheet'));
+ pages.push(page(10,t.contact,`<div class="closing"><p>Garam Kim · Problem Solver</p><h2><a href="mailto:${email}">${email}</a></h2><div class="closing-links">${external(site+(en?'en/':''),t.site)}${external('https://github.com/kgr0831','GitHub')}${external('https://www.linkedin.com/in/kimgalam0831/','LinkedIn')}${external(site+(en?'Garam_Kim_CV_EN.pdf':'Garam_Kim_CV.pdf'),'CV')}</div>${additionalWorkHtml(lang)}</div>`,'closing-sheet'));
  return head(lang,`${t.name} · ${t.portfolio} · 10 pages`,base,options)+nav+`<main class="deck">${pages.join('')}</main><script src="${base}assets/documents.js" defer></script></body></html>`;
 }
 

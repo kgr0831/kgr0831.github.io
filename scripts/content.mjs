@@ -42,3 +42,44 @@ export const labels = {
  ko:{work:'작업',about:'소개',contact:'연락',portfolio:'포트폴리오',close:'닫기',open:'자세히 보기',tabs:['개요','결정','결과'],problem:'문제',scope:'담당',code:'코드',video:'발표 영상',evidence:'근거',selected:'세 가지 작업',role:'Problem Solver',aboutText:'게임을 만들며 시작했습니다. 지금은 AI가 쓰이는 제품을 만듭니다.',copy:'이메일 복사',copied:'복사했습니다.',copyFail:'주소를 직접 선택해 주세요.',cv:'CV',pdf:'PDF 다운로드',site:'사이트',print:'인쇄',experience:'경력',education:'학력·교육',skills:'기술',projects:'대표 프로젝트',index:'목차',name:'김가람'},
  en:{work:'Work',about:'About',contact:'Contact',portfolio:'Portfolio',close:'Close',open:'View case',tabs:['Overview','Decisions','Results'],problem:'Problem',scope:'My role',code:'Code',video:'Presentation',evidence:'Evidence',selected:'Three selected works',role:'Problem Solver',aboutText:'I started with games. Today, I build products that put AI to use.',copy:'Copy email',copied:'Email copied.',copyFail:'Please select the address to copy it.',cv:'CV',pdf:'Download PDF',site:'Website',print:'Print',experience:'Experience',education:'Education',skills:'Skills',projects:'Selected projects',index:'Contents',name:'Garam Kim'}
 };
+
+export const additionalWork = {
+  ko: {
+    title: '다른 프로젝트 기여',
+    items: [
+      {
+        name: '숭실대 시간표 데모',
+        url: 'https://github.com/kgr0831/openSourceProject/tree/main/timetable-demo',
+        description: '2026년 두 학기 4,722개 분반을 학기·학과별로 선택할 수 있게 했습니다. 시간이 미등록된 108개 분반은 목록에 남기고 추천에서 제외했습니다.',
+      },
+      {
+        name: 'BeeRFriend 채용 페이지',
+        url: 'https://beerfriend.co/apply.html',
+        description: '지원자가 이력서와 포트폴리오를 각각 링크나 파일로 낼 수 있게 지원서를 개편했습니다. 자료가 빠지면 제출 전에 해당 입력란에 표시합니다.',
+      },
+    ],
+  },
+  en: {
+    title: 'Other project contributions',
+    items: [
+      {
+        name: 'Soongsil timetable demo',
+        url: 'https://github.com/kgr0831/openSourceProject/tree/main/timetable-demo',
+        description: 'I made 4,722 class sections from both 2026 terms selectable by term and department. The 108 sections without meeting times stay in the catalog and are excluded from recommendations.',
+      },
+      {
+        name: 'BeeRFriend careers page',
+        url: 'https://beerfriend.co/apply.html',
+        description: 'I updated the application form so applicants can provide a link or upload a file for each of their CV and portfolio. It flags missing material before submission.',
+      },
+    ],
+  },
+};
+
+export function additionalWorkHtml(lang) {
+  const { title, items } = additionalWork[lang];
+  const entries = items.map(({ name, url, description }) =>
+    `<li><a href="${url}">${name}</a><p>${description}</p></li>`
+  ).join('');
+  return `<section class="additional-work"><h3>${title}</h3><ul>${entries}</ul></section>`;
+}
