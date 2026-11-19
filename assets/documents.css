@@ -29,25 +29,14 @@
   line-height: 1.65;
   margin-top: 16px;
 }
-.cv-background {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 36px;
-}
-.cv-credential { margin-top: 10px; }
-.cv-credential h3 { font-size: 13px; font-weight: 600; }
-.cv-credential p { font-size: 12px; line-height: 1.55; color: var(--muted); }
 @media screen and (min-width: 541px), print {
-  .cv-head { padding-bottom: 16px; }
-  .cv-section { margin-top: 19px; }
-  .cv-entry { margin-top: 12px; }
-  .cv-entry h3 { font-size: 14px; }
-  .cv-entry li, .cv-entry p { font-size: 13px; line-height: 1.55; }
+  .cv-head { padding-bottom: 18px; }
+  .cv-section { margin-top: 24px; }
+  .cv-entry { margin-top: 15px; }
+  .cv-entry h3 { font-size: 15px; }
+  .cv-entry li, .cv-entry p { font-size: 14px; line-height: 1.55; }
   .cv-entry .cv-note { font-size: 11px; }
   .cv-entry .cv-role { font-size: 12px; }
-}
-@media screen and (max-width: 540px) {
-  .cv-background { grid-template-columns: 1fr; gap: 0; }
 }
 .doc-trailer-still {
   width: 100%;
@@ -57,8 +46,7 @@
   object-position: center 43%;
 }
 .cv-media-link { font-weight: 400; text-decoration: underline; }
-@media print, screen and (min-width: 851px) {
-  html[lang=en] .cv-section { margin-top: 15px; }
-  html[lang=en] .cv-entry { margin-top: 9px; }
-  html[lang=en] .cv-credential { margin-top: 8px; }
+@media screen and (min-width: 541px), print {
+  html[lang=en] .cv-section { margin-top: 19px; }
+  html[lang=en] .cv-entry { margin-top: 10px; }
 }

@@ -31,7 +31,13 @@ for filename, count, prefix in documents:
     assert len(document) == count, (filename, len(document), count)
     text = '\n'.join(page.get_text() for page in document)
     assert 'Problem' in text and 'Solver' in text and 'garam@moai.co' in text
-    assert 'On Your Mark' in text and '64' in text
+    assert 'On Your Mark' in text
+    if count > 1:
+        assert '64' in text
+    else:
+        assert '시간표' not in text and 'timetable' not in text.lower()
+        assert text.index('EUM') < text.index('On Your Mark')
+        assert ('두드리' if prefix.endswith('ko') else 'Dudri') in text[:text.index('On Your Mark')]
     trailer = 'https://kgr0831.github.io/assets/work/on-your-mark-trailer.mp4'
     assert any(link.get('uri') == trailer for page in document for link in page.get_links()), (filename, 'Trailer link')
     if prefix.endswith('ko'):
