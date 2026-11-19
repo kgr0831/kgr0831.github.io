@@ -1,4 +1,4 @@
-﻿import {additionalWork} from './content.mjs';
+﻿import {additionalWork,projects,portfolioPageCount} from './content.mjs';
 import {createSite,banner} from './site-template.mjs';
 import {conceptOptions,conceptComparison} from './concept-template.mjs';
 import {createPortfolio,createCV} from './document-template.mjs';
@@ -29,6 +29,8 @@ function profileContributions(lang) {
  const rows = items.map(({ name, url, description }) => `- **[${name}](${url})** — ${description}`);
  return `### ${title}\n\n${rows.join('\n')}`;
 }
+const jam = projects.find(project => project.id === 'on-your-mark');
+const profileGame = lang => `| **[${jam.name}](${jam.code})** | ${jam[lang].profile} [${lang === 'en' ? 'Trailer' : '트레일러'}](https://kgr0831.github.io/${jam.trailer}) · [${lang === 'en' ? 'Windows demo' : 'Windows 데모'}](${jam.release}) |`;
 const profileEN=`[한국어](README.ko.md) / English
 
 ![Garam Kim · Problem Solver](assets/profile-banner.png)
@@ -42,6 +44,7 @@ I build products that put AI to use. AX Engineer Intern at MOAI.
 | **MOAI** | Admin search, filters, pagination and consistent aggregate counts. Admin feature PR merged. |
 | **[EUM](https://github.com/kgr0831/EUM2)** | Real-time whiteboard in a five-person team. PixiJS v8 / WebGPU renderer, input smoothing and batched updates. Average 23.7 to 58.7 FPS in the original project measurement; hardware and object count were not recorded. |
 | **[Dudri](https://github.com/kgr0831/KOSSCCHTHON_2026)** | AI profiles and community. 1st prize at 2026 KOSSCCHTHON. Post-award work separated generation, versions and publication while preserving hand-written code during visual editing. |
+${profileGame('en')}
 
 ${profileContributions('en')}
 
@@ -60,6 +63,7 @@ AI가 쓰이는 제품을 만듭니다. MOAI에서 AX Engineer Intern으로 일�
 | **MOAI** | 관리자 검색·필터·페이지네이션, 집계 기준과 응답 처리 개선. 관리자 기능 PR 병합. |
 | **[EUM](https://github.com/kgr0831/EUM2)** | 5인 팀에서 실시간 화이트보드 풀스택 개발. PixiJS v8·WebGPU 렌더러, 입력 보정과 전송 배칭. 당시 평균 23.7에서 58.7 FPS. 장비·객체 수 미기록. |
 | **[두드리](https://github.com/kgr0831/KOSSCCHTHON_2026)** | AI 경험 정리·교류 플랫폼. 2026 KOSSCCHTHON 대상. 수상 후 생성·버전·게시를 분리하고, 화면에서 편집할 때 직접 작성한 코드를 보존하도록 개선. |
+${profileGame('ko')}
 
 ${profileContributions('ko')}
 
@@ -70,7 +74,7 @@ write('README.md',`# Garam Kim · Problem Solver
 
 [한국어 사이트](https://kgr0831.github.io/) · [English website](https://kgr0831.github.io/en/) · [garam@moai.co](mailto:garam@moai.co)
 
-Three selected projects: MOAI, EUM and Dudri. Korean and English editions include a 10-page portfolio and a one-page CV.
+Selected projects include MOAI, EUM, Dudri and On Your Mark. Korean and English editions include a ${portfolioPageCount}-page portfolio and a one-page CV.
 
 The published identity uses teal and cream motion typography. CV, portfolio PDF and Tech Blog are available in the first viewport; GitHub is in the footer.
 
@@ -88,4 +92,4 @@ The typeface is [IBM Plex Sans KR, selected on Noonnu](https://noonnu.cc/font_pa
 
 See [DESIGN.md](DESIGN.md) for the selected visual system and [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for release validation. The GitHub profile is maintained in [kgr0831/kgr0831](https://github.com/kgr0831/kgr0831).
 `);
-console.log('Built KO/EN website, 10-page portfolio, one-page CV and GitHub profile sources.');
+console.log(`Built KO/EN website, ${portfolioPageCount}-page portfolio, one-page CV and GitHub profile sources.`);

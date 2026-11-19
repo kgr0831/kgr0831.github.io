@@ -13,3 +13,8 @@
 - `vfriend-*.png`: 캐릭터 프로토타입 일러스트. LoRA 학습 결과나 완성된 서비스 화면으로 표시하지 않습니다.
 
 홈페이지의 이미지 카드, 기관 패널, 기술 로고, 프로젝트 상세창에서 사용합니다. 상세창 이미지에는 한·영 설명을 붙였으며 원본 이미지를 새 탭에서 열 수 있습니다.
+
+## On Your Mark
+
+- `work/on-your-mark-hud.png`는 팀 Architecture의 [SenseLink HUD 프로토타입](https://github.com/Architecture-UnityAIGameJam2026/UnityAIGameJam2026/tree/main/Documentation/garam-ui)입니다.
+- `work/on-your-mark-trailer.mp4`는 팀 트레일러의 웹 재생용 버전입니다. `work/on-your-mark-still.jpg`는 같은 영상에서 추출한 프레임입니다.

@@ -2,7 +2,7 @@
 
 [한국어 사이트](https://kgr0831.github.io/) · [English website](https://kgr0831.github.io/en/) · [garam@moai.co](mailto:garam@moai.co)
 
-Three selected projects: MOAI, EUM and Dudri. Korean and English editions include a 10-page portfolio and a one-page CV.
+Selected projects include MOAI, EUM, Dudri and On Your Mark. Korean and English editions include a 12-page portfolio and a one-page CV.
 
 The published identity uses teal and cream motion typography. CV, portfolio PDF and Tech Blog are available in the first viewport; GitHub is in the footer.
 

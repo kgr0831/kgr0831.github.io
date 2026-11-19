@@ -12,7 +12,7 @@ IBM Plex Sans KR is selected through [Noonnu](https://noonnu.cc/font_page/448), 
 
 The first viewport contains PROBLEM / SOLVER, Garam Kim, the AX / AI Native field, CV, portfolio PDF, Tech Blog and contact. It contains no project previews. The header repeats the three resources; on narrow phones it uses a second row. GitHub is in the footer.
 
-Three work rows follow: MOAI, EUM and Dudri. A row opens a native dialog with Overview, Decisions and Results tabs. The dialog has a fixed header and tabs with a scrollable reading body. Without JavaScript, rows open PDF pages 3, 5 and 7. The portfolio has ten pages; CV has one A4 page, in each language.
+Four project rows feature MOAI, EUM, Dudri and On Your Mark. A row opens a native dialog with Overview, Decisions and Results tabs. The dialog has a fixed header and tabs with a scrollable reading body. Without JavaScript, rows open PDF pages 3, 5, 7 and 9. The portfolio has twelve pages; CV has one A4 page, in each language.
 
 ## Motion and interaction
 
