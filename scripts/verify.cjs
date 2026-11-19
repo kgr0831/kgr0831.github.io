@@ -17,7 +17,7 @@ const report={viewports:[],interactions:[],documents:[],links:[],errors:[]};
    await page.setViewportSize(size);await page.goto(base+route,{waitUntil:'networkidle'});await ready();await page.waitForTimeout(1250);
    const metrics=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,font:document.fonts.check('500 16px Plex','김가람'),projectTop:document.querySelector('.works').getBoundingClientRect().top,images:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src),heading:document.querySelector('h1').innerText,heroText:document.querySelector('.intro-shell').innerText,language:document.documentElement.lang}));
    assert.equal(metrics.language,lang);assert.ok(metrics.scrollWidth<=size.width+1,`Page overflow ${lang} ${size.width}`);assert.ok(metrics.projectTop>=size.height,`Projects in first viewport ${size.width}`);assert.equal(metrics.font,true);assert.deepEqual(metrics.images,[]);assert.doesNotMatch(metrics.heroText,/MOAI|EUM|Dudri|두드리/);
-   assert.equal(await page.locator('[data-case-open]').count(),4);assert.equal(await page.locator('[data-motion-toggle],svg').count(),0);
+   assert.equal(await page.locator('[data-case-open]').count(),3);assert.equal(await page.locator('[data-motion-toggle],svg').count(),0);
    assert.equal(await page.locator('meta[name=robots][content*=noindex],.concept-switch').count(),0,'Published route must not expose draft controls or noindex');
    const resources=await page.locator('.hero-resources a').evaluateAll(els=>els.map(a=>{const r=a.getBoundingClientRect();return{href:a.href,top:r.top,bottom:r.bottom,left:r.left,right:r.right}}));
    assert.equal(resources.length,3);assert.ok(resources.every(a=>a.top>=0&&a.bottom<=size.height+1&&a.left>=0&&a.right<=size.width+1));
@@ -32,18 +32,11 @@ const report={viewports:[],interactions:[],documents:[],links:[],errors:[]};
   // Each dialog and each tab must work at both the smallest and desktop viewport.
   for(const width of [1440,320]){
    await page.setViewportSize({width,height:width===320?740:900});
-   for(const id of ['moai','eum','dudri','on-your-mark']){
+   for(const id of ['moai','eum','dudri']){
     const trigger=page.locator(`[data-case-open=${id}]`),dialog=page.locator(`#case-${id}`);
     await trigger.click();await page.waitForTimeout(650);
     assert.ok(await dialog.isVisible());assert.equal(await page.evaluate(()=>document.body.style.overflow),'hidden');
     assert.ok(await dialog.locator('[data-dialog-close]').evaluate(e=>document.activeElement===e));
-    if(id==='on-your-mark'){
-     const video=dialog.locator('video');
-     await video.evaluate(async player=>{player.muted=true;await player.play()});
-     assert.ok(await video.evaluate(player=>player.duration>38&&player.duration<41&&player.videoWidth>0));
-     await dialog.locator('[role=tab]').nth(1).click();
-     assert.ok(await video.evaluate(player=>player.paused),'Switching tabs must pause the trailer');
-    }
     for(let i=0;i<3;i++){
      const tab=dialog.locator('[role=tab]').nth(i);await tab.click();await page.waitForTimeout(450);
      assert.equal(await tab.getAttribute('aria-selected'),'true');assert.equal(await dialog.locator('[role=tabpanel]:visible').count(),1);
@@ -68,7 +61,7 @@ const report={viewports:[],interactions:[],documents:[],links:[],errors:[]};
  await page.locator('[data-case-open=moai]').click();await page.waitForTimeout(650);await page.mouse.click(10,10);await page.waitForTimeout(300);assert.equal(await page.locator('dialog[open]').count(),0);assert.equal(await page.evaluate(()=>document.body.style.overflow),'');report.interactions.push('Mouse close, backdrop and opening cancellation');
  await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{value:undefined,configurable:true}));await page.locator('[data-copy-email]').click();assert.match(await page.locator('[data-copy-status]').innerText(),/직접 선택/);report.interactions.push('Clipboard fallback');
  // Print media is validated before exporting the actual PDFs.
- for(const [route,selector,count,file,prefix] of [['/portfolio/','.sheet',12,'portfolio/Garam_Kim_Portfolio.pdf','portfolio-ko'],['/portfolio/en/','.sheet',12,'portfolio/Garam_Kim_Portfolio_EN.pdf','portfolio-en'],['/cv/','.cv-page',1,'Garam_Kim_CV.pdf','cv-ko'],['/cv/en/','.cv-page',1,'Garam_Kim_CV_EN.pdf','cv-en']]){
+ for(const [route,selector,count,file,prefix] of [['/portfolio/','.sheet',10,'portfolio/Garam_Kim_Portfolio.pdf','portfolio-ko'],['/portfolio/en/','.sheet',10,'portfolio/Garam_Kim_Portfolio_EN.pdf','portfolio-en'],['/cv/','.cv-page',1,'Garam_Kim_CV.pdf','cv-ko'],['/cv/en/','.cv-page',1,'Garam_Kim_CV_EN.pdf','cv-en']]){
   await page.setViewportSize({width:1440,height:1000});await page.goto(base+route,{waitUntil:'networkidle'});await ready();assert.equal(await page.locator(selector).count(),count);await page.emulateMedia({media:'print'});
   const boxes=await page.locator(selector).evaluateAll(els=>els.map((s,i)=>{const b=s.getBoundingClientRect(),f=s.querySelector('footer').getBoundingClientRect();const content=s.querySelector('.sheet-body')||s;const violations=[...content.querySelectorAll('h1,h2,h3,p,li,dl,img,.doc-link')].filter(e=>{const r=e.getBoundingClientRect();return r.width&&r.height&&(r.bottom>f.top+1||r.right>b.right+1||r.left<b.left-1)}).map(e=>({tag:e.tagName,text:e.textContent.slice(0,70),bottom:Math.round(e.getBoundingClientRect().bottom-b.top)}));return{page:i+1,width:b.width,height:b.height,violations}}));
   report.documents.push({route,count,boxes});assert.ok(boxes.every(b=>!b.violations.length),`Print overflow ${route}: ${JSON.stringify(boxes.filter(b=>b.violations.length))}`);

@@ -62,7 +62,6 @@ function positionTab(dialog){
 }
 function activateTab(dialog,tab,keyboard=false){
   if(tab.getAttribute('aria-selected')==='true')return;
-  dialog.querySelector('video')?.pause();
   for(const other of dialog.querySelectorAll('[role=tab]')){
     const selected=other===tab;
     other.setAttribute('aria-selected',String(selected));
@@ -96,7 +95,6 @@ function openCase(dialog,trigger,keyboard){
 }
 function closeCase(dialog,immediate=false){
   if(!dialog.open||dialog.dataset.closing==='true')return;
-  dialog.querySelector('video')?.pause();
   dialog.dataset.closing='true';
   const finish=()=>{
     dialog.close();dialog.dataset.closing='false';
@@ -118,7 +116,7 @@ document.querySelectorAll('[data-case-open]').forEach(trigger=>trigger.addEventL
 document.querySelectorAll('.case-dialog').forEach(dialog=>{
   dialog.addEventListener('keydown',event=>{
     if(event.key!=='Tab')return;
-    const stops=[...dialog.querySelectorAll('a[href],button,video[controls],[tabindex="0"]')].filter(el=>el.tabIndex>=0&&el.getClientRects().length&&!el.closest('[hidden]'));
+    const stops=[...dialog.querySelectorAll('a[href],button,[tabindex="0"]')].filter(el=>el.tabIndex>=0&&el.getClientRects().length&&!el.closest('[hidden]'));
     const first=stops[0],last=stops.at(-1);
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}

@@ -4,12 +4,12 @@ const args=process.argv.slice(2),arg=(k,d)=>args.includes(k)?args[args.indexOf(k
 const {chromium}=require(arg('--playwright','playwright-core'));
 const root=path.resolve(__dirname,'..'),base=arg('--base','http://127.0.0.1:4173'),out=path.join(root,arg('--out','.runtime/v4'));
 const documents=[
- ['/portfolio/','portfolio/Garam_Kim_Portfolio.pdf',12],
- ['/portfolio/en/','portfolio/Garam_Kim_Portfolio_EN.pdf',12],
+ ['/portfolio/','portfolio/Garam_Kim_Portfolio.pdf',10],
+ ['/portfolio/en/','portfolio/Garam_Kim_Portfolio_EN.pdf',10],
  ['/cv/','Garam_Kim_CV.pdf',1],['/cv/en/','Garam_Kim_CV_EN.pdf',1],
  ...['metallic','motion'].flatMap(theme=>['ko','en'].map(lang=>[
   `/concepts/${theme}/${lang==='en'?'en/':''}portfolio.html`,
-  `concepts/${theme}/Garam_Kim_Portfolio${lang==='en'?'_EN':''}.pdf`,12
+  `concepts/${theme}/Garam_Kim_Portfolio${lang==='en'?'_EN':''}.pdf`,10
  ]))
 ];
 (async()=>{

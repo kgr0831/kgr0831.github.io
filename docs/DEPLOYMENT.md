@@ -14,7 +14,7 @@ Run `node scripts/build.mjs`, then `node scripts/serve.mjs` for the local previe
 
 Run `node scripts/verify.cjs --playwright PATH_TO_PLAYWRIGHT --chrome PATH_TO_CHROMIUM --out .runtime/deploy-check` to verify Korean/English desktop and mobile routes, first-screen resources, native dialogs, keyboard navigation, PDF links, reduced motion and no-JavaScript fallbacks. This also exports the four canonical PDFs and renders the GitHub/social banners.
 
-Run `python scripts/check-pdfs.py --out .runtime/deploy-check` with PyMuPDF and Pillow installed to inspect the actual PDF page counts, selectable text, internal contents links and every rendered page. The portfolio has 12 pages per language; CV has one page per language.
+Run `python scripts/check-pdfs.py --out .runtime/deploy-check` with PyMuPDF and Pillow installed to inspect the actual PDF page counts, selectable text, internal contents links and every rendered page. The portfolio has 10 pages per language; CV has one page per language.
 
 ## Release scope
 
@@ -26,8 +26,8 @@ After publication, check the exact GitHub Pages build commit and load the live K
 
 ## Design and evidence
 
-The local [IBM Plex Sans KR](https://noonnu.cc/font_page/448) font is licensed under the included OFL file. The four cases are MOAI, EUM, Dudri and On Your Mark. Original measurement qualifications and the distinction between Dudri's award and later work remain in the shared content source.
+The local [IBM Plex Sans KR](https://noonnu.cc/font_page/448) font is licensed under the included OFL file. The three cases are MOAI, EUM and Dudri. Original measurement qualifications and the distinction between Dudri's award and later work remain in the shared content source.
 
 The captured entry/dialog motion was independently reviewed. Real-device frame-rate benchmarks, Safari and screen-reader operation were not part of that review. No additional manual setup is needed for the configured GitHub Pages target.
 
-The original three-project release passed 12 Korean/English viewport combinations, 13 interaction groups and 24 internal links with no browser/HTTP errors. The rendered canonical PDFs were independently checked as 10, 10, 1 and 1 pages. The release staging check compares the published PDF bytes, including legacy aliases, against those verified artifacts.
+Pre-release validation passed 12 Korean/English viewport combinations, 13 interaction groups and 24 internal links with no browser/HTTP errors. The rendered canonical PDFs were independently checked as 10, 10, 1 and 1 pages. The release staging check compares the published PDF bytes, including legacy aliases, against those verified artifacts.
