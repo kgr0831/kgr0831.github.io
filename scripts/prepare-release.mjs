@@ -11,6 +11,37 @@ for(const [dir,expected]of [[siteDir,'https://github.com/kgr0831/kgr0831.github.
 }
 const copy=(src,dst)=>{mkdirSync(path.dirname(dst),{recursive:true});copyFileSync(src,dst)};
 const files=['.nojekyll','.gitignore','index.html','en/index.html','README.md','DESIGN.md','PRODUCT.md','docs/DEPLOYMENT.md','Garam_Kim_CV.pdf','Garam_Kim_CV_EN.pdf','portfolio/index.html','portfolio/en/index.html','portfolio/Garam_Kim_Portfolio.pdf','portfolio/Garam_Kim_Portfolio_EN.pdf','cv/index.html','cv/en/index.html','assets/site.css','assets/site.js','assets/documents.css','assets/documents.js','assets/concepts.css','assets/concepts.js','assets/concept-documents.css','assets/fonts/IBMPlexSansKR-Regular.woff2','assets/fonts/IBMPlexSansKR-Medium.woff2','assets/fonts/IBMPlexSansKR-SemiBold.woff2','assets/fonts/IBM-Plex-LICENSE.txt','assets/brand/mark.svg','assets/brand/profile-banner.png','assets/brand/social.png','assets/brand/banner.html','assets/work/eum-whiteboard.png','assets/work/dudri-studio.png','assets/work/dudri-award.jpg','scripts/build.mjs','scripts/content.mjs','scripts/site-template.mjs','scripts/concept-template.mjs','scripts/document-template.mjs','scripts/serve.mjs','scripts/verify.cjs','scripts/check-pdfs.py','scripts/export-documents.cjs','scripts/prepare-release.mjs'];
+files.push('portfolio/VFriend_D2SF_IR.pdf');
+for (const file of [
+ 'index.html',
+ 'portfolio.pdf',
+ 'portfolio.pptx',
+ 'portfolio.zip',
+ 'sources/dudri-award.jpg',
+ 'sources/dudri-studio.png',
+ 'sources/eum-whiteboard.png',
+ 'sources/jam-ai.pdf',
+ 'sources/jam-project.pdf',
+ 'sources/OnYourMark-Gameplay.mp4',
+ 'sources/oym-award.png',
+ 'sources/oym-exhibit.jpg',
+ 'sources/oym-gameplay.png',
+]) {
+ files.push('portfolio/projects/'+file);
+}
+for (const file of [
+ 'index.html',
+ 'portfolio.pdf',
+ 'portfolio.pptx',
+ 'portfolio.zip',
+ 'sources/jam-project.pdf',
+ 'sources/jam-ai.pdf',
+ 'sources/OnYourMark-Gameplay.mp4',
+ 'sources/oym-award.png',
+ 'sources/oym-exhibit.jpg',
+]) {
+ files.push('portfolio/pearlabyss/'+file);
+}
 const mappings=files.map(f=>[f,f]);
 mappings.push(['Garam_Kim_CV.pdf','CV.pdf'],['Garam_Kim_CV_EN.pdf','CV.en.pdf'],['portfolio/Garam_Kim_Portfolio.pdf','portfolio.pdf'],['portfolio/Garam_Kim_Portfolio_EN.pdf','portfolio.en.pdf']);
 for(const [src]of mappings)if(!existsSync(path.join(root,src)))throw Error('Missing release file '+src);
