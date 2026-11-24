@@ -9,9 +9,10 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const write=(file,text)=>{mkdirSync(path.dirname(path.join(root,file)),{recursive:true});writeFileSync(path.join(root,file),text.trimEnd()+'\n','utf8')};
 for(const lang of ['ko','en']){
  const en=lang==='en';
- const options=conceptOptions(lang,'motion',{base:en?'../':'',portfolioPdf:'portfolio/'+(en?'Garam_Kim_Portfolio_EN.pdf':'Garam_Kim_Portfolio.pdf'),production:true});
+ const options=conceptOptions(lang,'motion',{base:en?'../':'',portfolioPdf:en?'portfolio/Garam_Kim_Portfolio_EN.pdf':'portfolio/projects/',production:true});
  write(en?'en/index.html':'index.html',createSite(lang,options));
- write(en?'portfolio/en/index.html':'portfolio/index.html',createPortfolio(lang,{concept:'motion'}));
+ if (en) write('portfolio/en/index.html',createPortfolio(lang,{concept:'motion'}));
+ else write('portfolio/index.html',"<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>김가람 · AI Native 개발 포트폴리오</title><link rel=\"canonical\" href=\"https://kgr0831.github.io/portfolio/projects/\"><noscript><meta http-equiv=\"refresh\" content=\"0;url=projects/portfolio.pdf\"></noscript><style>body{background:#171717;color:#87c5a9;font:1rem/1.6 sans-serif;margin:2rem}a{color:inherit}</style></head><body><a href=\"projects/\">김가람 포트폴리오 열기</a> · <a href=\"projects/portfolio.pdf\">인쇄용 PDF</a><script>location.replace('projects/'+location.search+location.hash)</script></body></html>");
  write(en?'cv/en/index.html':'cv/index.html',createCV(lang,{concept:'motion'}));
 }
 if(process.argv.includes('--concepts')){

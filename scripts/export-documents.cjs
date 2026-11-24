@@ -4,7 +4,7 @@ const args=process.argv.slice(2),arg=(k,d)=>args.includes(k)?args[args.indexOf(k
 const {chromium}=require(arg('--playwright','playwright-core'));
 const root=path.resolve(__dirname,'..'),base=arg('--base','http://127.0.0.1:4173'),out=path.join(root,arg('--out','.runtime/v4'));
 const documents=[
- ['/portfolio/','portfolio/Garam_Kim_Portfolio.pdf',10],
+ ['/portfolio/','portfolio/Garam_Kim_Portfolio.pdf',16],
  ['/portfolio/en/','portfolio/Garam_Kim_Portfolio_EN.pdf',10],
  ['/cv/','Garam_Kim_CV.pdf',1],['/cv/en/','Garam_Kim_CV_EN.pdf',1],
  ...['metallic','motion'].flatMap(theme=>['ko','en'].map(lang=>[
@@ -19,6 +19,11 @@ const documents=[
   const page=await browser.newPage({viewport:{width:1440,height:1000}});
   const selected=arg('--concept')?documents.filter(([route])=>route.startsWith(`/concepts/${arg('--concept')}/`)):documents.filter(([route])=>!route.startsWith('/concepts/'));
   for(const [route,file,count] of selected){
+   if(route==='/portfolio/'){
+    fs.copyFileSync(path.join(root,'portfolio/projects/portfolio.pdf'),path.join(root,file));
+    report.push({route,file,count,bytes:fs.statSync(path.join(root,file)).size});
+    continue;
+   }
    await page.goto(base+route,{waitUntil:'networkidle'});
    await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode()))});
    await page.emulateMedia({media:'print'});const selector=count===1?'.cv-page':'.sheet';

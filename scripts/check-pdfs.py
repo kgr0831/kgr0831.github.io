@@ -20,7 +20,7 @@ root = Path(__file__).resolve().parents[1]
 out = root / args.out / 'pdf'
 out.mkdir(parents=True, exist_ok=True)
 report = []
-documents = [('portfolio/Garam_Kim_Portfolio.pdf', 10, 'portfolio-ko'), ('portfolio/Garam_Kim_Portfolio_EN.pdf', 10, 'portfolio-en'), ('Garam_Kim_CV.pdf', 1, 'cv-ko'), ('Garam_Kim_CV_EN.pdf', 1, 'cv-en')]
+documents = [('portfolio/Garam_Kim_Portfolio.pdf', 16, 'portfolio-ko'), ('portfolio/Garam_Kim_Portfolio_EN.pdf', 10, 'portfolio-en'), ('Garam_Kim_CV.pdf', 1, 'cv-ko'), ('Garam_Kim_CV_EN.pdf', 1, 'cv-en')]
 documents += [(f'concepts/{theme}/Garam_Kim_Portfolio{suffix}.pdf', 10, f'{theme}-{lang}') for theme in ['metallic', 'motion'] for lang, suffix in [('ko', ''), ('en', '_EN')]]
 for filename, count, prefix in documents:
     if args.concept and not filename.startswith(f'concepts/{args.concept}/'):
@@ -30,7 +30,11 @@ for filename, count, prefix in documents:
     document = pymupdf.open(root / filename)
     assert len(document) == count, (filename, len(document), count)
     text = '\n'.join(page.get_text() for page in document)
-    assert 'Problem' in text and 'Solver' in text and 'garam@moai.co' in text
+    if prefix == 'portfolio-ko':
+        assert (root / filename).read_bytes() == (root / 'portfolio/projects/portfolio.pdf').read_bytes()
+        assert all(word in text for word in ['김가람', 'MOAI', 'On Your Mark', 'VFriend', '두드리', 'Remnents of Light', 'EUM', 'garam@moai.co'])
+    else:
+        assert 'Problem' in text and 'Solver' in text and 'garam@moai.co' in text
     if prefix.endswith('ko'):
         assert '김가람' in text
     assert 'kimgalam0831@gmail.com' not in text and 'Orca' not in text
@@ -46,12 +50,14 @@ for filename, count, prefix in documents:
         target = out / f'{prefix}-{i+1:02d}.png'
         pix.save(target)
         pages.append({'page': i+1, 'width': round(page.rect.width,2), 'height': round(page.rect.height,2), 'characters': len(page.get_text()), 'links': len(page.get_links())})
-    if count == 10:
+    if prefix == 'portfolio-ko':
+        assert {link['page'] for link in document[1].get_links() if 'page' in link} == {2, 4, 7, 10, 12, 14}
+    elif count == 10:
         assert [link['page'] for link in document[1].get_links() if 'page' in link] == [2, 4, 6], (filename, 'Internal PDF TOC destinations')
     report.append({'file': filename, 'pages': pages, 'characters': len(text), 'fontNames': sorted(set(font[3] for page in document for font in page.get_fonts()))})
     thumb_w = 480
-    thumb_h = 270 if count == 10 else 679
-    cols = 3 if count == 10 else 1
+    thumb_h = 270 if count > 1 else 679
+    cols = 3 if count > 1 else 1
     rows = (count + cols - 1) // cols
     sheet = Image.new('RGB',(cols*(thumb_w+16)+16,rows*(thumb_h+38)+16),'#dce2d7')
     draw = ImageDraw.Draw(sheet)

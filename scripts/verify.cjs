@@ -22,7 +22,7 @@ const report={viewports:[],interactions:[],documents:[],links:[],errors:[]};
    const resources=await page.locator('.hero-resources a').evaluateAll(els=>els.map(a=>{const r=a.getBoundingClientRect();return{href:a.href,top:r.top,bottom:r.bottom,left:r.left,right:r.right}}));
    assert.equal(resources.length,3);assert.ok(resources.every(a=>a.top>=0&&a.bottom<=size.height+1&&a.left>=0&&a.right<=size.width+1));
    assert.ok(resources[0].href.endsWith(lang==='en'?'Garam_Kim_CV_EN.pdf':'Garam_Kim_CV.pdf'));
-   assert.ok(resources[1].href.endsWith(lang==='en'?'portfolio/Garam_Kim_Portfolio_EN.pdf':'portfolio/Garam_Kim_Portfolio.pdf'));
+   assert.ok(resources[1].href.endsWith(lang==='en'?'portfolio/Garam_Kim_Portfolio_EN.pdf':'portfolio/projects/'));
    assert.equal(resources[2].href,'https://kgr0831.tistory.com/');
    assert.ok(await page.locator('a[href="https://github.com/kgr0831"]').evaluateAll(els=>els.length===1&&els.every(a=>!!a.closest('footer'))));
    report.viewports.push({lang,...size,...metrics,resources});
@@ -60,8 +60,13 @@ const report={viewports:[],interactions:[],documents:[],links:[],errors:[]};
  await page.setViewportSize({width:1440,height:900});await page.goto(base);await page.locator('[data-case-open=moai]').click();await page.locator('#case-moai [data-dialog-close]').click();await page.waitForTimeout(300);assert.equal(await page.locator('dialog[open]').count(),0);
  await page.locator('[data-case-open=moai]').click();await page.waitForTimeout(650);await page.mouse.click(10,10);await page.waitForTimeout(300);assert.equal(await page.locator('dialog[open]').count(),0);assert.equal(await page.evaluate(()=>document.body.style.overflow),'');report.interactions.push('Mouse close, backdrop and opening cancellation');
  await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{value:undefined,configurable:true}));await page.locator('[data-copy-email]').click();assert.match(await page.locator('[data-copy-status]').innerText(),/직접 선택/);report.interactions.push('Clipboard fallback');
+ await page.goto(base+'/portfolio/',{waitUntil:'networkidle'});
+ assert.equal(new URL(page.url()).pathname,'/portfolio/projects/');
+ assert.equal(await page.locator('section.leaf').count(),16);
+ assert.deepEqual(fs.readFileSync(path.join(root,'portfolio/Garam_Kim_Portfolio.pdf')),fs.readFileSync(path.join(root,'portfolio/projects/portfolio.pdf')));
+ report.documents.push({route:'/portfolio/',count:16});
  // Print media is validated before exporting the actual PDFs.
- for(const [route,selector,count,file,prefix] of [['/portfolio/','.sheet',10,'portfolio/Garam_Kim_Portfolio.pdf','portfolio-ko'],['/portfolio/en/','.sheet',10,'portfolio/Garam_Kim_Portfolio_EN.pdf','portfolio-en'],['/cv/','.cv-page',1,'Garam_Kim_CV.pdf','cv-ko'],['/cv/en/','.cv-page',1,'Garam_Kim_CV_EN.pdf','cv-en']]){
+ for(const [route,selector,count,file,prefix] of [['/portfolio/en/','.sheet',10,'portfolio/Garam_Kim_Portfolio_EN.pdf','portfolio-en'],['/cv/','.cv-page',1,'Garam_Kim_CV.pdf','cv-ko'],['/cv/en/','.cv-page',1,'Garam_Kim_CV_EN.pdf','cv-en']]){
   await page.setViewportSize({width:1440,height:1000});await page.goto(base+route,{waitUntil:'networkidle'});await ready();assert.equal(await page.locator(selector).count(),count);await page.emulateMedia({media:'print'});
   const boxes=await page.locator(selector).evaluateAll(els=>els.map((s,i)=>{const b=s.getBoundingClientRect(),f=s.querySelector('footer').getBoundingClientRect();const content=s.querySelector('.sheet-body')||s;const violations=[...content.querySelectorAll('h1,h2,h3,p,li,dl,img,.doc-link')].filter(e=>{const r=e.getBoundingClientRect();return r.width&&r.height&&(r.bottom>f.top+1||r.right>b.right+1||r.left<b.left-1)}).map(e=>({tag:e.tagName,text:e.textContent.slice(0,70),bottom:Math.round(e.getBoundingClientRect().bottom-b.top)}));return{page:i+1,width:b.width,height:b.height,violations}}));
   report.documents.push({route,count,boxes});assert.ok(boxes.every(b=>!b.violations.length),`Print overflow ${route}: ${JSON.stringify(boxes.filter(b=>b.violations.length))}`);
@@ -73,8 +78,12 @@ const report={viewports:[],interactions:[],documents:[],links:[],errors:[]};
   for(const width of [390,320]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${route} mobile overflow ${width}`)}
  }
  const urls=new Map();for(const route of ['/','/en/','/portfolio/','/portfolio/en/','/cv/','/cv/en/']){await page.goto(base+route);for(const href of await page.locator('a[href]').evaluateAll(els=>els.map(e=>e.href))){const u=new URL(href);if(u.origin===new URL(base).origin)urls.set(href,u)}}
- for(const [href,u]of urls){const response=await context.request.get(u.origin+u.pathname);assert.equal(response.status(),200,href);if(u.hash&&!u.pathname.endsWith('.pdf'))assert.ok((await response.text()).includes(`id="${decodeURIComponent(u.hash.slice(1))}"`),`Missing anchor ${href}`);report.links.push(u.pathname+u.hash)}
- const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),plain=await nojs.newPage();await plain.goto(base);const pdfHref=await plain.locator('[data-case-open=eum]').getAttribute('href');assert.equal(pdfHref,'portfolio/Garam_Kim_Portfolio.pdf#page=5');const pdfResponse=await nojs.request.get(new URL(pdfHref,base).href);assert.equal(pdfResponse.status(),200);assert.match(pdfResponse.headers()['content-type'],/application\/pdf/);await nojs.close();report.interactions.push('No-JS project fallback');
+ for(const [href,u]of urls){const response=await context.request.get(u.origin+u.pathname);assert.equal(response.status(),200,href);if(u.hash&&!u.pathname.endsWith('.pdf')){
+    const anchor=decodeURIComponent(u.hash.slice(1)),source=await response.text();
+    const exists=source.includes(`id="${anchor}"`)||source.includes(`"id":"${anchor}"`);
+    assert.ok(exists,`Missing anchor ${href}`);
+   }report.links.push(u.pathname+u.hash)}
+ const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),plain=await nojs.newPage();await plain.goto(base);const pdfHref=await plain.locator('[data-case-open=eum]').getAttribute('href');assert.equal(pdfHref,'portfolio/projects/portfolio.pdf#page=15');const pdfResponse=await nojs.request.get(new URL(pdfHref,base).href);assert.equal(pdfResponse.status(),200);assert.match(pdfResponse.headers()['content-type'],/application\/pdf/);await nojs.close();report.interactions.push('No-JS project fallback');
  await page.setViewportSize({width:1280,height:480});await page.goto(base+'/assets/brand/banner.html');await ready();await page.screenshot({path:path.join(root,'assets/brand/profile-banner.png')});await page.setViewportSize({width:1280,height:640});await page.addStyleTag({content:'body{height:640px}.banner{padding-block:60px}.banner-title{font-size:166px}'});await page.screenshot({path:path.join(root,'assets/brand/social.png')});
  assert.deepEqual(report.errors,[]);fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({viewports:report.viewports.length,interactionGroups:report.interactions.length,documents:report.documents.map(d=>({route:d.route,pages:d.count})),localLinks:report.links.length,errors:report.errors}));
  }finally{await browser.close()}
