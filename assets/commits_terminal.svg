@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">f0bd518</tspan> - <tspan class="commit-msg">Publish the five-project portfolio, VFriend inv...</tspan> <tspan class="commit-time">(25 seconds ago)</tspan>
+        <tspan class="commit-hash">0936452</tspan> - <tspan class="commit-msg">Add the Unity AI Game Jam exhibition and team a...</tspan> <tspan class="commit-time">(32 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">20550fe</tspan> - <tspan class="commit-msg">Restore the activity image from the November 19...</tspan> <tspan class="commit-time">(5 days ago)</tspan>
+        <tspan class="commit-hash">82e2505</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(9 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">9c0ed95</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(5 days ago)</tspan>
+        <tspan class="commit-hash">f0bd518</tspan> - <tspan class="commit-msg">Publish the five-project portfolio, VFriend inv...</tspan> <tspan class="commit-time">(10 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">0398330</tspan> - <tspan class="commit-msg">Restore the portfolio and CV to the version bef...</tspan> <tspan class="commit-time">(5 days ago)</tspan>
+        <tspan class="commit-hash">20550fe</tspan> - <tspan class="commit-msg">Restore the activity image from the November 19...</tspan> <tspan class="commit-time">(5 days ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">5e6a82b</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(5 days ago)</tspan>
+        <tspan class="commit-hash">9c0ed95</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(5 days ago)</tspan>
       </text>
     </g>
   </g>
