@@ -17,6 +17,7 @@ for (const file of [
  'portfolio.pdf',
  'portfolio.pptx',
  'portfolio.zip',
+ 'details.pdf',
  'sources/dudri-award.jpg',
  'sources/dudri-studio.png',
  'sources/eum-whiteboard.png',
