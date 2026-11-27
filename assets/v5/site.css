@@ -24,7 +24,7 @@ ul, ol { padding: 0; list-style: none; }
 .skip:focus { left: 8px; }
 
 /* header */
-.top { position: sticky; top: 0; z-index: 5; background: rgba(255, 255, 255, 0.96); border-bottom: 1px solid var(--line); }
+.top { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
 .brand { font-weight: 600; text-decoration: none; font-size: 18px; }
 .top nav { display: flex; gap: clamp(14px, 2.4vw, 32px); font-size: 15px; font-weight: 500; }
@@ -46,7 +46,7 @@ ul, ol { padding: 0; list-style: none; }
 section > .wrap > h2, .career-col > h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.25; }
 .flow { padding: 64px 0 24px; }
 .flow h2 { font-size: 15px !important; font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
-.flow-list { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); margin-top: 14px; }
+.flow-list { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 2px solid var(--ink); margin-top: 14px; }
 .flow-list li { padding: 18px 20px 4px 0; display: grid; gap: 4px; }
 .flow-list strong { font-size: 22px; font-weight: 600; }
 .flow-list span { color: var(--ink-2); font-size: 16px; }

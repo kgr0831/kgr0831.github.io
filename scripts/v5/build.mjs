@@ -35,7 +35,7 @@ function shell({ rel, title, desc, body, cls = '' }) {
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="top"><div class="wrap">
 <a class="brand" href="${up}./">김가람</a>
-<nav aria-label="주요 메뉴"><a href="${up}./#projects">프로젝트</a><a href="${up}./#career">경력</a><a href="${up}cv/">CV</a><a href="${up}${P}">포트폴리오 PDF</a></nav>
+<nav aria-label="주요 메뉴"><a href="${up}./#projects">Projects</a><a href="${up}./#career">Experience</a><a href="${up}cv/">CV</a><a href="${up}${P}">Portfolio PDF</a></nav>
 </div></header>
 <main id="main">
 ${body}
@@ -68,7 +68,7 @@ const home = `<section class="hero"><div class="wrap">
 <p class="hero-tag">${esc(C.person.tagline)}</p>
 <p class="hero-intro">${esc(C.person.intro)} ${esc(C.person.now)}</p>
 <ul class="hero-links">
-<li><a href="${P}">포트폴리오 PDF</a></li>
+<li><a href="${P}">Portfolio PDF</a></li>
 <li><a href="cv/">CV</a></li>
 <li><a href="mailto:${C.person.email}">${C.person.email}</a></li>
 <li><a href="${C.person.links[0][1]}">${C.person.links[0][2]}</a></li>
@@ -76,33 +76,33 @@ const home = `<section class="hero"><div class="wrap">
 </div></section>
 
 <section class="flow" aria-labelledby="flow-h"><div class="wrap">
-<h2 id="flow-h">일하는 방식</h2>
+<h2 id="flow-h">Workflow</h2>
 <ol class="flow-list">${C.workflow.map(([k, v]) => `<li><strong>${esc(k)}</strong><span>${esc(v)}</span></li>`).join('')}</ol>
 </div></section>
 
 <section id="projects" class="projects" aria-labelledby="proj-h"><div class="wrap">
-<h2 id="proj-h">여섯 프로젝트</h2>
+<h2 id="proj-h">Projects</h2>
 ${C.projects.map(card).join('\n')}
 </div></section>
 
 <section id="career" class="career" aria-labelledby="career-h"><div class="wrap">
 <div class="career-col">
-<h2 id="career-h">경력과 학력</h2>
+<h2 id="career-h">Experience &amp; Education</h2>
 <table class="rows"><tbody>${C.career.map(([w, o, n]) => `<tr><td class="w">${esc(w)}</td><th scope="row">${esc(o)}</th><td>${esc(n)}</td></tr>`).join('')}</tbody></table>
 </div>
 <div class="career-col">
-<h2>수상</h2>
+<h2>Awards</h2>
 <table class="rows"><tbody>${C.awards.map(([w, o, n]) => `<tr><td class="w">${esc(w)}</td><th scope="row">${esc(o)}</th><td>${esc(n)}</td></tr>`).join('')}</tbody></table>
-<h2 class="mt">기술</h2>
+<h2 class="mt">Skills</h2>
 <table class="rows"><tbody>${C.skills.map(([k, v]) => `<tr><td class="w">${esc(k)}</td><td colspan="2">${esc(v)}</td></tr>`).join('')}</tbody></table>
 </div>
 </div></section>
 
 <section class="other" aria-labelledby="other-h"><div class="wrap">
-<h2 id="other-h">그 밖의 작업</h2>
+<h2 id="other-h">Other Work</h2>
 <table class="grid"><thead><tr><th scope="col">프로젝트</th><th scope="col">기간</th><th scope="col">만든 것</th><th scope="col">맡은 일</th></tr></thead>
 <tbody>${C.otherWork.map(r => `<tr><th scope="row">${esc(r[0])}</th><td class="w">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td></tr>`).join('')}</tbody></table>
-<h3>다른 프로젝트 기여</h3>
+<h3>Contributions</h3>
 <ul class="contrib">${C.contributions.map(([k, v, u]) => `<li><a href="${u}">${esc(k)}</a><p>${esc(v)}</p></li>`).join('')}</ul>
 </div></section>`;
 
@@ -127,7 +127,7 @@ ${s.lead ? `<p class="slide-lead">${esc(s.lead)}</p>` : ''}
 </div></section>`; }).join('\n');
   const body = `<section class="phero"><div class="wrap phero-grid">
 <div class="phero-text">
-<p class="crumb"><a href="../../#projects">프로젝트</a></p>
+<p class="crumb"><a href="../../#projects">Projects</a></p>
 <h1>${esc(o.display)}</h1>
 <p class="phero-sub">${esc(o.sub)}</p>
 <p class="phero-lead">${esc(o.lead)}</p>
@@ -152,12 +152,12 @@ const cvBody = `<article class="cv">
 <ul class="cv-contact"><li><a href="mailto:${C.person.email}">${C.person.email}</a></li><li><a href="https://kgr0831.github.io/">kgr0831.github.io</a></li>${C.person.links.map(([, u, shown]) => `<li><a href="${u}">${esc(shown)}</a></li>`).join('')}<li><a href="https://kgr0831.github.io/${P}">포트폴리오 kgr0831.github.io/${P}</a></li></ul>
 </header>
 <p class="cv-summary"><strong>${esc(C.person.tagline)}.</strong> ${esc(C.cv.summary)}</p>
-<section><h2>경력</h2>${C.cv.work.map(w => cvRow(w.when, `<strong>${esc(w.org)}</strong> · ${esc(w.role)}`, w.head, w.items)).join('')}</section>
-<section><h2>프로젝트</h2>${C.cv.projects.map(w => cvRow(w.when, `<strong>${esc(w.name)}</strong> · ${esc(w.role)}`, '', [], w.desc)).join('')}</section>
-<section><h2>학력</h2>${C.career.filter(r => /학교|정글/.test(r[1])).map(([w, o, n]) => `<p class="cv-line"><span class="cv-when">${esc(w)}</span><span><strong>${esc(o)}</strong> · ${esc(n)}</span></p>`).join('')}</section>
+<section><h2>Experience</h2>${C.cv.work.map(w => cvRow(w.when, `<strong>${esc(w.org)}</strong> · ${esc(w.role)}`, w.head, w.items)).join('')}</section>
+<section><h2>Projects</h2>${C.cv.projects.map(w => cvRow(w.when, `<strong>${esc(w.name)}</strong> · ${esc(w.role)}`, '', [], w.desc)).join('')}</section>
+<section><h2>Education</h2>${C.career.filter(r => /학교|정글/.test(r[1])).map(([w, o, n]) => `<p class="cv-line"><span class="cv-when">${esc(w)}</span><span><strong>${esc(o)}</strong> · ${esc(n)}</span></p>`).join('')}</section>
 <div class="cv-cols">
-<section><h2>수상</h2>${C.awards.map(([w, o, n]) => `<p class="cv-line"><span class="cv-when">${esc(w)}</span><span><strong>${esc(o)}</strong> · ${esc(n)}</span></p>`).join('')}</section>
-<section><h2>기술</h2>${C.skills.map(([k, v]) => `<p class="cv-line"><span class="cv-when">${esc(k)}</span><span>${esc(v)}</span></p>`).join('')}</section>
+<section><h2>Awards</h2>${C.awards.map(([w, o, n]) => `<p class="cv-line"><span class="cv-when">${esc(w)}</span><span><strong>${esc(o)}</strong> · ${esc(n)}</span></p>`).join('')}</section>
+<section><h2>Skills</h2>${C.skills.map(([k, v]) => `<p class="cv-line"><span class="cv-when">${esc(k)}</span><span>${esc(v)}</span></p>`).join('')}</section>
 </div>
 </article>`;
 write('cv/index.html', `<!doctype html>

@@ -23,10 +23,11 @@ export const docs = {
 };
 
 export const workflow = [
-  ['인터뷰', '현업에서 막히는 일부터 질문'],
+  ['Problem Definition', '해결할 문제와 기준을 먼저 정의'],
+  ['Interview', '현업에서 막히는 일부터 질문'],
   ['MVP', 'AI 에이전트와 빠른 구현'],
-  ['보강', '써 본 사람의 반응으로 수정'],
-  ['실사용', '실제 업무와 서비스에 적용'],
+  ['Iteration', '써 본 사람의 반응으로 수정'],
+  ['Adoption', '실제 업무와 서비스에 적용'],
 ];
 
 // home cards: problem and result lines are the ones on the portfolio's contents page
@@ -97,7 +98,7 @@ export const contributions = [
 
 // one-page CV
 export const cv = {
-  summary: '현업에서 막히는 일을 인터뷰로 찾습니다. AI 에이전트로 MVP를 빠르게 만들고 써 본 사람의 반응으로 고쳐 실제 업무와 서비스에 적용합니다.',
+  summary: '해결할 문제와 기준을 먼저 정의하고 현업에서 막히는 일을 인터뷰로 확인합니다. AI 에이전트로 MVP를 빠르게 만들고 써 본 사람의 반응으로 고쳐 실제 업무와 서비스에 적용합니다.',
   work: [
     { when: '2026.10 – 현재', org: 'BeeRFriend', role: 'CPO · 3인 창업팀의 제품, 개발, 사업 구상', head: 'VFriend · 캐릭터와 채팅하고 통화하는 AI 컴패니언 서비스. 웹과 음성 MVP 배포, 원작사 IP를 들여오는 B2B2C 구상(제휴 전 가설)',
       items: [
