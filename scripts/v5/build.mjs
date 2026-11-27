@@ -68,8 +68,8 @@ const home = `<section class="hero"><div class="wrap">
 <p class="hero-tag">${esc(C.person.tagline)}</p>
 <p class="hero-intro">${esc(C.person.intro)} ${esc(C.person.now)}</p>
 <ul class="hero-links">
-<li><a href="${P}">포트폴리오 PDF</a><span>${C.docs.portfolioPages}쪽</span></li>
-<li><a href="cv/">CV</a><span>한 쪽</span></li>
+<li><a href="${P}">포트폴리오 PDF</a></li>
+<li><a href="cv/">CV</a></li>
 <li><a href="mailto:${C.person.email}">${C.person.email}</a></li>
 <li><a href="${C.person.links[0][1]}">${C.person.links[0][2]}</a></li>
 </ul>

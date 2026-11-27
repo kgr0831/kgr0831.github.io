@@ -1,4 +1,4 @@
-// Korean site and CV copy. Facts follow the 40-page portfolio (Figma page "Portfolio v4 · Problem Solver"),
+// Korean site and CV copy. Facts follow the portfolio (Figma page "Portfolio v4 · Problem Solver"),
 // which was checked against the project sources. Change the portfolio first, then this file.
 
 export const person = {
@@ -7,7 +7,7 @@ export const person = {
   field: 'AX · AI Native',
   tagline: '문제를 발견하고 필요한 기술로 해결합니다',
   intro: '게임을 만들며 시작했습니다. 지금은 AI가 쓰이는 제품을 만듭니다.',
-  now: 'MOAI에서 AX Engineer Intern으로 사내 AI 업무 도구를 만들고 BeeRFriend의 CTO로 AI 컴패니언 서비스 VFriend를 개발합니다.',
+  now: 'MOAI에서 AX Engineer Intern으로 사내 AI 업무 도구를 만들고 BeeRFriend의 CPO로 AI 컴패니언 서비스 VFriend를 만듭니다.',
   email: 'garam@moai.co',
   links: [
     ['GitHub', 'https://github.com/kgr0831', 'github.com/kgr0831'],
@@ -17,8 +17,7 @@ export const person = {
 };
 
 export const docs = {
-  portfolio: 'portfolio.pdf', // 40-page portfolio; also copied to portfolio/Garam_Kim_Portfolio.pdf
-  portfolioPages: 40,
+  portfolio: 'portfolio.pdf', // also copied to portfolio/Garam_Kim_Portfolio.pdf
   cvPdf: 'Garam_Kim_CV.pdf', // also copied to CV.pdf
   cvPage: 'cv/',
 };
@@ -36,7 +35,7 @@ export const projects = [
     problem: '영업 담당자가 메일 한 통을 쓰기 전에 흩어진 자료를 다시 찾음',
     result: 'AI가 후보와 근거, 초안을 준비하고 담당자가 승인하는 메일 도구. 영업팀이 실제 발송에 사용. 사내 도구 넷을 더 만듦',
     image: { src: 'moai-envelope.jpg', alt: '편지 봉투 그림', caption: '회사 내부 화면과 실제 수치는 싣지 않았습니다' } },
-  { slug: 'vfriend', name: 'VFriend', sub: 'AI 컴패니언 서비스', opener: '10', when: '2026.10 – 현재 · BeeRFriend CTO',
+  { slug: 'vfriend', name: 'VFriend', sub: 'AI 컴패니언 서비스', opener: '10', when: '2026.10 – 현재 · BeeRFriend CPO',
     problem: '엔딩 뒤에도 캐릭터를 만나고 싶은 팬, 후속 콘텐츠를 만들 여력이 없는 원작사(사업 가설)',
     result: '한 캐릭터와 채팅하다 통화로 이어지는 서비스. 팀의 오리지널 캐릭터로 이미지 생성, 통화, 기억 선별 시스템을 개발해 배포',
     image: { src: 'vf-discover.jpg', alt: 'VFriend 탐색 화면', caption: '실제 서비스의 탐색 화면' } },
@@ -59,7 +58,7 @@ export const projects = [
 ];
 
 export const career = [
-  ['2026.10 – 현재', 'BeeRFriend · CTO', '2인 창업팀, VFriend 개발'],
+  ['2026.10 – 현재', 'BeeRFriend · CPO', '3인 창업 · 제품, 개발, 사업 구상'],
   ['2026.09 – 현재', 'MOAI · AX Engineer Intern', '사내 AI 업무 도구 개발'],
   ['2026.04 – 08', '숭실평화통일 연구원 · SmartAI Lab', '학부연구생'],
   ['2026.03 – 현재', '숭실대학교 AI소프트웨어학부', '1학년 재학'],
@@ -100,7 +99,7 @@ export const contributions = [
 export const cv = {
   summary: '현업에서 막히는 일을 인터뷰로 찾습니다. AI 에이전트로 MVP를 빠르게 만들고 써 본 사람의 반응으로 고쳐 실제 업무와 서비스에 적용합니다.',
   work: [
-    { when: '2026.10 – 현재', org: 'BeeRFriend', role: 'CTO · 2인 창업팀의 개발 전담', head: 'VFriend · 캐릭터와 채팅하고 통화하는 AI 컴패니언 서비스. 웹과 음성 MVP 배포, 원작사 IP를 들여오는 B2B2C 구상(제휴 전 가설)',
+    { when: '2026.10 – 현재', org: 'BeeRFriend', role: 'CPO · 3인 창업팀의 제품, 개발, 사업 구상', head: 'VFriend · 캐릭터와 채팅하고 통화하는 AI 컴패니언 서비스. 웹과 음성 MVP 배포, 원작사 IP를 들여오는 B2B2C 구상(제휴 전 가설)',
       items: [
         '기준 시트로 캐릭터 외형을 맞추고 품질 등급별로 생성 경로를 나눔. 고급 등급은 다섯 항목을 검사해 반려되면 한 번 다시 그림',
         '통화의 차례를 인식된 말로 판단하고 구간별 지연을 재서 고침. 일대일 통화의 새 엔진에서 추임새 시작을 0.92초에서 0.32초로 당김',

@@ -41,7 +41,6 @@ ul, ol { padding: 0; list-style: none; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.24); font-size: 17px; }
 .hero-links a { color: #fff; font-weight: 500; }
 .hero-links a:hover { color: var(--on-deep-2); }
-.hero-links span { color: var(--on-deep-2); margin-left: 8px; font-size: 15px; }
 
 /* sections */
 section > .wrap > h2, .career-col > h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.25; }

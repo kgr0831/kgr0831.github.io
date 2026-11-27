@@ -1,6 +1,6 @@
 # Garam Kim · Problem Solver · design (v5)
 
-The site, CV and 40-page portfolio share one system. The portfolio is designed in Figma (file `Mw9xu8Aj91XfNDZlr9wjpm`, page "Portfolio v4 · Problem Solver"); the site is its web edition.
+The site, CV and portfolio share one system. The portfolio is designed in Figma (file `Mw9xu8Aj91XfNDZlr9wjpm`, page "Portfolio v4 · Problem Solver"); the site is its web edition.
 
 ## Palette and type
 
