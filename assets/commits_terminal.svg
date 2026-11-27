@@ -95,35 +95,35 @@
     <!-- Line 1 -->
     <g class="line line-1">
       <text x="0" y="95" class="console-text">
-        <tspan class="commit-hash">aa187c5</tspan> - <tspan class="commit-msg">Correct BeeRFriend role to CPO of a three-perso...</tspan> <tspan class="commit-time">(22 seconds ago)</tspan>
+        <tspan class="commit-hash">e341eb5</tspan> - <tspan class="commit-msg">Workflow starts with Problem Definition; Englis...</tspan> <tspan class="commit-time">(22 seconds ago)</tspan>
       </text>
     </g>
 
     <!-- Line 2 -->
     <g class="line line-2">
       <text x="0" y="123" class="console-text">
-        <tspan class="commit-hash">b7e572b</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(37 minutes ago)</tspan>
+        <tspan class="commit-hash">ac7631f</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(5 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 3 -->
     <g class="line line-3">
       <text x="0" y="151" class="console-text">
-        <tspan class="commit-hash">4f4a738</tspan> - <tspan class="commit-msg">Rebuild site, CV and portfolio PDF from the v4 ...</tspan> <tspan class="commit-time">(38 minutes ago)</tspan>
+        <tspan class="commit-hash">aa187c5</tspan> - <tspan class="commit-msg">Correct BeeRFriend role to CPO of a three-perso...</tspan> <tspan class="commit-time">(6 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 4 -->
     <g class="line line-4">
       <text x="0" y="179" class="console-text">
-        <tspan class="commit-hash">520a92c</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(3 days ago)</tspan>
+        <tspan class="commit-hash">b7e572b</tspan> - <tspan class="commit-msg">chore: auto-update recent commits in README [sk...</tspan> <tspan class="commit-time">(42 minutes ago)</tspan>
       </text>
     </g>
 
     <!-- Line 5 -->
     <g class="line line-5">
       <text x="0" y="207" class="console-text">
-        <tspan class="commit-hash">6dcb5c3</tspan> - <tspan class="commit-msg">Include type specimens and Korean design-system...</tspan> <tspan class="commit-time">(3 days ago)</tspan>
+        <tspan class="commit-hash">4f4a738</tspan> - <tspan class="commit-msg">Rebuild site, CV and portfolio PDF from the v4 ...</tspan> <tspan class="commit-time">(43 minutes ago)</tspan>
       </text>
     </g>
   </g>
