@@ -1,0 +1,907 @@
+[
+ {
+  "no": "01",
+  "name": "표지",
+  "section": "00 도입"
+ },
+ {
+  "no": "02",
+  "name": "프로필",
+  "section": "00 도입"
+ },
+ {
+  "no": "03",
+  "name": "목차",
+  "section": "00 도입",
+  "title": [
+   {
+    "t": "여섯 프로젝트",
+    "a": 0
+   }
+  ]
+ },
+ {
+  "no": "04",
+  "name": "MOAI · 개요",
+  "section": "01 MOAI",
+  "kind": "opener",
+  "display": "MOAI",
+  "sub": "직원 인터뷰에서 시작한 사내 AI 업무 자동화",
+  "lead": "직원들이 매일 어디에 시간을 쓰는지 먼저 물었습니다. 반복되는 준비는 AI가 하고 판단은 담당자가 하는 도구를 만들어 실제 업무에 쓰이게 했습니다.",
+  "meta": [
+   [
+    "기간",
+    "2026.09 – 현재"
+   ],
+   [
+    "역할",
+    "AX Engineer Intern"
+   ],
+   [
+    "기술",
+    "Next.js · PostgreSQL · MCP · Claude Code · Codex CLI"
+   ],
+   [
+    "만든 것",
+    "영업 메일 자동화, 사내 문서 초안 작성, 후속 업무 통계, 영업 리드 챗봇, AI 사용량 수집"
+   ]
+  ]
+ },
+ {
+  "no": "05",
+  "name": "MOAI · 문제 정의",
+  "section": "01 MOAI",
+  "title": [
+   {
+    "t": "담당자는 메일 한 통을 쓰기 전에\n",
+    "a": 0
+   },
+   {
+    "t": "흩어진 자료를 다시",
+    "a": 1
+   },
+   {
+    "t": " 찾고 있었습니다",
+    "a": 0
+   }
+  ],
+  "lead": "영업 담당자에게 인터뷰를 요청해 제안 메일 한 통을 준비하는 과정을 처음부터 따라갔습니다. 후보 목록이 있어도 연락할 근거는 회사마다 공고와 보유 솔루션에서 새로 확인해야 했습니다.",
+  "bodyTop": 321,
+  "bodyBottom": 917
+ },
+ {
+  "no": "06",
+  "name": "MOAI · 영업 메일 자동화",
+  "section": "01 MOAI",
+  "title": [
+   {
+    "t": "AI가 준비하고\n",
+    "a": 0
+   },
+   {
+    "t": "담당자가 승인",
+    "a": 1
+   },
+   {
+    "t": "합니다",
+    "a": 0
+   }
+  ],
+  "lead": "누구에게 메일을 보낼지는 영업팀이 가장 잘 압니다. AI에는 근거를 찾고 초안을 쓰는 일까지만 맡기고 발송은 담당자가 승인하게 했습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "07",
+  "name": "MOAI · 그 밖에 만든 도구",
+  "section": "01 MOAI",
+  "title": [
+   {
+    "t": "메일 말고도 ",
+    "a": 0
+   },
+   {
+    "t": "반복되는 업무",
+    "a": 1
+   },
+   {
+    "t": "를\n도구로 바꿨습니다",
+    "a": 0
+   }
+  ],
+  "lead": "영업 메일과 사내 문서 초안은 제가 먼저 제안해 시작한 일입니다.",
+  "bodyTop": 320,
+  "bodyBottom": 918
+ },
+ {
+  "no": "08",
+  "name": "MOAI · 판단 사례 · 문서 초안",
+  "section": "01 MOAI",
+  "title": [
+   {
+    "t": "설치할 앱을 늘리지 않고\n",
+    "a": 0
+   },
+   {
+    "t": "쓰던 AI 도구에 연결",
+    "a": 1
+   },
+   {
+    "t": "했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "사내 문서 초안을 만드는 세 가지 방식을 차례로 써 봤습니다. 초기화된 PC에서 설치가 실패한 일이 계기였고 추가 앱을 없애 달라는 요구를 기준으로 골랐습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 954
+ },
+ {
+  "no": "09",
+  "name": "MOAI · 판단 사례 · 영업 리드 챗봇",
+  "section": "01 MOAI",
+  "title": [
+   {
+    "t": "분류 단계는 미루고\n",
+    "a": 0
+   },
+   {
+    "t": "모델이 바로 판단하게",
+    "a": 1
+   },
+   {
+    "t": " 했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "영업 리드의 조회와 등록, 수정 요청을 채팅으로 처리하는 챗봇입니다. 요청을 먼저 분류하는 단계를 더하면 실제로 나아지는지 판단할 근거가 필요했습니다.",
+  "bodyTop": 312,
+  "bodyBottom": 926
+ },
+ {
+  "no": "10",
+  "name": "VFriend · 개요",
+  "section": "02 VFriend",
+  "kind": "opener",
+  "display": "VFriend",
+  "sub": "캐릭터와 채팅하고 통화하는 AI 컴패니언 서비스",
+  "lead": "비주얼 노벨의 엔딩 뒤에도 캐릭터를 만나고 싶은 팬이 있습니다. 중소 원작사는 차기작을 만들면서 후속 콘텐츠까지 운영하기 어렵습니다. 이 틈을 겨냥한 서비스를 2인 팀의 CTO로 개발하고 있습니다. 지금은 팀의 오리지널 캐릭터로 운영합니다.",
+  "meta": [
+   [
+    "기간",
+    "2026.10 – 현재"
+   ],
+   [
+    "역할",
+    "BeeRFriend CTO · 2인 팀의 개발 전담"
+   ],
+   [
+    "기술",
+    "Node.js · WebSocket · 음성 인식·합성 · 이미지 생성 모델"
+   ],
+   [
+    "상태",
+    "웹과 음성 MVP 배포, 오리지널 캐릭터 9명 공개"
+   ]
+  ],
+  "links": [
+   [
+    "서비스",
+    "https://54.66.167.6/discover",
+    "54.66.167.6/discover"
+   ],
+   [
+    "시연 영상",
+    "https://beerfriend.co/assets/vfriend-demo.mp4",
+    "beerfriend.co/assets/vfriend-demo.mp4"
+   ],
+   [
+    "IR 자료",
+    "https://kgr0831.github.io/portfolio/VFriend_D2SF_IR.pdf",
+    "kgr0831.github.io/portfolio/VFriend_D2SF_IR.pdf"
+   ]
+  ],
+  "image": "vf-discover-c",
+  "caption": "실제 서비스의 탐색 화면"
+ },
+ {
+  "no": "11",
+  "name": "VFriend · 문제 정의",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "팬은 더 만나고 싶고\n원작사는 ",
+    "a": 0
+   },
+   {
+    "t": "만들 여력이 없습니다",
+    "a": 1
+   }
+  ],
+  "lead": "원작사를 만나기 전에 IR을 준비하며 세운 문제 가설입니다. 캐릭터 AI 시장을 살펴보다 비주얼 노벨의 엔딩을 본 팬과 후속 이야기를 만들 여력이 없는 중소 원작사 사이의 틈을 봤습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "12",
+  "name": "VFriend · 사업 구상",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "원작사는 감수하고 VFriend가\n",
+    "a": 0
+   },
+   {
+    "t": "제작과 운영",
+    "a": 1
+   },
+   {
+    "t": "을 맡는 구상입니다",
+    "a": 0
+   }
+  ],
+  "lead": "제휴 IP를 VFriend 안에 들여와 운영하는 B2B2C 모델입니다. 원작의 팬덤이 B2C 서비스의 약점인 마케팅을 대신할 수 있다고 봤습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "13",
+  "name": "VFriend · 기준 시트",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "장면을 그리기 전에 캐릭터마다\n",
+    "a": 0
+   },
+   {
+    "t": "기준 시트",
+    "a": 1
+   },
+   {
+    "t": "를 만듭니다",
+    "a": 0
+   }
+  ],
+  "lead": "장면이 바뀌어도 같은 캐릭터로 보여야 합니다. 정면과 후면, 얼굴을 담은 기준 시트를 캐릭터마다 먼저 저장하고 이후의 모든 그림 생성에 같은 시트를 참조로 넘깁니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "14",
+  "name": "VFriend · 등급과 검사",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "고급 등급은 그린 뒤에\n",
+    "a": 0
+   },
+   {
+    "t": "다섯 항목을 검사",
+    "a": 1
+   },
+   {
+    "t": "합니다",
+    "a": 0
+   }
+  ],
+  "lead": "사용자가 초급, 중급, 고급 가운데 품질 등급을 고릅니다. 등급마다 그리는 경로가 다르고 고급은 그린 그림을 검사해 반려되면 한 번 다시 그립니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "15",
+  "name": "VFriend · 통화의 차례 판단",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "첫 통화 엔진은 끼어들기를\n",
+    "a": 0
+   },
+   {
+    "t": "인식된 말",
+    "a": 1
+   },
+   {
+    "t": "로 판단했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "통화 중에는 맞장구와 잡음, 진짜 끼어들기가 섞여 들어옵니다. 소리 크기만으로 재생을 멈추면 대화가 자꾸 끊겨서 인식된 말의 내용으로 차례를 넘기게 했습니다.",
+  "bodyTop": 322,
+  "bodyBottom": 916
+ },
+ {
+  "no": "16",
+  "name": "VFriend · 통화 지연",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "가장 오래 걸린 곳은\n",
+    "a": 0
+   },
+   {
+    "t": "답변 생성의 첫 토큰",
+    "a": 1
+   },
+   {
+    "t": "이었습니다",
+    "a": 0
+   }
+  ],
+  "lead": "통화가 대화처럼 느껴지려면 말이 끝난 뒤 답이 바로 시작돼야 합니다. 목표를 0.5초로 잡고 어디서 시간이 걸리는지 구간별로 쟀습니다.",
+  "bodyTop": 313,
+  "bodyBottom": 925
+ },
+ {
+  "no": "17",
+  "name": "VFriend · 기억 선별",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "기억은 사용자가\n",
+    "a": 0
+   },
+   {
+    "t": "실제로 한 말",
+    "a": 1
+   },
+   {
+    "t": "에서만 만듭니다",
+    "a": 0
+   }
+  ],
+  "lead": "모델이 잘못 해석한 내용이 기억으로 굳지 않도록 기억을 만드는 단계와 쓰는 단계를 나눴습니다.",
+  "bodyTop": 288,
+  "bodyBottom": 951
+ },
+ {
+  "no": "18",
+  "name": "VFriend · 모임 대화 실험",
+  "section": "02 VFriend",
+  "title": [
+   {
+    "t": "모임에서 누가 답할지\n",
+    "a": 0
+   },
+   {
+    "t": "세 방식을 같은 상황으로",
+    "a": 1
+   },
+   {
+    "t": " 견줬습니다",
+    "a": 0
+   }
+  ],
+  "lead": "친구 여럿이 있는 방에서는 누가 먼저 답하고 몇 명이 말하는지가 어색함을 좌우합니다. 세 친구와 열 가지 상황, 통과 기준을 미리 정해 두고 세 방식을 한 번씩 돌려 비교했습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "19",
+  "name": "EUM · 개요",
+  "section": "03 EUM",
+  "kind": "opener",
+  "display": "EUM",
+  "sub": "화상회의와 공동 화이트보드를 묶은 AI 네이티브 협업 워크스페이스",
+  "lead": "회의에서 설명하는 사람과 듣는 사람이 같은 그림을 보며 가리킬 수 있어야 했습니다. 크래프톤 정글의 5인 팀에서 저는 공동 화이트보드를 맡아 낯선 그래픽스 기술을 AI와 배우며 구현했습니다.",
+  "meta": [
+   [
+    "기간",
+    "2025.12 – 2026.01"
+   ],
+   [
+    "역할",
+    "5인 팀 · 공동 화이트보드의 프런트엔드와 서버"
+   ],
+   [
+    "기술",
+    "PixiJS v8 · Socket.IO · NestJS · Redis"
+   ],
+   [
+    "결과",
+    "당시 기록한 평균 23.7 → 58.7 FPS · 조건 미기록"
+   ]
+  ],
+  "links": [
+   [
+    "저장소",
+    "https://github.com/kgr0831/EUM2",
+    "github.com/kgr0831/EUM2"
+   ],
+   [
+    "발표 영상",
+    "https://www.youtube.com/watch?v=Pnjw9WitAXg",
+    "www.youtube.com/watch?v=Pnjw9WitAXg"
+   ]
+  ],
+  "image": "eum-draw",
+  "caption": "회의 화면 안의 공동 화이트보드"
+ },
+ {
+  "no": "20",
+  "name": "EUM · 문제 정의",
+  "section": "03 EUM",
+  "title": [
+   {
+    "t": "선이 쌓일수록\n",
+    "a": 0
+   },
+   {
+    "t": "보드가 느려졌습니다",
+    "a": 1
+   }
+  ],
+  "lead": "회의가 길어질수록 느려지는 원인을 저장, 전송, 렌더링으로 나눠 찾았습니다. 고칠 범위와 순서를 제안서로 정리해 팀과 합의한 뒤 바꿨습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "21",
+  "name": "EUM · 필기감",
+  "section": "03 EUM",
+  "title": [
+   {
+    "t": "필기 보정은 여러 방식을 시험해\n",
+    "a": 0
+   },
+   {
+    "t": "세 단계로 조합",
+    "a": 1
+   },
+   {
+    "t": "했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "AI에게 필기 보정 방식을 조사하게 해 보고서로 받았습니다. 추천을 그대로 쓰지 않고 직접 시험해 떨림 보정, 곡선, 점 줄이기의 세 단계로 조합했습니다.",
+  "bodyTop": 331,
+  "bodyBottom": 907
+ },
+ {
+  "no": "22",
+  "name": "EUM · 재설계",
+  "section": "03 EUM",
+  "title": [
+   {
+    "t": "빠르지만 고칠 수 없던 방식을\n",
+    "a": 0
+   },
+   {
+    "t": "벡터 객체",
+    "a": 1
+   },
+   {
+    "t": "로 다시 설계했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "속도를 먼저 잡은 비트맵 방식은 한번 그린 것을 다시 고르거나 고칠 수 없었습니다. 그린 것을 벡터 객체로 저장하고 위치를 쿼드트리로 색인하는 구조로 바꿨습니다.",
+  "bodyTop": 308,
+  "bodyBottom": 931
+ },
+ {
+  "no": "23",
+  "name": "EUM · 결과",
+  "section": "03 EUM",
+  "title": [
+   {
+    "t": "당시 기록한 평균 프레임이\n",
+    "a": 0
+   },
+   {
+    "t": "두 배 넘게",
+    "a": 1
+   },
+   {
+    "t": " 올랐습니다",
+    "a": 0
+   }
+  ],
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "24",
+  "name": "On Your Mark · 개요",
+  "section": "04 On Your Mark",
+  "kind": "opener",
+  "display": "On Your Mark",
+  "sub": "AI 네이티브로 만든 2인 협동 SF 액션 게임",
+  "lead": "서로의 화면 정보(HUD)가 뒤바뀌어 말로 알려 줘야 하는 2인 협동 게임을 Unity AI Game Jam에서 4인 팀이 24시간 동안 만들었습니다. 기획부터 모델, 음성, 코드, 빌드까지 AI를 썼고 저는 렌더링과 게임 속 AI, 통합을 맡았습니다.",
+  "meta": [
+   [
+    "기간",
+    "2026.11.18 – 19"
+   ],
+   [
+    "역할",
+    "4인 팀 Architecture · 렌더링·아트·AI·통합"
+   ],
+   [
+    "기술",
+    "Unity 6 · HDRP · Codex CLI · ElevenLabs"
+   ],
+   [
+    "결과",
+    "‘AI는 거들 뿐상’ · 팀 수상"
+   ]
+  ],
+  "links": [
+   [
+    "다운로드",
+    "https://github.com/Architecture-UnityAIGameJam2026/UnityAIGameJam2026/releases",
+    "github.com/Architecture-UnityAIGameJam2026/UnityAIGameJam2026/releases"
+   ],
+   [
+    "플레이 영상",
+    "https://kgr0831.github.io/portfolio/projects/sources/OnYourMark-Gameplay.mp4",
+    "kgr0831.github.io/portfolio/projects/sources/OnYourMark-Gameplay.mp4"
+   ],
+   [
+    "트레일러",
+    "https://www.youtube.com/watch?v=fogiP4cf5wc",
+    "www.youtube.com/watch?v=fogiP4cf5wc"
+   ]
+  ],
+  "image": "oym-hud",
+  "caption": "두 파일럿의 HUD가 뒤바뀌는 실제 플레이 화면"
+ },
+ {
+  "no": "25",
+  "name": "On Your Mark · AI 네이티브 제작",
+  "section": "04 On Your Mark",
+  "title": [
+   {
+    "t": "기획부터 빌드까지\n24시간 동안 ",
+    "a": 0
+   },
+   {
+    "t": "AI와 만들었습니다",
+    "a": 1
+   }
+  ],
+  "lead": "네 사람이 같은 기획서를 기준으로 모델과 음성, 코드를 동시에 만들었습니다. 저는 Unity에 합친 장면에서 어긋나는 곳을 찾아 고쳤습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "26",
+  "name": "On Your Mark · 맡은 일",
+  "section": "04 On Your Mark",
+  "title": [
+   {
+    "t": "AI로 만든 모델과 음성을\n",
+    "a": 0
+   },
+   {
+    "t": "한 장면으로",
+    "a": 1
+   },
+   {
+    "t": " 합쳤습니다",
+    "a": 0
+   }
+  ],
+  "lead": "네 사람이 따로 만든 모델과 음성, 코드가 한 번의 플레이로 이어지게 하는 일을 맡았습니다.",
+  "bodyTop": 309,
+  "bodyBottom": 930
+ },
+ {
+  "no": "27",
+  "name": "On Your Mark · 음성 제작과 검수",
+  "section": "04 On Your Mark",
+  "title": [
+   {
+    "t": "음성 300개는 AI로 만들고\n",
+    "a": 0
+   },
+   {
+    "t": "AI로 다시 받아써",
+    "a": 1
+   },
+   {
+    "t": " 검수했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "근거리, 원거리, 중재 AI의 무전 대사를 역할마다 100개씩 만들었습니다. 300개 전부를 다시 받아써 대본과 대조하고 사람은 역할별 대표 음성만 직접 들었습니다.",
+  "bodyTop": 299,
+  "bodyBottom": 939
+ },
+ {
+  "no": "28",
+  "name": "On Your Mark · 게임 속 AI",
+  "section": "04 On Your Mark",
+  "title": [
+   {
+    "t": "무전 AI는 미리 만든 대사\n가운데 ",
+    "a": 0
+   },
+   {
+    "t": "하나를 고릅니다",
+    "a": 1
+   }
+  ],
+  "lead": "무전 AI가 문장을 실시간으로 만들면 대사와 목소리를 통제하기 어렵고 응답도 늦어집니다. 대사와 음성을 미리 만들어 두고 AI는 상황에 맞는 대사 하나만 고르게 했습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "29",
+  "name": "On Your Mark · 결과",
+  "section": "04 On Your Mark",
+  "title": [
+   {
+    "t": "팀이 ",
+    "a": 0
+   },
+   {
+    "t": "‘AI는 거들 뿐상’",
+    "a": 1
+   },
+   {
+    "t": "을\n받았습니다",
+    "a": 0
+   }
+  ],
+  "lead": "시상식 화면의 선정 기준은 “AI를 도구로 쓰되, 사람의 기획과 판단이 가장 빛난 팀”이었습니다.",
+  "bodyTop": 290,
+  "bodyBottom": 948
+ },
+ {
+  "no": "30",
+  "name": "Remnents of Light · 개요",
+  "section": "05 Remnents of Light",
+  "kind": "opener",
+  "display": "Remnents of Light",
+  "sub": "원격 에이전트 루프로 만든 2D 액션 게임",
+  "lead": "개발 노트북이 한 대뿐이라 밖에서는 떠오른 수정을 시험할 수 없었습니다. Discord로 명령을 보내면 에이전트가 고치고 실행해 결과를 돌려주는 개발 루프를 만들었습니다.",
+  "meta": [
+   [
+    "기간",
+    "2026.07 – 09"
+   ],
+   [
+    "역할",
+    "전투·연출·원격 개발 도구 · 맵 제작에 팀원 참여"
+   ],
+   [
+    "기술",
+    "Unity 6 · Discord · Claude Code · Gemini · Unity MCP"
+   ],
+   [
+    "결과",
+    "첫 스테이지 데모와 10분 분량의 플레이 영상"
+   ]
+  ],
+  "links": [
+   [
+    "저장소",
+    "https://github.com/kgr0831/Remnents-of-Light/tree/feature/Demo",
+    "github.com/kgr0831/Remnents-of-Light/tree/feature/Demo"
+   ],
+   [
+    "플레이 영상",
+    "https://www.youtube.com/watch?v=WHP7L8P5Be8",
+    "www.youtube.com/watch?v=WHP7L8P5Be8"
+   ],
+   [
+    "소개 페이지",
+    "https://kgr0831.itch.io/remnents-of-light",
+    "kgr0831.itch.io/remnents-of-light"
+   ]
+  ],
+  "image": "rol-laser",
+  "caption": "보스의 레이저를 피하는 실제 플레이 화면"
+ },
+ {
+  "no": "31",
+  "name": "Remnents of Light · 원격 개발 루프",
+  "section": "05 Remnents of Light",
+  "title": [
+   {
+    "t": "밖에서 명령하면\n고치고 실행해 ",
+    "a": 0
+   },
+   {
+    "t": "결과를 돌려줍니다",
+    "a": 1
+   }
+  ],
+  "lead": "노트북은 꺼질 수 있어서 명령을 받는 봇은 항상 켜진 서버에 두고 실제로 실행하는 프로그램만 노트북에 뒀습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "32",
+  "name": "Remnents of Light · 권한과 승인",
+  "section": "05 Remnents of Light",
+  "title": [
+   {
+    "t": "에이전트에게 맡길 일과\n",
+    "a": 0
+   },
+   {
+    "t": "사람이 승인할 일",
+    "a": 1
+   },
+   {
+    "t": "을 나눴습니다",
+    "a": 0
+   }
+  ],
+  "lead": "노트북 앞에 아무도 없어도 돌아가는 도구라 명령마다 쓸 수 있는 권한을 다르게 줬습니다. 되돌리기 어려운 작업은 멈추고 번호가 붙은 선택지로 묻습니다.",
+  "bodyTop": 312,
+  "bodyBottom": 925
+ },
+ {
+  "no": "33",
+  "name": "Remnents of Light · 운영 문제",
+  "section": "05 Remnents of Light",
+  "title": [
+   {
+    "t": "원격 루프를 직접 돌리며\n",
+    "a": 0
+   },
+   {
+    "t": "멈추고 새는 곳",
+    "a": 1
+   },
+   {
+    "t": "을 고쳤습니다",
+    "a": 0
+   }
+  ],
+  "lead": "명령은 Discord에서 중계 봇과 실행기를 거쳐 Claude Code 호출로 이어집니다. 다섯 문제 가운데 넷이 노트북의 실행기에서 생겼습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "34",
+  "name": "Remnents of Light · 검증과 판단",
+  "section": "05 Remnents of Light",
+  "title": [
+   {
+    "t": "검사를 통과한 뒤에도\n",
+    "a": 0
+   },
+   {
+    "t": "직접 플레이",
+    "a": 1
+   },
+   {
+    "t": "로 판단했습니다",
+    "a": 0
+   }
+  ],
+  "lead": "자동 검사는 수치와 상태를 알려 주고 손에 닿는 느낌은 사람이 판단하도록 역할을 나눴습니다.",
+  "bodyTop": 310,
+  "bodyBottom": 928
+ },
+ {
+  "no": "35",
+  "name": "두드리 · 개요",
+  "section": "06 두드리",
+  "kind": "opener",
+  "display": "두드리",
+  "sub": "AI 네이티브 + 애자일 워크플로우로 하루 만에 만든 캠퍼스 서비스",
+  "lead": "같은 학교에서 팀원을 찾아도 전공과 학년만으로는 그 학생이 무엇을 해 봤는지 알기 어려웠습니다. 학생이 경험을 정리해 공개하면 그 소개를 읽은 동문이 커피챗을 요청하는 서비스를 해커톤에서 만들었습니다.",
+  "meta": [
+   [
+    "기간",
+    "2026.09.19 – 20 · KOSSCCHTHON 2026"
+   ],
+   [
+    "역할",
+    "5인 팀 · MVP 단독 개발 · 기획과 QA는 팀원"
+   ],
+   [
+    "기술",
+    "Next.js · FastAPI · PostgreSQL · Codex CLI · Figma MCP"
+   ],
+   [
+    "결과",
+    "대상 · 팀 수상"
+   ]
+  ],
+  "links": [
+   [
+    "서비스",
+    "https://dudri-app.vercel.app/",
+    "dudri-app.vercel.app"
+   ],
+   [
+    "저장소",
+    "https://github.com/kgr0831/KOSSCCHTHON_2026",
+    "github.com/kgr0831/KOSSCCHTHON_2026"
+   ],
+   [
+    "발표 영상",
+    "https://www.youtube.com/watch?v=vvsyQIOtiUQ",
+    "www.youtube.com/watch?v=vvsyQIOtiUQ"
+   ]
+  ],
+  "image": "dudri-coffee",
+  "caption": "실제 커피챗 약속 화면"
+ },
+ {
+  "no": "36",
+  "name": "두드리 · 워크플로우",
+  "section": "06 두드리",
+  "title": [
+   {
+    "t": "혼자 개발",
+    "a": 1
+   },
+   {
+    "t": "하고\n팀원은 배포본을 써 봤습니다",
+    "a": 0
+   }
+  ],
+  "lead": "팀원이 기획하고 저는 명세와 구현을 AI와 혼자 맡았습니다. 개발을 나누면 합치는 데 시간이 더 들 것으로 봤습니다. 팀원은 배포된 화면을 써 보며 막히는 곳을 알려 줬습니다.",
+  "bodyTop": 282,
+  "bodyBottom": 956
+ },
+ {
+  "no": "37",
+  "name": "두드리 · 제품 설계",
+  "section": "06 두드리",
+  "title": [
+   {
+    "t": "AI가 만든 초안은\n",
+    "a": 0
+   },
+   {
+    "t": "학생이 승인",
+    "a": 1
+   },
+   {
+    "t": "해야 공개됩니다",
+    "a": 0
+   }
+  ],
+  "lead": "문서는 학생의 이름으로 동문에게 공개됩니다. 그래서 AI가 정리한 내용은 승인 전에는 프로필에 넣지 않고 생성한 문서도 게시 버튼을 눌러야 공개되게 했습니다.",
+  "bodyTop": 333,
+  "bodyBottom": 906
+ },
+ {
+  "no": "38",
+  "name": "두드리 · 결과",
+  "section": "06 두드리",
+  "title": [
+   {
+    "t": "하루 만에 만든 MVP로\n팀이 ",
+    "a": 0
+   },
+   {
+    "t": "대상",
+    "a": 1
+   },
+   {
+    "t": "을 받았습니다",
+    "a": 0
+   }
+  ],
+  "lead": "국민대·숭실대·순천향대 연합 경진대회 KOSSCCHTHON 2026에서 팀이 이 MVP를 발표해 대상을 받았습니다.",
+  "bodyTop": 293,
+  "bodyBottom": 946
+ },
+ {
+  "no": "39",
+  "name": "그 밖의 작업",
+  "section": "07 마무리",
+  "title": [
+   {
+    "t": "그 밖의 작업",
+    "a": 0
+   }
+  ]
+ },
+ {
+  "no": "40",
+  "name": "연락처",
+  "section": "07 마무리",
+  "kind": "opener",
+  "display": "김가람",
+  "sub": "Problem Solver · AX · AI Native"
+ }
+]

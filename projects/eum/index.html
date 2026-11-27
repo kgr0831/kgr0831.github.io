@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EUM · 김가람</title>
+<meta name="description" content="화상회의와 공동 화이트보드를 묶은 AI 네이티브 협업 워크스페이스. 회의에서 설명하는 사람과 듣는 사람이 같은 그림을 보며 가리킬 수 있어야 했습니다. 크래프톤 정글의 5인 팀에서 저는 공동 화이트보드를 맡아 낯선 그래픽스 기술을 AI와 배우며 구현했습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EUM · 김가람">
+<meta property="og:description" content="화상회의와 공동 화이트보드를 묶은 AI 네이티브 협업 워크스페이스. 회의에서 설명하는 사람과 듣는 사람이 같은 그림을 보며 가리킬 수 있어야 했습니다. 크래프톤 정글의 5인 팀에서 저는 공동 화이트보드를 맡아 낯선 그래픽스 기술을 AI와 배우며 구현했습니다.">
+<meta property="og:image" content="https://kgr0831.github.io/assets/v5/og.png">
+<link rel="icon" href="../../favicon.svg">
+<link rel="preload" href="../../assets/fonts/IBMPlexSansKR-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/v5/site.css">
+</head>
+<body class="project">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../.././">김가람</a>
+<nav aria-label="주요 메뉴"><a href="../.././#projects">프로젝트</a><a href="../.././#career">경력</a><a href="../../cv/">CV</a><a href="../../portfolio.pdf">포트폴리오 PDF</a></nav>
+</div></header>
+<main id="main">
+<section class="phero"><div class="wrap phero-grid">
+<div class="phero-text">
+<p class="crumb"><a href="../../#projects">프로젝트</a></p>
+<h1>EUM</h1>
+<p class="phero-sub">화상회의와 공동 화이트보드를 묶은 AI 네이티브 협업 워크스페이스</p>
+<p class="phero-lead">회의에서 설명하는 사람과 듣는 사람이 같은 그림을 보며 가리킬 수 있어야 했습니다. 크래프톤 정글의 5인 팀에서 저는 공동 화이트보드를 맡아 낯선 그래픽스 기술을 AI와 배우며 구현했습니다.</p>
+<dl class="meta"><div><dt>기간</dt><dd>2025.12 – 2026.01</dd></div><div><dt>역할</dt><dd>5인 팀 · 공동 화이트보드의 프런트엔드와 서버</dd></div><div><dt>기술</dt><dd>PixiJS v8 · Socket.IO · NestJS · Redis</dd></div><div><dt>결과</dt><dd>당시 기록한 평균 23.7 → 58.7 FPS · 조건 미기록</dd></div></dl>
+<ul class="plinks"><li><span>저장소</span><a href="https://github.com/kgr0831/EUM2">github.com/kgr0831/EUM2</a></li><li><span>발표 영상</span><a href="https://www.youtube.com/watch?v=Pnjw9WitAXg">www.youtube.com/watch?v=Pnjw9WitAXg</a></li></ul>
+</div>
+<figure class="phero-fig"><img src="../../assets/v5/img/eum-board.jpg" alt="EUM 회의 화면의 공동 화이트보드"><figcaption>회의 화면 안의 공동 화이트보드</figcaption></figure>
+</div></section>
+<section class="slide" id="p20"><div class="wrap">
+<h2>선이 쌓일수록<br><em>보드가 느려졌습니다</em></h2>
+<p class="slide-lead">회의가 길어질수록 느려지는 원인을 저장, 전송, 렌더링으로 나눠 찾았습니다. 고칠 범위와 순서를 제안서로 정리해 팀과 합의한 뒤 바꿨습니다.</p>
+<figure class="slide-fig"><a class="slide-img" href="../../assets/v5/slides/20.webp"><img src="../../assets/v5/slides/20.webp" width="1824" height="746" alt="선이 쌓일수록 보드가 느려졌습니다" loading="lazy"></a>
+<figcaption><span class="swipe">옆으로 밀어 보기 · </span><a href="../../portfolio.pdf#page=20">포트폴리오 20쪽</a> · 문제 정의</figcaption></figure>
+</div></section>
+<section class="slide" id="p21"><div class="wrap">
+<h2>필기 보정은 여러 방식을 시험해<br><em>세 단계로 조합</em>했습니다</h2>
+<p class="slide-lead">AI에게 필기 보정 방식을 조사하게 해 보고서로 받았습니다. 추천을 그대로 쓰지 않고 직접 시험해 떨림 보정, 곡선, 점 줄이기의 세 단계로 조합했습니다.</p>
+<figure class="slide-fig"><a class="slide-img" href="../../assets/v5/slides/21.webp"><img src="../../assets/v5/slides/21.webp" width="1824" height="648" alt="필기 보정은 여러 방식을 시험해 세 단계로 조합했습니다" loading="lazy"></a>
+<figcaption><span class="swipe">옆으로 밀어 보기 · </span><a href="../../portfolio.pdf#page=21">포트폴리오 21쪽</a> · 필기감</figcaption></figure>
+</div></section>
+<section class="slide" id="p22"><div class="wrap">
+<h2>빠르지만 고칠 수 없던 방식을<br><em>벡터 객체</em>로 다시 설계했습니다</h2>
+<p class="slide-lead">속도를 먼저 잡은 비트맵 방식은 한번 그린 것을 다시 고르거나 고칠 수 없었습니다. 그린 것을 벡터 객체로 저장하고 위치를 쿼드트리로 색인하는 구조로 바꿨습니다.</p>
+<figure class="slide-fig"><a class="slide-img" href="../../assets/v5/slides/22.webp"><img src="../../assets/v5/slides/22.webp" width="1824" height="695" alt="빠르지만 고칠 수 없던 방식을 벡터 객체로 다시 설계했습니다" loading="lazy"></a>
+<figcaption><span class="swipe">옆으로 밀어 보기 · </span><a href="../../portfolio.pdf#page=22">포트폴리오 22쪽</a> · 재설계</figcaption></figure>
+</div></section>
+<section class="slide" id="p23"><div class="wrap">
+<h2>당시 기록한 평균 프레임이<br><em>두 배 넘게</em> 올랐습니다</h2>
+
+<figure class="slide-fig"><a class="slide-img" href="../../assets/v5/slides/23.webp"><img src="../../assets/v5/slides/23.webp" width="1824" height="746" alt="당시 기록한 평균 프레임이 두 배 넘게 올랐습니다" loading="lazy"></a>
+<figcaption><span class="swipe">옆으로 밀어 보기 · </span><a href="../../portfolio.pdf#page=23">포트폴리오 23쪽</a> · 결과</figcaption></figure>
+</div></section>
+<nav class="pnav" aria-label="다른 프로젝트"><div class="wrap">
+<a class="prev" href="../vfriend/"><span>이전 프로젝트</span>VFriend</a>
+<a class="next" href="../on-your-mark/"><span>다음 프로젝트</span>On Your Mark</a>
+</div></nav>
+</main>
+<footer class="foot"><div class="wrap">
+<p class="foot-name">김가람 · Problem Solver</p>
+<ul class="foot-links"><li><a href="mailto:garam@moai.co">garam@moai.co</a></li><li><a href="https://github.com/kgr0831">GitHub</a></li><li><a href="https://www.linkedin.com/in/kimgalam0831/">LinkedIn</a></li><li><a href="https://kgr0831.tistory.com/">기술 블로그</a></li></ul>
+</div></footer>
+</body>
+</html>

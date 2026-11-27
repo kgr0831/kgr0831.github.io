@@ -1,27 +1,21 @@
-# Garam Kim · Problem Solver
+# Garam Kim · Problem Solver · design (v5)
 
-The selected identity uses flat motion typography in deep teal and cream. A single horizontal composition connects the introduction, project frames, dialogs, footer, portfolio PDFs and GitHub banner.
+The site, CV and 40-page portfolio share one system. The portfolio is designed in Figma (file `Mw9xu8Aj91XfNDZlr9wjpm`, page "Portfolio v4 · Problem Solver"); the site is its web edition.
 
 ## Palette and type
 
-Accent/background: #174c48. Paper/type on the cover: #f2efe7. Reading ink: #172d2b. Secondary text: #566b65. Soft surfaces: #dfe6dc. Rules: #b2c1b7. Primary contrast is 8.45:1; secondary text on cream is 4.96:1.
+White pages #FFFFFF, ink #14201E, secondary #4B5957, muted #6B7775, hairline #D8DFDD, surface #EDF1F0. One accent family: teal #0E6B62 for links and the key phrase of a heading, deep teal #174C48 for the hero bands and footer, soft teal #DFF0EC. No second accent, no dark mode, no per-project theme.
 
-IBM Plex Sans KR is selected through [Noonnu](https://noonnu.cc/font_page/448), with local 400/500/600 WOFF2 files and the OFL license. Large display typography uses the 600 face; it is preloaded and avoids a fallback-font flash. Body copy uses 400 and labels use 500. Korean keeps words together.
+IBM Plex Sans KR only (400, 500, 600 from `assets/fonts`). Korean keeps words together (`word-break: keep-all`).
 
-## Layout and resources
+## Layout
 
-The first viewport contains PROBLEM / SOLVER, Garam Kim, the AX / AI Native field, CV, portfolio PDF, Tech Blog and contact. It contains no project previews. The header repeats the three resources; on narrow phones it uses a second row. GitHub is in the footer.
+Home: deep teal hero (name, Problem Solver, AX · AI Native, one sentence, links to the portfolio PDF, CV, email and GitHub), the four-step way of working, six projects (period, name, problem, result, real screen), career and education, awards, skills, other work, contributions, footer with contact links.
 
-Three work rows follow: MOAI, EUM and Dudri. A row opens a native dialog with Overview, Decisions and Results tabs. The dialog has a fixed header and tabs with a scrollable reading body. Without JavaScript, rows open PDF pages 3, 5 and 7. The portfolio has ten pages; CV has one A4 page, in each language.
+Project pages: deep teal header with the portfolio opener's text, meta table, visible URLs and the real screen; then one section per portfolio page with its title (key phrase in teal), lead and the page body as an image, linked to the PDF page.
 
-## Motion and interaction
+CV: one A4 page in the same type and colours; hairlines instead of boxes; printed from `cv/index.html`.
 
-PROB and LEM enter through opposing horizontal masks; the cream SOLVER band assembles with them. CSS establishes the sequence before first paint and completes it in 1.16 seconds. Native scroll offsets the typographic planes in opposite horizontal directions. There is no perpetual loop or scroll interception.
+## Rules
 
-Dialogs reveal horizontally in 400 ms and exit in 200 ms. Tab content transitions take 220 ms. Keyboard activation and reduced-motion preferences keep states immediately usable. Escape closes the dialog, focus returns to the source row, and background scrolling resumes. Reduced motion removes spatial sequences and preserves selected states.
-
-Controls are text and underlines. No decorative arrows, plus signs, pause controls, red ending or vertical fade entrance is used. User content and real project screenshots supply the case evidence.
-
-## Implementation
-
-Shared copy is in scripts/content.mjs. scripts/site-template.mjs and scripts/concept-template.mjs generate the canonical site with production mode enabled. assets/site.css and assets/concepts.css hold the base and selected styles; assets/site.js and assets/concepts.js hold interactions. Document templates use the corresponding teal/cream theme. Development proposal pages are excluded from publication.
+Real screenshots and photos only. No decorative marks, gradients, shadows, emoji or icon decoration on the site. Captions are plain and end without a period. Numbers keep the conditions the portfolio states (for example "당시 기록한" for the EUM frame rate). The VFriend business model is a plan before any partnership and is labelled so.
